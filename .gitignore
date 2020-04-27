@@ -75,3 +75,7 @@ testPlatformer/ProjectSettings/
 testPlatformer/obj/
 
 testPlatformer/.idea/
+
+testPlatformer/Temp/
+
+testPlatformer/build/
