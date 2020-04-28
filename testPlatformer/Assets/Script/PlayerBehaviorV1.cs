@@ -2,14 +2,11 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerBehaviorV1 : MonoBehaviour
 {
-    public Vector3 debugPlayerVelocity;
-    public float XRawAxis;
-    public float YRawAxis;
-    public float XAxis;
-    public float YAxis;
+    private Vector3 debugPlayerVelocity;
 
     //Dubug Zone
     public CharacterController playerCC;
@@ -59,6 +56,17 @@ public class PlayerBehaviorV1 : MonoBehaviour
     float _landTimer;
 
 
+
+
+    public void OnJump(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            Debug.Log("wow Jump");
+        }
+    }
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -79,10 +87,6 @@ public class PlayerBehaviorV1 : MonoBehaviour
 
     private void GetDebugValues()
     {
-        XAxis = Input.GetAxis("Horizontal");
-        YAxis = Input.GetAxis("Vertical");
-        XRawAxis = Input.GetAxisRaw("Horizontal");
-        YRawAxis = Input.GetAxisRaw("Vertical");
         debugPlayerVelocity = playerCC.velocity;
     }
 
