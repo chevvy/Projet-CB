@@ -14,37 +14,15 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Shoot",
+                    "name": "Jump",
                     "type": "Button",
-                    "id": "f06a615d-fd6c-412c-bb1e-d68ce965ac32",
+                    "id": "796e3889-a455-48f7-b474-d138a2dce47e",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
                 }
             ],
             "bindings": [
-                {
-                    "name": "",
-                    "id": "2f6dfdf3-c9f8-4290-9e03-2f6c9cb685df",
-                    "path": "<XInputController>/buttonNorth",
-                    "interactions": "Press",
-                    "processors": "",
-                    "groups": "XboxGamePad",
-                    "action": "Shoot",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "e2cde30b-8c88-454f-b29a-b47a234cc589",
-                    "path": "<Keyboard>/space",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "KeyboardMouse",
-                    "action": "Shoot",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
                 {
                     "name": "DPad-Controller",
                     "id": "f893b385-fd77-4585-b9a8-eada93b51349",
@@ -99,6 +77,28 @@
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "e7a191b3-929c-443b-b6dc-b257db38215b",
+                    "path": "<XInputController>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "XboxGamePad",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6d4b7055-7882-495d-bdd1-dfe41c3bbbb2",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyboardMouse",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }

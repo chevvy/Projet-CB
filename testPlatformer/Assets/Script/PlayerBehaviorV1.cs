@@ -60,10 +60,22 @@ public class PlayerBehaviorV1 : MonoBehaviour
 
     public void OnJump(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        // special line for minimal jump delay
+        if (context.started && playerCC.isGrounded) // Started correspond dès que le bouton est appuyé
         {
-            Debug.Log("wow Jump");
+            _minimalJumpTimer = minimalJumpDelay;
         }
+
+        if (context.performed) // Le bouton est enfoncé
+        {
+            isInputedJump = true;
+        }
+        if (context.canceled) // Le bouton est relaché 
+        {
+            isInputedJump = false;
+        }
+        
+        
     }
 
 
@@ -99,11 +111,6 @@ public class PlayerBehaviorV1 : MonoBehaviour
         if (Input.GetAxisRaw("Vertical") > 0) { isInputedVerticalUp = true; isInputedVerticalDown = false; }
         if (Input.GetAxisRaw("Vertical") < 0) { isInputedVerticalDown = true; isInputedVerticalUp = false; }
         if (Math.Abs(Input.GetAxisRaw("Vertical")) < 0.1f) { isInputedVerticalUp = false; isInputedVerticalDown = false; }
-        
-        // special line for minimal jump delay
-        if (Input.GetButtonDown("Jump") && playerCC.isGrounded) { _minimalJumpTimer = minimalJumpDelay; }
-        if (Input.GetButton("Jump")) { isInputedJump = true; }
-        if (!Input.GetButton("Jump") && _minimalJumpTimer <= 0) { isInputedJump = false; }
 
         if (Input.GetAxisRaw("Horizontal") > 0) { playerIsRight = true; }
         if (Input.GetAxisRaw("Horizontal") < 0) { playerIsRight = false; }
