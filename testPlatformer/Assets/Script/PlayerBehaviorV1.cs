@@ -2,14 +2,11 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerBehaviorV1 : MonoBehaviour
 {
-    public Vector3 debugPlayerVelocity;
-    public float XRawAxis;
-    public float YRawAxis;
-    public float XAxis;
-    public float YAxis;
+    private Vector3 debugPlayerVelocity;
 
     //Dubug Zone
     public CharacterController playerCC;
@@ -50,6 +47,9 @@ public class PlayerBehaviorV1 : MonoBehaviour
     public float horizontalOutput;
     float verticalOutput;
 
+    private float horizontalValue;
+    private float verticalValue;
+
     //TimerZone
 
     float _curveTimer;
@@ -57,8 +57,7 @@ public class PlayerBehaviorV1 : MonoBehaviour
     float _releasedHorizontalInput;
     float _minimalJumpTimer;
     float _landTimer;
-
-
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -70,40 +69,72 @@ public class PlayerBehaviorV1 : MonoBehaviour
     void Update()
     {
         GetDebugValues();
-        InputManager(); // vient handle quel bouton est appuyé et changer le state 
         StateManager(); // vient effectuer des actions selon les states
         SetHorizontalMovement();
         CheckForOverDriveState();
         Timer();
     }
 
+    public void OnMove(InputAction.CallbackContext context)
+    {
+        var joystickMovement = context.ReadValue<Vector2>();
+        horizontalValue = joystickMovement.x;
+        verticalValue = joystickMovement.y;
+        if (context.performed)
+        {
+            if (joystickMovement.x > 0)
+            {
+                isInputedHorizontalRight = true; 
+                isInputedHorizontalLeft = false; 
+                _releasedHorizontalInput = noXInputDelay;
+                playerIsRight = true;
+            }
+            if (joystickMovement.x < 0)
+            {
+                isInputedHorizontalRight = false; 
+                isInputedHorizontalLeft = true; 
+                _releasedHorizontalInput = noXInputDelay;
+                playerIsRight = false;
+            }
+
+            if (joystickMovement.y > 0)
+            {
+                isInputedVerticalUp = true; isInputedVerticalDown = false;
+            }
+
+            if (joystickMovement.y < 0)
+            {
+                isInputedVerticalDown = true; isInputedVerticalUp = false;
+            }
+        }
+
+        if (!context.canceled) return;
+        isInputedHorizontalRight = false; isInputedHorizontalLeft = false; 
+        isInputedVerticalUp = false; isInputedVerticalDown = false;
+
+    }
+    public void OnJump(InputAction.CallbackContext context)
+    {
+        // special line for minimal jump delay
+        if (context.started && playerCC.isGrounded) // Started correspond dès que le bouton est appuyé
+        {
+            _minimalJumpTimer = minimalJumpDelay;
+        }
+        if (context.performed) // Le bouton est enfoncé
+        {
+            isInputedJump = true;
+        }
+        if (context.canceled) // Le bouton est relaché 
+        {
+            isInputedJump = false;
+        }
+    }
+
     private void GetDebugValues()
     {
-        XAxis = Input.GetAxis("Horizontal");
-        YAxis = Input.GetAxis("Vertical");
-        XRawAxis = Input.GetAxisRaw("Horizontal");
-        YRawAxis = Input.GetAxisRaw("Vertical");
         debugPlayerVelocity = playerCC.velocity;
     }
-
-    void InputManager()
-    {
-        if (Input.GetAxisRaw("Horizontal") > 0) { isInputedHorizontalRight = true; isInputedHorizontalLeft = false; _releasedHorizontalInput = noXInputDelay; }
-        if (Input.GetAxisRaw("Horizontal") < 0) { isInputedHorizontalRight = false; isInputedHorizontalLeft = true; _releasedHorizontalInput = noXInputDelay; }
-        if (Math.Abs(Input.GetAxisRaw("Horizontal")) < 0.1f && _releasedHorizontalInput <= 0) { isInputedHorizontalRight = false; isInputedHorizontalLeft = false; }
-
-        if (Input.GetAxisRaw("Vertical") > 0) { isInputedVerticalUp = true; isInputedVerticalDown = false; }
-        if (Input.GetAxisRaw("Vertical") < 0) { isInputedVerticalDown = true; isInputedVerticalUp = false; }
-        if (Math.Abs(Input.GetAxisRaw("Vertical")) < 0.1f) { isInputedVerticalUp = false; isInputedVerticalDown = false; }
-        
-        // special line for minimal jump delay
-        if (Input.GetButtonDown("Jump") && playerCC.isGrounded) { _minimalJumpTimer = minimalJumpDelay; }
-        if (Input.GetButton("Jump")) { isInputedJump = true; }
-        if (!Input.GetButton("Jump") && _minimalJumpTimer <= 0) { isInputedJump = false; }
-
-        if (Input.GetAxisRaw("Horizontal") > 0) { playerIsRight = true; }
-        if (Input.GetAxisRaw("Horizontal") < 0) { playerIsRight = false; }
-    }
+    
     void StateManager()
     {
         if (overdriveMove) return;
@@ -140,7 +171,7 @@ public class PlayerBehaviorV1 : MonoBehaviour
         {
             AnimJump();
             verticalOutput = jumpingCurve.Evaluate(_curveTimer) * jumpForce;
-            horizontalOutput = horizontalSpeed * Input.GetAxis("Horizontal");
+            horizontalOutput = horizontalSpeed * horizontalValue;
         }
     }
 
@@ -164,7 +195,7 @@ public class PlayerBehaviorV1 : MonoBehaviour
         {
             AnimFall();
             verticalOutput = -fallingCurve.Evaluate(_curveTimer) *fallForce;
-            horizontalOutput = horizontalSpeed * Input.GetAxis("Horizontal");
+            horizontalOutput = horizontalSpeed * horizontalValue;
         }
     }
   
@@ -197,7 +228,7 @@ public class PlayerBehaviorV1 : MonoBehaviour
         {
             AnimRunRight();
             verticalOutput = 0;
-            horizontalOutput = horizontalSpeed * Input.GetAxis("Horizontal");
+            horizontalOutput = horizontalSpeed * horizontalValue;
         }
     }
     void RunLeft()
@@ -207,7 +238,7 @@ public class PlayerBehaviorV1 : MonoBehaviour
         {
             AnimRunLeft();
             verticalOutput = 0;
-            horizontalOutput = horizontalSpeed * Input.GetAxis("Horizontal");
+            horizontalOutput = horizontalSpeed * horizontalValue;
         }
     }
     
@@ -242,7 +273,7 @@ public class PlayerBehaviorV1 : MonoBehaviour
         {
             AnimCrouchRunRight();
             verticalOutput = 0;
-            horizontalOutput = horizontalSpeed * Input.GetAxis("Horizontal");
+            horizontalOutput = horizontalSpeed * horizontalValue;
         }
     }
     void CrouchRunLeft()
@@ -252,7 +283,7 @@ public class PlayerBehaviorV1 : MonoBehaviour
         {
             AnimCrouchRunLeft();
             verticalOutput = 0;
-            horizontalOutput = horizontalSpeed * Input.GetAxis("Horizontal");
+            horizontalOutput = horizontalSpeed * horizontalValue;
         }
     }
 
@@ -285,7 +316,7 @@ public class PlayerBehaviorV1 : MonoBehaviour
         if (desiredState == "Idle" )
         {
             AnimIdle();
-            horizontalOutput = horizontalSpeed * Input.GetAxis("Horizontal");
+            horizontalOutput = horizontalSpeed * horizontalValue;
         }
     
     }
@@ -306,7 +337,7 @@ public class PlayerBehaviorV1 : MonoBehaviour
         if (desiredState == "CrouchIdle")
         {
             AnimCrouchIdle();
-            horizontalOutput = horizontalSpeed * Input.GetAxis("Horizontal");
+            horizontalOutput = horizontalSpeed * horizontalValue;
         }
 
     }
