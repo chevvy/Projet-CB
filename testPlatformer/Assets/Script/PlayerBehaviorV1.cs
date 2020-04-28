@@ -54,31 +54,7 @@ public class PlayerBehaviorV1 : MonoBehaviour
     float _releasedHorizontalInput;
     float _minimalJumpTimer;
     float _landTimer;
-
-
-
-
-    public void OnJump(InputAction.CallbackContext context)
-    {
-        // special line for minimal jump delay
-        if (context.started && playerCC.isGrounded) // Started correspond dès que le bouton est appuyé
-        {
-            _minimalJumpTimer = minimalJumpDelay;
-        }
-
-        if (context.performed) // Le bouton est enfoncé
-        {
-            isInputedJump = true;
-        }
-        if (context.canceled) // Le bouton est relaché 
-        {
-            isInputedJump = false;
-        }
-        
-        
-    }
-
-
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -97,6 +73,53 @@ public class PlayerBehaviorV1 : MonoBehaviour
         Timer();
     }
 
+    public void OnMove(InputAction.CallbackContext context)
+    {
+        var joystickMovement = context.ReadValue<Vector2>();
+        if (context.performed)
+        {
+            Debug.Log("Mouvement actuel = " + context.ReadValue<Vector2>());
+            if (joystickMovement.x > 0)
+            {
+                isInputedHorizontalRight = true; 
+                isInputedHorizontalLeft = false; 
+                _releasedHorizontalInput = noXInputDelay;
+                playerIsRight = true;
+                Debug.Log(" Player going right");
+            }
+            if (joystickMovement.x < 0)
+            {
+                isInputedHorizontalRight = false; 
+                isInputedHorizontalLeft = true; 
+                _releasedHorizontalInput = noXInputDelay;
+                playerIsRight = false;
+                Debug.Log(" Player going left");
+            }
+        }
+
+        if (context.canceled)
+        {
+            isInputedHorizontalRight = false; isInputedHorizontalLeft = false;
+            Debug.Log("Movement canceled ");
+        }
+    }
+    public void OnJump(InputAction.CallbackContext context)
+    {
+        // special line for minimal jump delay
+        if (context.started && playerCC.isGrounded) // Started correspond dès que le bouton est appuyé
+        {
+            _minimalJumpTimer = minimalJumpDelay;
+        }
+        if (context.performed) // Le bouton est enfoncé
+        {
+            isInputedJump = true;
+        }
+        if (context.canceled) // Le bouton est relaché 
+        {
+            isInputedJump = false;
+        }
+    }
+
     private void GetDebugValues()
     {
         debugPlayerVelocity = playerCC.velocity;
@@ -104,16 +127,18 @@ public class PlayerBehaviorV1 : MonoBehaviour
 
     void InputManager()
     {
-        if (Input.GetAxisRaw("Horizontal") > 0) { isInputedHorizontalRight = true; isInputedHorizontalLeft = false; _releasedHorizontalInput = noXInputDelay; }
-        if (Input.GetAxisRaw("Horizontal") < 0) { isInputedHorizontalRight = false; isInputedHorizontalLeft = true; _releasedHorizontalInput = noXInputDelay; }
-        if (Math.Abs(Input.GetAxisRaw("Horizontal")) < 0.1f && _releasedHorizontalInput <= 0) { isInputedHorizontalRight = false; isInputedHorizontalLeft = false; }
+        //if (Input.GetAxisRaw("Horizontal") > 0) { isInputedHorizontalRight = true; isInputedHorizontalLeft = false; _releasedHorizontalInput = noXInputDelay; }
+        //if (Input.GetAxisRaw("Horizontal") > 0) { playerIsRight = true; }
+        //if (Input.GetAxisRaw("Horizontal") < 0) { isInputedHorizontalRight = false; isInputedHorizontalLeft = true; _releasedHorizontalInput = noXInputDelay; }
+        //if (Input.GetAxisRaw("Horizontal") < 0) { playerIsRight = false; }
+        // if (Math.Abs(Input.GetAxisRaw("Horizontal")) < 0.1f && _releasedHorizontalInput <= 0) { isInputedHorizontalRight = false; isInputedHorizontalLeft = false; }
 
         if (Input.GetAxisRaw("Vertical") > 0) { isInputedVerticalUp = true; isInputedVerticalDown = false; }
         if (Input.GetAxisRaw("Vertical") < 0) { isInputedVerticalDown = true; isInputedVerticalUp = false; }
         if (Math.Abs(Input.GetAxisRaw("Vertical")) < 0.1f) { isInputedVerticalUp = false; isInputedVerticalDown = false; }
 
-        if (Input.GetAxisRaw("Horizontal") > 0) { playerIsRight = true; }
-        if (Input.GetAxisRaw("Horizontal") < 0) { playerIsRight = false; }
+        
+       
     }
     void StateManager()
     {
