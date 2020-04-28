@@ -47,6 +47,9 @@ public class PlayerBehaviorV1 : MonoBehaviour
     public float horizontalOutput;
     float verticalOutput;
 
+    private float horizontalValue;
+    private float verticalValue;
+
     //TimerZone
 
     float _curveTimer;
@@ -75,6 +78,8 @@ public class PlayerBehaviorV1 : MonoBehaviour
     public void OnMove(InputAction.CallbackContext context)
     {
         var joystickMovement = context.ReadValue<Vector2>();
+        horizontalValue = joystickMovement.x;
+        verticalValue = joystickMovement.y;
         if (context.performed)
         {
             if (joystickMovement.x > 0)
@@ -165,7 +170,7 @@ public class PlayerBehaviorV1 : MonoBehaviour
         {
             AnimJump();
             verticalOutput = jumpingCurve.Evaluate(_curveTimer) * jumpForce;
-            horizontalOutput = horizontalSpeed * Input.GetAxis("Horizontal");
+            horizontalOutput = horizontalSpeed * horizontalValue;
         }
     }
 
@@ -189,7 +194,7 @@ public class PlayerBehaviorV1 : MonoBehaviour
         {
             AnimFall();
             verticalOutput = -fallingCurve.Evaluate(_curveTimer) *fallForce;
-            horizontalOutput = horizontalSpeed * Input.GetAxis("Horizontal");
+            horizontalOutput = horizontalSpeed * horizontalValue;
         }
     }
   
@@ -222,7 +227,7 @@ public class PlayerBehaviorV1 : MonoBehaviour
         {
             AnimRunRight();
             verticalOutput = 0;
-            horizontalOutput = horizontalSpeed * Input.GetAxis("Horizontal");
+            horizontalOutput = horizontalSpeed * horizontalValue;
         }
     }
     void RunLeft()
@@ -232,7 +237,7 @@ public class PlayerBehaviorV1 : MonoBehaviour
         {
             AnimRunLeft();
             verticalOutput = 0;
-            horizontalOutput = horizontalSpeed * Input.GetAxis("Horizontal");
+            horizontalOutput = horizontalSpeed * horizontalValue;
         }
     }
     
@@ -267,7 +272,7 @@ public class PlayerBehaviorV1 : MonoBehaviour
         {
             AnimCrouchRunRight();
             verticalOutput = 0;
-            horizontalOutput = horizontalSpeed * Input.GetAxis("Horizontal");
+            horizontalOutput = horizontalSpeed * horizontalValue;
         }
     }
     void CrouchRunLeft()
@@ -277,7 +282,7 @@ public class PlayerBehaviorV1 : MonoBehaviour
         {
             AnimCrouchRunLeft();
             verticalOutput = 0;
-            horizontalOutput = horizontalSpeed * Input.GetAxis("Horizontal");
+            horizontalOutput = horizontalSpeed * horizontalValue;
         }
     }
 
@@ -310,7 +315,7 @@ public class PlayerBehaviorV1 : MonoBehaviour
         if (desiredState == "Idle" )
         {
             AnimIdle();
-            horizontalOutput = horizontalSpeed * Input.GetAxis("Horizontal");
+            horizontalOutput = horizontalSpeed * horizontalValue;
         }
     
     }
@@ -331,7 +336,7 @@ public class PlayerBehaviorV1 : MonoBehaviour
         if (desiredState == "CrouchIdle")
         {
             AnimCrouchIdle();
-            horizontalOutput = horizontalSpeed * Input.GetAxis("Horizontal");
+            horizontalOutput = horizontalSpeed * horizontalValue;
         }
 
     }
