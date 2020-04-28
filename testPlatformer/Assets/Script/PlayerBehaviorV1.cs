@@ -109,8 +109,9 @@ public class PlayerBehaviorV1 : MonoBehaviour
         }
 
         if (!context.canceled) return;
-        isInputedHorizontalRight = false; isInputedHorizontalLeft = false;
+        isInputedHorizontalRight = false; isInputedHorizontalLeft = false; 
         isInputedVerticalUp = false; isInputedVerticalDown = false;
+
     }
     public void OnJump(InputAction.CallbackContext context)
     {
