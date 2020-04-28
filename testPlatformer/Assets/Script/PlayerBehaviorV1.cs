@@ -66,7 +66,6 @@ public class PlayerBehaviorV1 : MonoBehaviour
     void Update()
     {
         GetDebugValues();
-        InputManager(); // vient handle quel bouton est appuyé et changer le state 
         StateManager(); // vient effectuer des actions selon les states
         SetHorizontalMovement();
         CheckForOverDriveState();
@@ -78,14 +77,12 @@ public class PlayerBehaviorV1 : MonoBehaviour
         var joystickMovement = context.ReadValue<Vector2>();
         if (context.performed)
         {
-            Debug.Log("Mouvement actuel = " + context.ReadValue<Vector2>());
             if (joystickMovement.x > 0)
             {
                 isInputedHorizontalRight = true; 
                 isInputedHorizontalLeft = false; 
                 _releasedHorizontalInput = noXInputDelay;
                 playerIsRight = true;
-                Debug.Log(" Player going right");
             }
             if (joystickMovement.x < 0)
             {
@@ -93,15 +90,22 @@ public class PlayerBehaviorV1 : MonoBehaviour
                 isInputedHorizontalLeft = true; 
                 _releasedHorizontalInput = noXInputDelay;
                 playerIsRight = false;
-                Debug.Log(" Player going left");
+            }
+
+            if (joystickMovement.y > 0)
+            {
+                isInputedVerticalUp = true; isInputedVerticalDown = false;
+            }
+
+            if (joystickMovement.y < 0)
+            {
+                isInputedVerticalDown = true; isInputedVerticalUp = false;
             }
         }
 
-        if (context.canceled)
-        {
-            isInputedHorizontalRight = false; isInputedHorizontalLeft = false;
-            Debug.Log("Movement canceled ");
-        }
+        if (!context.canceled) return;
+        isInputedHorizontalRight = false; isInputedHorizontalLeft = false;
+        isInputedVerticalUp = false; isInputedVerticalDown = false;
     }
     public void OnJump(InputAction.CallbackContext context)
     {
@@ -124,22 +128,7 @@ public class PlayerBehaviorV1 : MonoBehaviour
     {
         debugPlayerVelocity = playerCC.velocity;
     }
-
-    void InputManager()
-    {
-        //if (Input.GetAxisRaw("Horizontal") > 0) { isInputedHorizontalRight = true; isInputedHorizontalLeft = false; _releasedHorizontalInput = noXInputDelay; }
-        //if (Input.GetAxisRaw("Horizontal") > 0) { playerIsRight = true; }
-        //if (Input.GetAxisRaw("Horizontal") < 0) { isInputedHorizontalRight = false; isInputedHorizontalLeft = true; _releasedHorizontalInput = noXInputDelay; }
-        //if (Input.GetAxisRaw("Horizontal") < 0) { playerIsRight = false; }
-        // if (Math.Abs(Input.GetAxisRaw("Horizontal")) < 0.1f && _releasedHorizontalInput <= 0) { isInputedHorizontalRight = false; isInputedHorizontalLeft = false; }
-
-        if (Input.GetAxisRaw("Vertical") > 0) { isInputedVerticalUp = true; isInputedVerticalDown = false; }
-        if (Input.GetAxisRaw("Vertical") < 0) { isInputedVerticalDown = true; isInputedVerticalUp = false; }
-        if (Math.Abs(Input.GetAxisRaw("Vertical")) < 0.1f) { isInputedVerticalUp = false; isInputedVerticalDown = false; }
-
-        
-       
-    }
+    
     void StateManager()
     {
         if (overdriveMove) return;
