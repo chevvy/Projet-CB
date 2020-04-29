@@ -57,7 +57,9 @@ public class PlayerBehaviorV1 : MonoBehaviour
     float _releasedHorizontalInput;
     float _minimalJumpTimer;
     float _landTimer;
-    
+    private static readonly int TrigIdleRight = Animator.StringToHash("trigIdleRight");
+    private static readonly int TrigIdleLeft = Animator.StringToHash("trigIdleLeft");
+
     // Start is called before the first frame update
     void Start()
     {
@@ -69,11 +71,12 @@ public class PlayerBehaviorV1 : MonoBehaviour
     void Update()
     {
         GetDebugValues();
-        StateManager(); // vient effectuer des actions selon les states
+        StateManager(); // vient effectuer des actions selon les states 
         SetHorizontalMovement();
         CheckForOverDriveState();
         Timer();
     }
+    
 
     public void OnMove(InputAction.CallbackContext context)
     {
@@ -108,10 +111,11 @@ public class PlayerBehaviorV1 : MonoBehaviour
             }
         }
 
-        if (!context.canceled) return;
-        isInputedHorizontalRight = false; isInputedHorizontalLeft = false; 
-        isInputedVerticalUp = false; isInputedVerticalDown = false;
-
+        if (context.canceled)
+        {
+            isInputedHorizontalRight = false; isInputedHorizontalLeft = false; 
+            isInputedVerticalUp = false; isInputedVerticalDown = false;
+        }
     }
     public void OnJump(InputAction.CallbackContext context)
     {
@@ -129,6 +133,27 @@ public class PlayerBehaviorV1 : MonoBehaviour
             isInputedJump = false;
         }
     }
+    
+    // Action Function & Animation Function
+    void Jump()
+    {
+        AnimJump(); 
+        verticalOutput = jumpingCurve.Evaluate(_curveTimer) * jumpForce; 
+        horizontalOutput = horizontalSpeed * horizontalValue;
+    }
+
+    void AnimJump()
+    {
+        if (desiredState == "Jump" && currentAnimState != "animJump")
+        {
+            CurveReset();
+            currentAnimState = "animJump";
+            if (isLastOrientationRight == true && playerIsRight == true) { playerAnimator.SetTrigger("trigJumpRight"); isLastOrientationRight = true; }
+            if (isLastOrientationRight == true && playerIsRight == false) { playerAnimator.SetTrigger("trigJumpLeft"); isLastOrientationRight = false; }
+            if (isLastOrientationRight == false && playerIsRight == true) { playerAnimator.SetTrigger("trigJumpRight"); isLastOrientationRight = true; }
+            if (isLastOrientationRight == false && playerIsRight == false) { playerAnimator.SetTrigger("trigJumpLeft"); isLastOrientationRight = false; }
+        }
+    }
 
     private void GetDebugValues()
     {
@@ -137,6 +162,7 @@ public class PlayerBehaviorV1 : MonoBehaviour
     
     void StateManager()
     {
+        
         if (overdriveMove) return;
         if (playerCC.isGrounded)
         {
@@ -164,31 +190,7 @@ public class PlayerBehaviorV1 : MonoBehaviour
         playerCC.Move(movementOutput*Time.deltaTime);
     }
     
-    // Action Function & Animation Function
-    void Jump()
-    {
-        if (desiredState == "Jump")
-        {
-            AnimJump();
-            verticalOutput = jumpingCurve.Evaluate(_curveTimer) * jumpForce;
-            horizontalOutput = horizontalSpeed * horizontalValue;
-        }
-    }
-
-    void AnimJump()
-    {
-        if (desiredState == "Jump" && currentAnimState != "animJump")
-        {
-            CurveReset();
-            currentAnimState = "animJump";
-            if (isLastOrientationRight == true && playerIsRight == true) { playerAnimator.SetTrigger("trigJumpRight"); isLastOrientationRight = true; }
-            if (isLastOrientationRight == true && playerIsRight == false) { playerAnimator.SetTrigger("trigJumpLeft"); isLastOrientationRight = false; }
-            if (isLastOrientationRight == false && playerIsRight == true) { playerAnimator.SetTrigger("trigJumpRight"); isLastOrientationRight = true; }
-            if (isLastOrientationRight == false && playerIsRight == false) { playerAnimator.SetTrigger("trigJumpLeft"); isLastOrientationRight = false; }
-
-        }
-
-    }
+ 
     void Fall()
     {
         if (desiredState == "Fall")
@@ -208,9 +210,7 @@ public class PlayerBehaviorV1 : MonoBehaviour
             currentAnimState = "animFall";
             if(isLastOrientationRight == true) { playerAnimator.SetTrigger("trigFallRight"); }
             if (isLastOrientationRight == false) { playerAnimator.SetTrigger("trigFallLeft"); }
-
         }
-
     }
 
     void RunCoolDown()
@@ -325,8 +325,8 @@ public class PlayerBehaviorV1 : MonoBehaviour
         if (desiredState == "Idle" && currentAnimState != "animIdle")
         {
             currentAnimState = "animIdle";
-            if (isLastOrientationRight == true) { playerAnimator.SetTrigger("trigIdleRight"); }
-            if (isLastOrientationRight == false) { playerAnimator.SetTrigger("trigIdleLeft"); }
+            if (isLastOrientationRight) { playerAnimator.SetTrigger(TrigIdleRight); }
+            if (!isLastOrientationRight) { playerAnimator.SetTrigger(TrigIdleLeft); }
 
         }
 
