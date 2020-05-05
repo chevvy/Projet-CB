@@ -13,7 +13,7 @@ public class PlayerBehaviorV2 : MonoBehaviour
     private static readonly int Horizontal = Animator.StringToHash("horizontal");
 
     private Rigidbody Rigidbody => GetComponent<UnityEngine.Rigidbody>();
-    private Vector3 m_LastMovement;
+    private Vector3 m_MoveDirection;
 
     private bool m_isMoving;
     // Start is called before the first frame update
@@ -28,10 +28,11 @@ public class PlayerBehaviorV2 : MonoBehaviour
     {
         if (m_isMoving)
         {
-            playerCC.Move(m_LastMovement);
-            Debug.Log("Player moved " + m_LastMovement);
+            if (playerCC.isGrounded)
+            {
+                playerCC.Move(m_MoveDirection * Time.deltaTime);
+            }
         }
-        
         if (!playerCC.isGrounded)
         {
             Vector3 fall = new Vector3(0, -fallForce, 0);
@@ -47,9 +48,11 @@ public class PlayerBehaviorV2 : MonoBehaviour
         playerAnimator.SetFloat(Horizontal, joystickMovement.x);
         if (context.performed)
         {
-            m_LastMovement = new Vector3(joystickMovement.x * Time.deltaTime * horizontalSpeed, 0, 0f);
+            joystickMovement = context.ReadValue<Vector2>();
+            m_MoveDirection = new Vector3(joystickMovement.x, 0, 0);
+            m_MoveDirection *= horizontalSpeed;
             m_isMoving = true;
-            //Debug.Log("Performed of x  = " + joystickMovement.x);
+            //Debug.Log("Current movement = " + m_MoveDirection);
         }
 
         if (context.canceled)
@@ -57,5 +60,12 @@ public class PlayerBehaviorV2 : MonoBehaviour
             m_isMoving = false;
         }
     }
-    
+
+    private void MovePerformed()
+    {
+
+    }
 }
+    
+
+
