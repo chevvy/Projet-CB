@@ -261,9 +261,7 @@ public class PlayerBehaviorV1 : MonoBehaviour
             currentAnimState = "animRunLeft";
             playerAnimator.SetTrigger("trigRunLeft");
             isLastOrientationRight = false;
-
         }
-
     }
 
     void CrouchRunRight()
@@ -306,14 +304,13 @@ public class PlayerBehaviorV1 : MonoBehaviour
             currentAnimState = "animCrouchRunLeft";
             playerAnimator.SetTrigger("trigCrouchRunLeft");
             isLastOrientationRight = false;
-
         }
     }
 
 
     void Idle()
     {
-        if (desiredState == "Idle" )
+        if (desiredState == "Idle")
         {
             AnimIdle();
             horizontalOutput = horizontalSpeed * horizontalValue;
@@ -322,14 +319,22 @@ public class PlayerBehaviorV1 : MonoBehaviour
     }
     void AnimIdle()
     {
-        if (desiredState == "Idle" && currentAnimState != "animIdle")
+        Debug.Log("Checking if current state is animIdle");
+        if (currentAnimState != "animIdle")
         {
             currentAnimState = "animIdle";
-            if (isLastOrientationRight) { playerAnimator.SetTrigger(TrigIdleRight); }
-            if (!isLastOrientationRight) { playerAnimator.SetTrigger(TrigIdleLeft); }
+            if (isLastOrientationRight)
+            {
+                Debug.Log("triggering right idle");
+                playerAnimator.SetTrigger(TrigIdleRight);
+            }
 
+            if (!isLastOrientationRight)
+            {
+                Debug.Log("triggering left idle ");
+                playerAnimator.SetTrigger(TrigIdleLeft);
+            }            
         }
-
     }
 
     void CrouchIdle()
@@ -348,9 +353,7 @@ public class PlayerBehaviorV1 : MonoBehaviour
             currentAnimState = "animCrouchIdle";
             if (isLastOrientationRight == true) { playerAnimator.SetTrigger("trigCrouchIdleRight"); }
             if (isLastOrientationRight == false) { playerAnimator.SetTrigger("trigCrouchIdleLeft"); }
-
         }
-
     }
 
     // OverDrive Move
