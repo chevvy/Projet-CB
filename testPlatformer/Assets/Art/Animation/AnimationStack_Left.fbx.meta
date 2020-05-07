@@ -1,32 +1,29 @@
 fileFormatVersion: 2
-guid: 73753d64c3c924045aea4b42b6941938
+guid: 70d3f469e30d7224aa64b8accf826c87
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable:
   - first:
       74: 1827226128182048838
-    second: Take 001
+    second: Anim_PlayerKneeling
   - first:
-      74: -5405653242291790180
-    second: Anim_PlayerJump_Right
+      74: -5627376875367600673
+    second: Anim_PlayerKneeling_Left
   - first:
-      74: 4854180139978558704
-    second: Anim_PlayerFall_Right
+      74: -3774202107206892868
+    second: Anim_PlayerJumping_Left
   - first:
-      74: 1389121407789637250
-    second: Anim_PlayerLanding_Right
+      74: -4540891437088685589
+    second: Anim_PlayerFalling_Left
   - first:
-      74: 4353825163953427278
-    second: Take 001 (4)
+      74: 5586673867776337184
+    second: Anim_PlayerLanding_Left
   - first:
-      74: 5200559358879370034
-    second: Anim_PlayerIdle_Right
+      74: -5641789522950107666
+    second: Anim_PlayerIdle_Left
   - first:
-      74: 3928864737282470240
-    second: Anim_PlayerAttack_Right
-  - first:
-      74: -8315861645527738739
-    second: Anim_PlayerKneeling_Right
+      74: 7982601063639532752
+    second: Anim_PlayerAttack_Left
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -56,11 +53,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Anim_PlayerKneeling_Right
+      name: Anim_PlayerKneeling_Left
       takeName: Take 001
       internalID: 0
-      firstFrame: 3
-      lastFrame: 4
+      firstFrame: 0
+      lastFrame: 64
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -85,11 +82,11 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Anim_PlayerJump_Right
+      name: Anim_PlayerJumping_Left
       takeName: Take 001
       internalID: 0
-      firstFrame: 10
-      lastFrame: 18
+      firstFrame: 0
+      lastFrame: 64
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -114,11 +111,11 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Anim_PlayerFall_Right
+      name: Anim_PlayerFalling_Left
       takeName: Take 001
       internalID: 0
-      firstFrame: 20
-      lastFrame: 27
+      firstFrame: 0
+      lastFrame: 64
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -143,11 +140,11 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Anim_PlayerLanding_Right
+      name: Anim_PlayerLanding_Left
       takeName: Take 001
       internalID: 0
-      firstFrame: 30
-      lastFrame: 32
+      firstFrame: 0
+      lastFrame: 64
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -172,11 +169,11 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Anim_PlayerIdle_Right
+      name: Anim_PlayerIdle_Left
       takeName: Take 001
       internalID: 0
       firstFrame: 34
-      lastFrame: 44
+      lastFrame: 46
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -201,10 +198,10 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Anim_PlayerAttack_Right
+      name: Anim_PlayerAttack_Left
       takeName: Take 001
       internalID: 0
-      firstFrame: 48
+      firstFrame: 46
       lastFrame: 64
       wrapMode: 0
       orientationOffsetY: 0
@@ -262,7 +259,7 @@ ModelImporter:
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
-    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
   referencedClips: []
