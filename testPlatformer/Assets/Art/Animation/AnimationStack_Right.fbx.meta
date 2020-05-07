@@ -5,25 +5,7 @@ ModelImporter:
   internalIDToNameTable:
   - first:
       74: 1827226128182048838
-    second: Anim_PlayerKneeling_Left
-  - first:
-      74: -5405653242291790180
     second: Anim_PlayerKneeling_Right
-  - first:
-      74: 4854180139978558704
-    second: Take 001 (2)
-  - first:
-      74: 1389121407789637250
-    second: Take 001 (3)
-  - first:
-      74: 4353825163953427278
-    second: Take 001 (4)
-  - first:
-      74: 3672910778998720083
-    second: Take 001 (5)
-  - first:
-      74: -3956177450704724540
-    second: Take 001 (6)
   - first:
       74: 1632995032171818590
     second: Anim_PlayerJumping_Right
@@ -68,11 +50,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Anim_PlayerKneeling_Left
+      name: Anim_PlayerKneeling_Right
       takeName: Take 001
       internalID: 0
-      firstFrame: 3
-      lastFrame: 4
+      firstFrame: 0
+      lastFrame: 64
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -100,8 +82,8 @@ ModelImporter:
       name: Anim_PlayerJumping_Right
       takeName: Take 001
       internalID: 0
-      firstFrame: 10
-      lastFrame: 18
+      firstFrame: 0
+      lastFrame: 64
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -129,8 +111,8 @@ ModelImporter:
       name: Anim_PlayerFalling_Right
       takeName: Take 001
       internalID: 0
-      firstFrame: 20
-      lastFrame: 27
+      firstFrame: 0
+      lastFrame: 64
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -158,8 +140,8 @@ ModelImporter:
       name: Anim_PlayerLanding_Right
       takeName: Take 001
       internalID: 0
-      firstFrame: 30
-      lastFrame: 32
+      firstFrame: 0
+      lastFrame: 64
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -187,15 +169,15 @@ ModelImporter:
       name: Anim_PlayerIdle_Right
       takeName: Take 001
       internalID: 0
-      firstFrame: 34
-      lastFrame: 44
+      firstFrame: 0
+      lastFrame: 64
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -216,7 +198,7 @@ ModelImporter:
       name: Anim_PlayerAttack_Right
       takeName: Take 001
       internalID: 0
-      firstFrame: 48
+      firstFrame: 0
       lastFrame: 64
       wrapMode: 0
       orientationOffsetY: 0
@@ -274,7 +256,7 @@ ModelImporter:
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
-    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
   referencedClips: []
