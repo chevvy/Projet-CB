@@ -10618,7 +10618,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   horizontalSpeed: 4
-  fallForce: 20
+  fallForce: 18
   gravity: 5
   jumpSpeed: 8
 --- !u!1 &313401507
@@ -120119,16 +120119,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1862561984816882698, guid: ee1a2883ccb561344b9c21098b3939f2,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1862561984816882699, guid: ee1a2883ccb561344b9c21098b3939f2,
         type: 3}
       propertyPath: m_Root
       value: 
-      objectReference: {fileID: 1905481918}
+      objectReference: {fileID: 0}
     - target: {fileID: 1862561984816882699, guid: ee1a2883ccb561344b9c21098b3939f2,
         type: 3}
       propertyPath: m_Enabled
