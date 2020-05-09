@@ -16,10 +16,12 @@ public class PlayerBehaviorV2 : MonoBehaviour
     private static readonly int jumping = Animator.StringToHash("jumping");
 
     private Rigidbody Rigidbody => GetComponent<UnityEngine.Rigidbody>();
-    private Vector3 m_MoveDirection = Vector3.zero;
+    private Vector3 _moveDirection = Vector3.zero;
 
     //private bool m_IsMoving;
-    private bool m_IsJumping;
+    private bool _isJumping;
+
+    private bool _mPlayerCcIsGrounded;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,21 +32,28 @@ public class PlayerBehaviorV2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!m_PlayerCc.isGrounded && !m_IsJumping)
+        _mPlayerCcIsGrounded = m_PlayerCc.isGrounded;
+        //if (!m_PlayerCc.isGrounded && !m_IsJumping)
+        //{
+        if (!m_PlayerCc.isGrounded)
         {
             CharacterFall();
         }
+        
+        //}
         MoveCharacter();
     }
     
     private void MoveCharacter()
     {
-        m_PlayerCc.Move(m_MoveDirection * Time.deltaTime);
+        var testMove = _moveDirection * Time.deltaTime;
+        m_PlayerCc.Move(testMove);
     }
 
     private void CharacterFall()
     {
-        m_MoveDirection.y -= fallForce;
+        //m_MoveDirection.y -= fallForce;
+        _moveDirection.y -= fallForce * Time.deltaTime;
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -54,14 +63,14 @@ public class PlayerBehaviorV2 : MonoBehaviour
         if (context.performed)
         {
             joystickMovement = context.ReadValue<Vector2>();
-            m_MoveDirection.x = joystickMovement.x;
-            m_MoveDirection *= horizontalSpeed;
+            _moveDirection.x = joystickMovement.x;
+            _moveDirection *= horizontalSpeed;
             //m_IsMoving = true;
             //Debug.Log("Current movement = " + m_MoveDirection);
         }
         if (context.canceled)
         {
-            m_MoveDirection.x = 0;
+            _moveDirection.x = 0;
         }
     }
 
@@ -75,22 +84,20 @@ public class PlayerBehaviorV2 : MonoBehaviour
         if (context.canceled)
         {
             m_PlayerAnimator.SetBool(jumping, false);
-            m_IsJumping = false;
+            _isJumping = false;
         }
     }
    
 
     private void Jump()
     {
-        if (m_PlayerCc.isGrounded && !m_IsJumping)
+        if (m_PlayerCc.isGrounded && !_isJumping)
         {
             m_PlayerAnimator.SetBool(jumping, true);
-            m_MoveDirection.y = jumpSpeed;
-            m_MoveDirection.y -= gravity * Time.deltaTime;
-            Debug.Log("Jumping : " + m_MoveDirection);
-            m_IsJumping = true;
-            //MoveCharacter();
-            // m_IsJumping = false;
+            _moveDirection.y = jumpSpeed;
+            _moveDirection.y -= gravity * Time.deltaTime;
+            Debug.Log("Jumping : " + _moveDirection);
+            _isJumping = true;
         }
     }
 }
