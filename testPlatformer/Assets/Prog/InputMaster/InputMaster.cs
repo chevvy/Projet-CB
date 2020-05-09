@@ -94,7 +94,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 {
                     ""name"": ""Joystick"",
                     ""id"": ""c54aac74-c79f-4e27-9d30-cf372df78fe6"",
-                    ""path"": ""2DVector"",
+                    ""path"": ""2DVector(mode=2)"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
