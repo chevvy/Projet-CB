@@ -53,8 +53,8 @@ ModelImporter:
       name: Anim_PlayerKneeling_Right
       takeName: Take 001
       internalID: 0
-      firstFrame: 0
-      lastFrame: 64
+      firstFrame: 3
+      lastFrame: 4
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -82,8 +82,8 @@ ModelImporter:
       name: Anim_PlayerJumping_Right
       takeName: Take 001
       internalID: 0
-      firstFrame: 0
-      lastFrame: 64
+      firstFrame: 10
+      lastFrame: 18
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -111,8 +111,8 @@ ModelImporter:
       name: Anim_PlayerFalling_Right
       takeName: Take 001
       internalID: 0
-      firstFrame: 0
-      lastFrame: 64
+      firstFrame: 20
+      lastFrame: 27
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -140,8 +140,8 @@ ModelImporter:
       name: Anim_PlayerLanding_Right
       takeName: Take 001
       internalID: 0
-      firstFrame: 0
-      lastFrame: 64
+      firstFrame: 30
+      lastFrame: 31
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -169,8 +169,8 @@ ModelImporter:
       name: Anim_PlayerIdle_Right
       takeName: Take 001
       internalID: 0
-      firstFrame: 0
-      lastFrame: 64
+      firstFrame: 36
+      lastFrame: 46
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -198,7 +198,7 @@ ModelImporter:
       name: Anim_PlayerAttack_Right
       takeName: Take 001
       internalID: 0
-      firstFrame: 0
+      firstFrame: 48
       lastFrame: 64
       wrapMode: 0
       orientationOffsetY: 0
