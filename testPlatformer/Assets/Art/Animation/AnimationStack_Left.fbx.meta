@@ -56,8 +56,8 @@ ModelImporter:
       name: Anim_PlayerKneeling_Left
       takeName: Take 001
       internalID: 0
-      firstFrame: 0
-      lastFrame: 64
+      firstFrame: 3
+      lastFrame: 4
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -85,8 +85,8 @@ ModelImporter:
       name: Anim_PlayerJumping_Left
       takeName: Take 001
       internalID: 0
-      firstFrame: 0
-      lastFrame: 64
+      firstFrame: 10
+      lastFrame: 18
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -114,8 +114,8 @@ ModelImporter:
       name: Anim_PlayerFalling_Left
       takeName: Take 001
       internalID: 0
-      firstFrame: 0
-      lastFrame: 64
+      firstFrame: 20
+      lastFrame: 27
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -143,8 +143,8 @@ ModelImporter:
       name: Anim_PlayerLanding_Left
       takeName: Take 001
       internalID: 0
-      firstFrame: 0
-      lastFrame: 64
+      firstFrame: 30
+      lastFrame: 31
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
