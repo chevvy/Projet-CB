@@ -1,103 +1,94 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
-public class PlayerBehaviorV2 : MonoBehaviour
+namespace Prog.Script
 {
-    private CharacterController m_PlayerCc;
-    private Animator m_PlayerAnimator;
-    
-    public float horizontalSpeed = 1;
-    public float fallForce = 1f;
-    public float gravity = 20f;
-    public float jumpSpeed = 8f;
-    private static readonly int Horizontal = Animator.StringToHash("horizontal");
-    private static readonly int jumping = Animator.StringToHash("jumping");
-
-    private Rigidbody Rigidbody => GetComponent<UnityEngine.Rigidbody>();
-    private Vector3 _moveDirection = Vector3.zero;
-
-    //private bool m_IsMoving;
-    private bool _isJumping;
-
-    private bool _mPlayerCcIsGrounded;
-    // Start is called before the first frame update
-    void Start()
+    public class PlayerBehaviorV2 : MonoBehaviour
     {
-        m_PlayerCc = GetComponent<CharacterController>();
-        m_PlayerAnimator = GetComponent<Animator>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        _mPlayerCcIsGrounded = m_PlayerCc.isGrounded;
-        //if (!m_PlayerCc.isGrounded && !m_IsJumping)
-        //{
-        if (!m_PlayerCc.isGrounded)
-        {
-            CharacterFall();
-        }
+        public float horizontalSpeed = 4f;
+        public float fallForce = 18f;
+        public float gravity = 20f;
+        [FormerlySerializedAs("jumpSpeed")] public float jumpForce = 9f;
         
-        //}
-        MoveCharacter();
-    }
+        private CharacterController _characterController;
+        private Animator _playerAnimator;
+        private static readonly int Horizontal = Animator.StringToHash("horizontal");
+        private static readonly int Jumping = Animator.StringToHash("jumping");
+        private Vector3 _moveDirection = Vector3.zero;
+        private bool _isJumping; 
+        private bool IsGrounded => _characterController.isGrounded;
+  
+        void Start()
+        {
+            _characterController = GetComponent<CharacterController>();
+            _playerAnimator = GetComponent<Animator>();
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+            if (IsGrounded && !_isJumping)
+            {
+                _moveDirection.y = -0.1f;
+            }
+            if (!IsGrounded)
+            {
+                CharacterFall();
+            }
+            MoveCharacter();
+        }
     
-    private void MoveCharacter()
-    {
-        var testMove = _moveDirection * Time.deltaTime;
-        m_PlayerCc.Move(testMove);
-    }
-
-    private void CharacterFall()
-    {
-        //m_MoveDirection.y -= fallForce;
-        _moveDirection.y -= fallForce * Time.deltaTime;
-    }
-
-    public void OnMove(InputAction.CallbackContext context)
-    {
-        var joystickMovement = context.ReadValue<Vector2>();
-        m_PlayerAnimator.SetFloat(Horizontal, joystickMovement.x);
-        if (context.performed)
+        private void CharacterFall()
         {
-            joystickMovement = context.ReadValue<Vector2>();
-            _moveDirection.x = joystickMovement.x;
-            _moveDirection *= horizontalSpeed;
-            //m_IsMoving = true;
-            //Debug.Log("Current movement = " + m_MoveDirection);
+            _moveDirection.y -= fallForce * Time.deltaTime;
         }
-        if (context.canceled)
+    
+        private void MoveCharacter()
         {
-            _moveDirection.x = 0;
-        }
-    }
-
-    public void OnJump(InputAction.CallbackContext context)
-    {
-        if (context.performed)
-        {
-            Jump();
+            var mouvementThisFrame = _moveDirection * Time.deltaTime;
+            _characterController.Move(mouvementThisFrame);
         }
 
-        if (context.canceled)
+        public void OnMove(InputAction.CallbackContext context)
         {
-            m_PlayerAnimator.SetBool(jumping, false);
-            _isJumping = false;
+            var joystickMovement = context.ReadValue<Vector2>();
+            _playerAnimator.SetFloat(Horizontal, joystickMovement.x);
+            if (context.performed)
+            {
+                joystickMovement = context.ReadValue<Vector2>();
+                _moveDirection.x = joystickMovement.x;
+                _moveDirection.x *= horizontalSpeed;
+            }
+            if (context.canceled)
+            {
+                _moveDirection.x = 0;
+            }
         }
-    }
-   
 
-    private void Jump()
-    {
-        if (m_PlayerCc.isGrounded && !_isJumping)
+        public void OnJump(InputAction.CallbackContext context)
         {
-            m_PlayerAnimator.SetBool(jumping, true);
-            _moveDirection.y = jumpSpeed;
-            _moveDirection.y -= gravity * Time.deltaTime;
-            Debug.Log("Jumping : " + _moveDirection);
-            _isJumping = true;
+            if (context.performed)
+            {
+                Jump();
+            }
+
+            if (context.canceled)
+            {
+                _playerAnimator.SetBool(Jumping, false);
+                _isJumping = false;
+            }
+        }
+
+        private void Jump()
+        {
+            if (IsGrounded && !_isJumping)
+            {
+                _playerAnimator.SetBool(Jumping, true);
+                _moveDirection.y = jumpForce;
+                _moveDirection.y -= gravity * Time.deltaTime;
+                _isJumping = true;
+            }
         }
     }
 }
