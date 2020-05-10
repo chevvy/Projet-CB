@@ -47,7 +47,26 @@ public class PlayerBehaviorV2 : MonoBehaviour
     private void MoveCharacter()
     {
         var testMove = _moveDirection * Time.deltaTime;
-        m_PlayerCc.Move(testMove);
+        
+        if (_mPlayerCcIsGrounded && !_isJumping)
+        {
+            testMove.y = -0.1f;
+            _moveDirection.y = 0.1f;
+            m_PlayerCc.Move(testMove);
+            //Debug.Log("Moved whit modified= " + testMove);
+        }
+        else
+        {
+            if (testMove.y > jumpSpeed * Time.deltaTime)
+            {
+                Debug.Log("Test move was too much " + testMove.y);
+                testMove.y = jumpSpeed * Time.deltaTime;
+                _moveDirection.y = testMove.y;
+            }
+            m_PlayerCc.Move(testMove);    
+            //Debug.Log("Moved = " + testMove);
+        }
+        
     }
 
     private void CharacterFall()
@@ -96,7 +115,7 @@ public class PlayerBehaviorV2 : MonoBehaviour
             m_PlayerAnimator.SetBool(jumping, true);
             _moveDirection.y = jumpSpeed;
             _moveDirection.y -= gravity * Time.deltaTime;
-            Debug.Log("Jumping : " + _moveDirection);
+            //Debug.Log("Jumping : " + _moveDirection);
             _isJumping = true;
         }
     }
