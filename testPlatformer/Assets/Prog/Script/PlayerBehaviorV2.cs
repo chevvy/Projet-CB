@@ -18,6 +18,7 @@ namespace Prog.Script
         private Vector3 _moveDirection = Vector3.zero;
         private bool _isJumping; 
         private bool IsGrounded => _characterController.isGrounded;
+        public bool _isGrounded;
   
         void Start()
         {
@@ -28,6 +29,7 @@ namespace Prog.Script
         // Update is called once per frame
         void Update()
         {
+            _isGrounded = _characterController.isGrounded;
             if (IsGrounded && !_isJumping)
             {
                 _moveDirection.y = -0.1f;
