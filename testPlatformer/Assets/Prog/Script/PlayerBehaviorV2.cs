@@ -18,23 +18,28 @@ namespace Prog.Script
         private Vector3 _moveDirection = Vector3.zero;
         private bool _isJumping; 
         private bool IsGrounded => _characterController.isGrounded;
-        public bool _isGrounded;
-  
+        public bool _isGroundedNative;
+        private Transform _groundChecker;
+        public bool _isGroundedNew = true;
+        public float GroundDistance = 0.2f;
+        public LayerMask Ground;
         void Start()
         {
             _characterController = GetComponent<CharacterController>();
             _playerAnimator = GetComponent<Animator>();
+            _groundChecker = transform.GetChild(0);
         }
 
         // Update is called once per frame
         void Update()
         {
-            _isGrounded = _characterController.isGrounded;
-            if (IsGrounded && !_isJumping)
+            _isGroundedNative = _characterController.isGrounded;
+            _isGroundedNew = Physics.CheckSphere(_groundChecker.position, GroundDistance, Ground, QueryTriggerInteraction.Ignore);
+            if (_isGroundedNew && !_isJumping)
             {
-                _moveDirection.y = -0.1f;
+                _moveDirection.y = 0f;
             }
-            if (!IsGrounded)
+            if (!_isGroundedNew)
             {
                 CharacterFall();
             }
@@ -84,7 +89,7 @@ namespace Prog.Script
 
         private void Jump()
         {
-            if (IsGrounded && !_isJumping)
+            if (_isGroundedNew && !_isJumping)
             {
                 _playerAnimator.SetBool(Jumping, true);
                 _moveDirection.y = jumpForce;
