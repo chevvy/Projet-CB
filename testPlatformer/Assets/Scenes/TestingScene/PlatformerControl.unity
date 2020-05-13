@@ -10621,10 +10621,8 @@ MonoBehaviour:
   fallForce: 18
   gravity: 20
   jumpForce: 9
-  _isGroundedNative: 0
-  _isGroundedNew: 1
-  GroundDistance: 0.2
-  Ground:
+  groundDistance: 0.2
+  groundLayerMask:
     serializedVersion: 2
     m_Bits: 1024
 --- !u!1 &313401507
