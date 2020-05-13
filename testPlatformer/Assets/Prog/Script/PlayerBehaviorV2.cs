@@ -10,36 +10,29 @@ namespace Prog.Script
         public float fallForce = 18f;
         public float gravity = 20f;
         [FormerlySerializedAs("jumpSpeed")] public float jumpForce = 9f;
+        public float groundDistance = 0.2f;
+        [FormerlySerializedAs("Ground")] public LayerMask groundLayerMask; // on vient indiquer ce qu'est le ground
         
         private CharacterController _characterController;
         private Animator _playerAnimator;
         private static readonly int Horizontal = Animator.StringToHash("horizontal");
         private static readonly int Jumping = Animator.StringToHash("jumping");
         private Vector3 _moveDirection = Vector3.zero;
-        private bool _isJumping; 
-        private bool IsGrounded => _characterController.isGrounded;
-        public bool _isGroundedNative;
+        private bool _isJumping;
         private Transform _groundChecker;
-        public bool _isGroundedNew = true;
-        public float GroundDistance = 0.2f;
-        public LayerMask Ground;
+        private bool _isGrounded = true;
+        
         void Start()
         {
             _characterController = GetComponent<CharacterController>();
             _playerAnimator = GetComponent<Animator>();
             _groundChecker = transform.GetChild(0);
         }
-
-        // Update is called once per frame
+        
         void Update()
         {
-            _isGroundedNative = _characterController.isGrounded;
-            _isGroundedNew = Physics.CheckSphere(_groundChecker.position, GroundDistance, Ground, QueryTriggerInteraction.Ignore);
-            if (_isGroundedNew && !_isJumping)
-            {
-                _moveDirection.y = 0f;
-            }
-            if (!_isGroundedNew)
+            _isGrounded = Physics.CheckSphere(_groundChecker.position, groundDistance, groundLayerMask, QueryTriggerInteraction.Ignore);
+            if (!_isGrounded)
             {
                 CharacterFall();
             }
@@ -80,22 +73,18 @@ namespace Prog.Script
                 Jump();
             }
 
-            if (context.canceled)
-            {
-                _playerAnimator.SetBool(Jumping, false);
-                _isJumping = false;
-            }
+            if (!context.canceled) return;
+            _playerAnimator.SetBool(Jumping, false);
+            _isJumping = false;
         }
 
         private void Jump()
         {
-            if (_isGroundedNew && !_isJumping)
-            {
-                _playerAnimator.SetBool(Jumping, true);
-                _moveDirection.y = jumpForce;
-                _moveDirection.y -= gravity * Time.deltaTime;
-                _isJumping = true;
-            }
+            if (!_isGrounded || _isJumping) return;
+            _playerAnimator.SetBool(Jumping, true);
+            _moveDirection.y = jumpForce;
+            _moveDirection.y -= gravity * Time.deltaTime;
+            _isJumping = true;
         }
     }
 }
