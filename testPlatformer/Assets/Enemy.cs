@@ -5,30 +5,37 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public int healthPoint = 100;
+    public int maxHealthPoint = 100;
     public bool isDead = false;
+    
     private MeshRenderer _enemyMesh;
-    // Start is called before the first frame update
+    private int _currentHealth;
+    
+    
     void Start()
     {
         _enemyMesh = GetComponent<MeshRenderer>();
+        _currentHealth = maxHealthPoint;
     }
 
-    void Update()
+    public void TakeDamage(int damage)
     {
-        if (healthPoint <= 0)
+        _currentHealth -= damage;
+        CheckHealth();
+    }
+
+    private void CheckHealth()
+    {
+        if (_currentHealth <= 0)
         {
-            _enemyMesh.enabled = false;
-            isDead = true;
+            Die();    
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void Die()
     {
-        if (other.CompareTag("PlayerWeapon") && !isDead)
-        {
-            Debug.Log("ayoye");
-            healthPoint -= other.GetComponent<PlayerWeapon>().dps;
-        }
+        Debug.Log("enemy dieeed");
+        GetComponent<Collider>().enabled = false;
+        enabled = false;
     }
 }
