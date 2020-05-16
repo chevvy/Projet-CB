@@ -12,6 +12,7 @@ namespace Prog.Script
         [FormerlySerializedAs("jumpSpeed")] public float jumpForce = 9f;
         public float groundDistance = 0.2f;
         [FormerlySerializedAs("Ground")] public LayerMask groundLayerMask; // on vient indiquer ce qu'est le ground
+        [SerializeField]PlayerCombat playerCombat;
         
         private CharacterController _characterController;
         private Animator _playerAnimator;
@@ -92,16 +93,17 @@ namespace Prog.Script
         {
             if (context.performed)
             {
-                Attack();
+                PerformAttack();
             }
 
             if (!context.canceled) return;
             _playerAnimator.SetBool(Attacking, false);
         }
 
-        private void Attack()
+        private void PerformAttack()
         {
             _playerAnimator.SetBool(Attacking, true);
+            playerCombat.Attack();
         }
     }
 }
