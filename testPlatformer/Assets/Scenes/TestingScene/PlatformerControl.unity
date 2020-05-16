@@ -33594,7 +33594,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackPoint: {fileID: 400216156}
   dps: 25
-  attackRange: 0.26
+  attackRange: 0.25
+  attackRate: 2
   enemyLayers:
     serializedVersion: 2
     m_Bits: 2048
@@ -56858,7 +56859,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1025486163}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -56882,7 +56883,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 097659c4d2b85034282106a4257294a9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -56939,6 +56940,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealthPoint: 100
   isDead: 0
+  damageMaterial: {fileID: 2100000, guid: 2f0dce8c1d771624a993f5e1633e2e05, type: 2}
 --- !u!54 &1025486169
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -56953,7 +56955,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 124
+  m_Constraints: 120
   m_CollisionDetection: 0
 --- !u!1 &1029547348
 GameObject:
@@ -106686,7 +106688,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 1697648527}
 --- !u!114 &1883651455
