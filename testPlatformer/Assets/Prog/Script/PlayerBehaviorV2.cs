@@ -17,6 +17,7 @@ namespace Prog.Script
         private Animator _playerAnimator;
         private static readonly int Horizontal = Animator.StringToHash("horizontal");
         private static readonly int Jumping = Animator.StringToHash("jumping");
+        private static readonly int Attacking = Animator.StringToHash("attacking");
         private Vector3 _moveDirection = Vector3.zero;
         private bool _isJumping;
         private Transform _groundChecker;
@@ -85,6 +86,22 @@ namespace Prog.Script
             _moveDirection.y = jumpForce;
             _moveDirection.y -= gravity * Time.deltaTime;
             _isJumping = true;
+        }
+        
+        public void OnAttack(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+            {
+                Attack();
+            }
+
+            if (!context.canceled) return;
+            _playerAnimator.SetBool(Attacking, false);
+        }
+
+        private void Attack()
+        {
+            _playerAnimator.SetBool(Attacking, true);
         }
     }
 }
