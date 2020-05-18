@@ -13,7 +13,7 @@ namespace Prog.Script
         public float groundDistance = 0.2f;
         [FormerlySerializedAs("Ground")] public LayerMask groundLayerMask; // on vient indiquer ce qu'est le ground
         [SerializeField]PlayerCombat playerCombat;
-        
+
         private CharacterController _characterController;
         private Animator _playerAnimator;
         private static readonly int Horizontal = Animator.StringToHash("horizontal");
