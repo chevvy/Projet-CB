@@ -4,7 +4,7 @@ using UnityEngine.Serialization;
 
 namespace Prog.Script
 {
-    public class PlayerBehaviorV2 : MonoBehaviour
+    public class PlayerBehavior : MonoBehaviour
     {
         public float horizontalSpeed = 4f;
         public float fallForce = 18f;
