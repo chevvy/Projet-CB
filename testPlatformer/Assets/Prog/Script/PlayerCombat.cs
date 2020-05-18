@@ -18,7 +18,6 @@ namespace Prog.Script
         void Start()
         {
             _weaponCollider = GetComponent<Collider>();
-            Debug.Log("Name of collider object" + _weaponCollider.name);
         }
 
         public void Attack()
