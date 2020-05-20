@@ -97,13 +97,18 @@ namespace Prog.Script
             }
 
             if (!context.canceled) return;
-            _playerAnimator.SetBool(Attacking, false);
+            CancelAttack();
         }
 
         private void PerformAttack()
         {
             _playerAnimator.SetBool(Attacking, true);
             playerCombat.Attack();
+        }
+
+        private void CancelAttack()
+        {
+            _playerAnimator.SetBool(Attacking, false);
         }
     }
 }
