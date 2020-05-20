@@ -8,6 +8,8 @@ namespace Prog.Script
         public int dps = 5;
         public float attackRange = 0.5f;
 
+        public AudioClip attackImpactSound;
+        
         public float attackRate = 2f;
         private float _nextAttackTime = 0f;
     
@@ -29,6 +31,7 @@ namespace Prog.Script
             foreach (var enemy in hitEnemies)
             {
                 enemy.GetComponent<Enemy>().TakesDamage(dps);
+                AudioManager.instance.PlaySingleRandomized(attackImpactSound);
             }
         }
 
