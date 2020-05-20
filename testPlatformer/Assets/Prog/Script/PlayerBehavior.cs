@@ -4,7 +4,7 @@ using UnityEngine.Serialization;
 
 namespace Prog.Script
 {
-    public class PlayerBehaviorV2 : MonoBehaviour
+    public class PlayerBehavior : MonoBehaviour
     {
         public float horizontalSpeed = 4f;
         public float fallForce = 18f;
@@ -13,7 +13,7 @@ namespace Prog.Script
         public float groundDistance = 0.2f;
         [FormerlySerializedAs("Ground")] public LayerMask groundLayerMask; // on vient indiquer ce qu'est le ground
         [SerializeField]PlayerCombat playerCombat;
-        
+
         private CharacterController _characterController;
         private Animator _playerAnimator;
         private static readonly int Horizontal = Animator.StringToHash("horizontal");
