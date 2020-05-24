@@ -16,6 +16,8 @@ namespace Prog.Script
         public LayerMask enemyLayers;
         private Collider _weaponCollider;
 
+        private bool _isAttacking = false;
+
         // Start is called before the first frame update
         void Start()
         {
@@ -26,13 +28,23 @@ namespace Prog.Script
         {
             if (!CheckIfWeCanAttack()) return;
             SetNextAttackTime();
-        
+            
+            AttackEnemyInRange();
+        }
+
+        public void AttackEnemyInRange()
+        {
             Collider[] hitEnemies = Physics.OverlapSphere(attackPoint.position, attackRange, enemyLayers);
             foreach (var enemy in hitEnemies)
             {
-                enemy.GetComponent<Enemy>().TakesDamage(dps);
-                AudioManager.instance.PlaySingleRandomized(attackImpactSound);
+                AttackEnemy(enemy);
             }
+        }
+
+        private void AttackEnemy(Collider enemy)
+        {
+            enemy.GetComponent<Enemy>().TakesDamage(dps, transform.position.x); // on passe le position du player en x 
+            AudioManager.instance.PlaySingleRandomized(attackImpactSound);
         }
 
         bool CheckIfWeCanAttack()
