@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
 
@@ -48,7 +49,13 @@ namespace Prog.Script
     
         private void MoveCharacter()
         {
+            var zPosition = 0;
             var mouvementThisFrame = _moveDirection * Time.deltaTime;
+            if(Math.Abs(transform.position.z - zPosition) > 0.01)
+            {
+                mouvementThisFrame.z = (float)((zPosition - transform.position.z) * 0.05f);
+            }
+            
             _characterController.Move(mouvementThisFrame);
         }
 
