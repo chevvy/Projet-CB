@@ -1,13 +1,15 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Prog.Script
 {
     public class Enemy : MonoBehaviour
     {
         public int maxHealthPoint = 100;
-        public float impactForceWhenAttacked = 1;
-
+        [FormerlySerializedAs("impactForceWhenAttacked")] public float impactForceWhenAttackedOnXAxis = 1;
+        public float impactForceWhenAttackedOnYAxis = 1;
+        
         private MeshRenderer _enemyMesh;
         public Material damageMaterial;
         private Material _enemyMaterial;
@@ -52,14 +54,23 @@ namespace Prog.Script
             var movementDirection = xEnemyPosition - xPlayerPosition;
             if (movementDirection < 0)
             {
-                _rigidbody.AddForce(-impactForceWhenAttacked,1, 0, ForceMode.Impulse);
+                _rigidbody.AddForce(
+                    -impactForceWhenAttackedOnXAxis,
+                    impactForceWhenAttackedOnYAxis, 
+                    0, 
+                    ForceMode.Impulse
+                );
             }
 
             if (movementDirection > 0)
             {
-                _rigidbody.AddForce(impactForceWhenAttacked,1, 0, ForceMode.Impulse);
+                _rigidbody.AddForce(
+                    impactForceWhenAttackedOnXAxis,
+                    impactForceWhenAttackedOnYAxis, 
+                    0,
+                    ForceMode.Impulse
+                );
             }
-            
         }
 
         private void CheckIfDead() // A tester 
