@@ -16,12 +16,12 @@ filters = {
 	settings = true
 }
 scopes = {
-	"last_search.AB59B443" = "characterse"
+	"last_search.AB59B443" = "char"
 }
 providers = {
 	asset = {
 		active = true
-		priority = 25
+		priority = 50
 		defaultAction = null
 	}
 	log = {
@@ -41,7 +41,7 @@ providers = {
 	}
 	scene = {
 		active = true
-		priority = 50
+		priority = 25
 		defaultAction = null
 	}
 	query = {
