@@ -43,7 +43,7 @@ namespace Prog.Script
 
         private void AttackEnemy(Collider enemy)
         {
-            enemy.GetComponent<Enemy>().TakesDamage(dps);
+            enemy.GetComponent<Enemy>().TakesDamage(dps, transform.position.x); // on passe le position du player en x 
             AudioManager.instance.PlaySingleRandomized(attackImpactSound);
         }
 
