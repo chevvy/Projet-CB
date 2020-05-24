@@ -96,8 +96,10 @@ namespace Prog.Script
                 PerformAttack();
             }
 
-            if (!context.canceled) return;
-            CancelAttack();
+            if (context.canceled)
+            {
+                CancelAttack();
+            }
         }
 
         private void PerformAttack()
@@ -109,6 +111,7 @@ namespace Prog.Script
         private void CancelAttack()
         {
             _playerAnimator.SetBool(Attacking, false);
+            playerCombat.AttackEnemyInRange();
         }
     }
 }
