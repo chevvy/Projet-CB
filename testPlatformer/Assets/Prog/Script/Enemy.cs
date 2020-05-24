@@ -6,6 +6,7 @@ namespace Prog.Script
     public class Enemy : MonoBehaviour
     {
         public int maxHealthPoint = 100;
+        public float impactForceWhenAttacked = 1;
 
         private MeshRenderer _enemyMesh;
         public Material damageMaterial;
@@ -28,12 +29,12 @@ namespace Prog.Script
             };
         }
 
-        public void TakesDamage(int damage)
+        public void TakesDamage(int damage, float xPlayerPosition)
         {
             _enemyLogic.ApplyDamage(damage);
             StartCoroutine(ApplyDamageMaterial());
             
-            ApplyMovement();
+            ApplyMovement(xPlayerPosition);
             
             CheckIfDead();
         }
@@ -45,9 +46,20 @@ namespace Prog.Script
             _enemyMesh.material = _enemyMaterial;
         }
 
-        private void ApplyMovement()
+        private void ApplyMovement(float xPlayerPosition)
         {
-            _rigidbody.AddForce(-1,0, 0, ForceMode.Impulse);
+            var xEnemyPosition = transform.position.x;
+            var movementDirection = xEnemyPosition - xPlayerPosition;
+            if (movementDirection < 0)
+            {
+                _rigidbody.AddForce(-impactForceWhenAttacked,1, 0, ForceMode.Impulse);
+            }
+
+            if (movementDirection > 0)
+            {
+                _rigidbody.AddForce(impactForceWhenAttacked,1, 0, ForceMode.Impulse);
+            }
+            
         }
 
         private void CheckIfDead() // A tester 
