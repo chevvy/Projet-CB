@@ -10,6 +10,7 @@ namespace Prog.Script
         private MeshRenderer _enemyMesh;
         public Material damageMaterial;
         private Material _enemyMaterial;
+        private Rigidbody _rigidbody;
 
         private EnemyLogic _enemyLogic;
 
@@ -17,6 +18,7 @@ namespace Prog.Script
         {
             _enemyMesh = GetComponent<MeshRenderer>();
             _enemyMaterial = _enemyMesh.material;
+            _rigidbody = GetComponent<Rigidbody>();
 
             _enemyLogic = new EnemyLogic
             {
@@ -30,6 +32,9 @@ namespace Prog.Script
         {
             _enemyLogic.ApplyDamage(damage);
             StartCoroutine(ApplyDamageMaterial());
+            
+            ApplyMovement();
+            
             CheckIfDead();
         }
 
@@ -38,6 +43,11 @@ namespace Prog.Script
             _enemyMesh.material = damageMaterial;
             yield return new WaitForSeconds(.1f);
             _enemyMesh.material = _enemyMaterial;
+        }
+
+        private void ApplyMovement()
+        {
+            _rigidbody.AddForce(-1,0, 0, ForceMode.Impulse);
         }
 
         private void CheckIfDead() // A tester 
