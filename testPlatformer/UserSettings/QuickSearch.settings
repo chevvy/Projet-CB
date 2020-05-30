@@ -9,14 +9,14 @@ queryFolder = "Assets/Editor/Queries"
 onBoardingDoNotAskAgain = true
 showPackageIndexes = false
 filters = {
-	asset = true
-	menu = true
-	object = true
-	scene = true
 	settings = true
+	scene = true
+	object = true
+	menu = true
+	asset = true
 }
 scopes = {
-	"last_search.AB59B443" = "char"
+	"last_search.AB59B443" = "collider"
 }
 providers = {
 	asset = {
@@ -24,24 +24,9 @@ providers = {
 		priority = 50
 		defaultAction = null
 	}
-	log = {
-		active = false
-		priority = 210
-		defaultAction = null
-	}
-	object = {
+	res = {
 		active = true
-		priority = 55
-		defaultAction = null
-	}
-	packages = {
-		active = true
-		priority = 90
-		defaultAction = null
-	}
-	scene = {
-		active = true
-		priority = 25
+		priority = 100
 		defaultAction = null
 	}
 	query = {
@@ -49,19 +34,9 @@ providers = {
 		priority = 100
 		defaultAction = null
 	}
-	menu = {
+	object = {
 		active = true
-		priority = 80
-		defaultAction = null
-	}
-	settings = {
-		active = true
-		priority = 100
-		defaultAction = null
-	}
-	help = {
-		active = true
-		priority = -1
+		priority = 55
 		defaultAction = null
 	}
 	calculator = {
@@ -69,14 +44,39 @@ providers = {
 		priority = 10
 		defaultAction = null
 	}
+	menu = {
+		active = true
+		priority = 80
+		defaultAction = null
+	}
+	scene = {
+		active = true
+		priority = 25
+		defaultAction = null
+	}
+	packages = {
+		active = true
+		priority = 90
+		defaultAction = null
+	}
 	static_methods = {
 		active = true
 		priority = 85
 		defaultAction = null
 	}
-	res = {
+	help = {
+		active = true
+		priority = -1
+		defaultAction = null
+	}
+	settings = {
 		active = true
 		priority = 100
+		defaultAction = null
+	}
+	log = {
+		active = false
+		priority = 210
 		defaultAction = null
 	}
 }

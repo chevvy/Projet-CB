@@ -10,14 +10,13 @@ namespace Prog.Script.Environnement
         [SerializeField] private float maxOpeningHeight = 20;
         [SerializeField] private float openingSpeed = 1;
 
-        private float initialPositionY;
+        private float _initialPositionY;
         
         // à tester : si transform pas assigné -> throw, si modif transform, nouvelle position bonne
     
         void Start()
         {
-            initialPositionY = door.position.y;
-            OpenDoor();
+            _initialPositionY = door.position.y;
         }
 
         public void OpenDoor()
@@ -28,7 +27,7 @@ namespace Prog.Script.Environnement
         private IEnumerator OpenDoorCoroutine()
         {
             // stop coroutine closeDoor 
-            while (door.position.y <= maxOpeningHeight + initialPositionY)
+            while (door.position.y <= maxOpeningHeight + _initialPositionY)
             {
                 door.position += new Vector3(0, openingSpeed, 0);
                 yield return null;
@@ -43,7 +42,7 @@ namespace Prog.Script.Environnement
 
         private IEnumerator CloseDoorCoroutine()
         {
-            while (door.position.y > initialPositionY)
+            while (door.position.y > _initialPositionY)
             {
                 door.position -= new Vector3(0, openingSpeed, 0);
                 yield return null;
