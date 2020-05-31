@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.InteropServices;
 using Prog.Script.Environnement;
 using UnityEngine;
@@ -13,6 +14,7 @@ public class PressurePlateManager : MonoBehaviour
     
     private Dictionary<string, bool> _listOfPlates = new Dictionary<string, bool>();
     private bool _isDoorActivated = false;
+    private bool _allPlatesAreActivated = false;
 
 
     private void Start()
@@ -32,17 +34,17 @@ public class PressurePlateManager : MonoBehaviour
 
     private void PressurePlatesStateVerification()
     {
-        var allPlatesAreActivated = true;
+        _allPlatesAreActivated = true;
         foreach (var plate in _listOfPlates)
         {
             if (!plate.Value) // si la plate n'est pas activé
             {
-                allPlatesAreActivated = false;
+                _allPlatesAreActivated = false;
                 targetedDoor.CloseDoor();
             }
         }
 
-        if (!allPlatesAreActivated) return;
+        if (!_allPlatesAreActivated) return;
         targetedDoor.OpenDoor();
     }
 
@@ -57,7 +59,30 @@ public class PressurePlateManager : MonoBehaviour
         _listOfPlates[pressurePlateName] = false;
         PressurePlatesStateVerification();
     }
-    
-    
-    
+
+    public bool CheckPressurePlateState(string pressurePlateName)
+    {
+        return _listOfPlates[pressurePlateName];
+    }
+
+    public int GetNbOfPressurePlates()
+    {
+        return _listOfPlates.Count;
+    }
+
+    public bool GetActivationStateOfManager()
+    {
+        return _allPlatesAreActivated;
+    }
+
+    public void AddPressurePlate(PressurePlate pressurePlate)
+    {
+        _listOfPlates.Add(pressurePlate.name, false);
+        pressurePlate.PressurePlateManager = GetComponent<PressurePlateManager>();
+    }
+
+    public void SetDoor(Door door)
+    {
+        targetedDoor = door;
+    }
 }

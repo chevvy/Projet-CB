@@ -17,6 +17,7 @@ namespace Tests
             doorInstance.AddComponent<Door>();
             doorInstance.GetComponent<Door>().DoorTransform = doorInstance.transform;
         }
+        
 
         [Test]
         public void Check_For_Valid_Instance_Of_Components()
