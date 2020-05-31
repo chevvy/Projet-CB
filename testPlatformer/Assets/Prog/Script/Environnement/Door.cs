@@ -6,30 +6,32 @@ namespace Prog.Script.Environnement
 {
     public class Door : MonoBehaviour
     {
-        [SerializeField] private Transform door;
         [SerializeField] private float maxOpeningHeight = 20;
         [SerializeField] private float openingSpeed = 1;
 
+        public Transform DoorTransform { get; set; }
+        
         private float _initialPositionY;
         
         // à tester : si transform pas assigné -> throw, si modif transform, nouvelle position bonne
     
         void Start()
         {
-            _initialPositionY = door.position.y;
+            DoorTransform = GetComponent<Transform>();
+            _initialPositionY = DoorTransform.position.y;
         }
 
         public void OpenDoor()
         {
+            StopCoroutine(CloseDoorCoroutine());
             StartCoroutine(OpenDoorCoroutine());
         }
 
         private IEnumerator OpenDoorCoroutine()
         {
-            // stop coroutine closeDoor 
-            while (door.position.y <= maxOpeningHeight + _initialPositionY)
+            while (DoorTransform.position.y <= maxOpeningHeight + _initialPositionY)
             {
-                door.position += new Vector3(0, openingSpeed, 0);
+                DoorTransform.position += new Vector3(0, openingSpeed, 0);
                 yield return null;
             }
         }
@@ -42,9 +44,9 @@ namespace Prog.Script.Environnement
 
         private IEnumerator CloseDoorCoroutine()
         {
-            while (door.position.y > _initialPositionY)
+            while (DoorTransform.position.y > _initialPositionY)
             {
-                door.position -= new Vector3(0, openingSpeed, 0);
+                DoorTransform.position -= new Vector3(0, openingSpeed, 0);
                 yield return null;
             }
         }
