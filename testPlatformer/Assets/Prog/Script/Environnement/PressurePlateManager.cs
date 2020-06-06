@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 using Prog.Script.Environnement;
 using UnityEngine;
 
-public class PressurePlateManager : MonoBehaviour
+public class PressurePlateManager : MonoBehaviour, IPressurePlateManager
 {
     [SerializeField] private Door targetedDoor; //  la porte qui sera ouverte suite à l'activation
     [SerializeField] private PressurePlate[] _pressurePlates;
@@ -22,7 +22,7 @@ public class PressurePlateManager : MonoBehaviour
         addPressurePlatesOnLoad();
     }
 
-    private void addPressurePlatesOnLoad()
+    public void addPressurePlatesOnLoad()
     {
         if (_pressurePlates == null) { return; }
         foreach (var pressurePlate in _pressurePlates)
@@ -32,7 +32,7 @@ public class PressurePlateManager : MonoBehaviour
         }
     }
 
-    private void PressurePlatesStateVerification()
+    public void PressurePlatesStateVerification()
     {
         _allPlatesAreActivated = true;
         foreach (var plate in _listOfPlates)
