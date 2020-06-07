@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class PressurePlate : MonoBehaviour
 {
-    private bool _isPressed = false; // FOR TESTING PURPOSE 
-    public PressurePlateManager PressurePlateManager { get; set; }
+    public bool isPressed = false; // FOR TESTING PURPOSE 
+    public IPressurePlateManager PressurePlateManager { get; set; }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -24,15 +24,17 @@ public class PressurePlate : MonoBehaviour
         }
     }
 
-    private void ActivatePressurePlate()
+    public void ActivatePressurePlate()
     {
-        _isPressed = true;
+        isPressed = true;
         PressurePlateManager.PressurePlateIsPressed(this.name);
     }
 
-    private void DisablePressurePlate()
+    public void DisablePressurePlate()
     {
-        _isPressed = false;
+        isPressed = false;
         PressurePlateManager.PresurePlateIsReleased(this.name);
     }
+    
+    
 }
