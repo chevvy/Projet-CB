@@ -121328,7 +121328,7 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 580752372545844160}
         m_MethodName: OnMove
         m_Mode: 0
         m_Arguments:
@@ -121338,12 +121338,12 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
     m_ActionId: 7e8c6c26-95a7-46db-855b-d960276c2020
     m_ActionName: Player/Movement[/XInputControllerWindows/dpad/down,/XInputControllerWindows/dpad/up,/XInputControllerWindows/dpad/left,/XInputControllerWindows/dpad/right,/XInputControllerWindows/leftStick/up,/XInputControllerWindows/leftStick/down,/XInputControllerWindows/leftStick/left,/XInputControllerWindows/leftStick/right]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 580752372545844160}
         m_MethodName: OnJump
         m_Mode: 0
         m_Arguments:
@@ -121353,12 +121353,12 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
     m_ActionId: 796e3889-a455-48f7-b474-d138a2dce47e
     m_ActionName: Player/Jump[/XInputControllerWindows/buttonSouth,/Keyboard/space]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 580752372545844160}
         m_MethodName: OnAttack
         m_Mode: 0
         m_Arguments:
@@ -121368,7 +121368,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
     m_ActionId: e04a3fe1-223b-4aad-802c-8e2c103f0426
     m_ActionName: Player/Attack[/Keyboard/f]
   m_NeverAutoSwitchControlSchemes: 0
