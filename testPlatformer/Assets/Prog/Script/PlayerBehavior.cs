@@ -112,13 +112,12 @@ namespace Prog.Script
         private void PerformAttack()
         {
             _playerAnimator.SetBool(Attacking, true);
-            playerCombat.Attack();
+            playerCombat.StartAttackTimer();
         }
 
         private void CancelAttack()
         {
             _playerAnimator.SetBool(Attacking, false);
-            playerCombat.AttackEnemyInRange();
         }
     }
 }
