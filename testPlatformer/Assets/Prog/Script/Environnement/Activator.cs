@@ -3,16 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PressurePlate : MonoBehaviour
+public class Activator : MonoBehaviour
 {
     public bool isPressed = false; // FOR TESTING PURPOSE 
-    public IPressurePlateManager PressurePlateManager { get; set; }
+    public IActivatorManager ActivatorManager { get; set; }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("PlayerCharacter"))
         {
-            ActivatePressurePlate();
+            EnableActivator();
         }
     }
 
@@ -20,20 +20,20 @@ public class PressurePlate : MonoBehaviour
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("PlayerCharacter"))
         {
-            DisablePressurePlate();
+            DisableActivator();
         }
     }
 
-    public void ActivatePressurePlate()
+    public void EnableActivator()
     {
         isPressed = true;
-        PressurePlateManager.PressurePlateIsPressed(this.name);
+        ActivatorManager.EnableActivator(this.name);
     }
 
-    public void DisablePressurePlate()
+    public void DisableActivator()
     {
         isPressed = false;
-        PressurePlateManager.PresurePlateIsReleased(this.name);
+        ActivatorManager.DisableActivator(this.name);
     }
     
     
