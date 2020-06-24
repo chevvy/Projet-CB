@@ -5,12 +5,13 @@ using UnityEngine;
 
 public class Activator : MonoBehaviour
 {
-    public bool isPressed = false; // FOR TESTING PURPOSE 
+    public bool isPressed = false;
+    public string tagThatEnablesActivator;
     public IActivatorManager ActivatorManager { get; set; }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer == LayerMask.NameToLayer("PlayerCharacter"))
+        if (other.CompareTag(tagThatEnablesActivator))
         {
             EnableActivator();
         }
@@ -18,12 +19,11 @@ public class Activator : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.layer == LayerMask.NameToLayer("PlayerCharacter"))
+        if (other.CompareTag(tagThatEnablesActivator))
         {
             DisableActivator();
         }
     }
-
     public void EnableActivator()
     {
         isPressed = true;
@@ -35,6 +35,4 @@ public class Activator : MonoBehaviour
         isPressed = false;
         ActivatorManager.DisableActivator(this.name);
     }
-    
-    
 }

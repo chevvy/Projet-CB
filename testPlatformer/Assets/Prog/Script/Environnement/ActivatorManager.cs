@@ -5,16 +5,23 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using Prog.Script.Environnement;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class ActivatorManager : MonoBehaviour, IActivatorManager
 {
-    [SerializeField] private Door targetedDoor; //  la porte qui sera ouverte suite à l'activation
-    [SerializeField] private Activator[] _pressurePlates;
-    [SerializeField] private bool _allPlatesMustBeActivated = false;
+    //[SerializeField] private Door targetedDoor; //  la porte qui sera ouverte suite à l'activation
+    
+    [SerializeField] private Animator targetAnimator; // l'animator a qui on va envoyer les changements d'anim
+    [SerializeField] private string animationParam; //Le param qui sera toggled selon le state d'activation
+    
+    [FormerlySerializedAs("_pressurePlates")] [SerializeField] private Activator[] activators;
+    [FormerlySerializedAs("_allPlatesMustBeActivated")] [SerializeField] private bool allActivatorsMustStayEnabled = false;
     
     private Dictionary<string, bool> _listOfPlates = new Dictionary<string, bool>();
     private bool _isDoorActivated = false;
     private bool _allPlatesAreActivated = false;
+    private int EnableAnimation => Animator.StringToHash(animationParam);
+
 
 
     private void Start()
@@ -24,8 +31,8 @@ public class ActivatorManager : MonoBehaviour, IActivatorManager
 
     public void addActivatorsOnLoad()
     {
-        if (_pressurePlates == null) { return; }
-        foreach (var pressurePlate in _pressurePlates)
+        if (activators == null) { return; }
+        foreach (var pressurePlate in activators)
         {
             _listOfPlates.Add(pressurePlate.name, false);
             pressurePlate.ActivatorManager = this;
@@ -40,12 +47,12 @@ public class ActivatorManager : MonoBehaviour, IActivatorManager
             if (!plate.Value) // si la plate n'est pas activé
             {
                 _allPlatesAreActivated = false;
-                targetedDoor.CloseDoor();
+                targetAnimator.SetBool(EnableAnimation, false);
             }
         }
 
         if (!_allPlatesAreActivated) return;
-        targetedDoor.OpenDoor();
+        targetAnimator.SetBool(EnableAnimation, true);
     }
 
     public void EnableActivator(string pressurePlateName)
@@ -83,6 +90,6 @@ public class ActivatorManager : MonoBehaviour, IActivatorManager
 
     public void SetDoor(Door door)
     {
-        targetedDoor = door;
+        //targetedDoor = door;
     }
 }
