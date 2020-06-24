@@ -502,7 +502,7 @@ namespace UnityEditor
 				if ( EditorGUIEx.ButtonMouseDown( position, GUIContent.none, FocusType.Passive, GUIStyle.none ) )
 				{
 					Rect last = GUILayoutUtilityEx.TopLevel_GetLast();
-					PopupWindow.Show( last, ( PopupWindowContent ) Activator.CreateInstance( System.Type.GetType( "UnityEditor.ShaderInspectorPlatformsPopup, UnityEditor" ), new object[] { s } ) );
+					PopupWindow.Show( last, ( PopupWindowContent ) System.Activator.CreateInstance( System.Type.GetType( "UnityEditor.ShaderInspectorPlatformsPopup, UnityEditor" ), new object[] { s } ) );
 					GUIUtility.ExitGUI();
 				}
 				if ( GUI.Button( rect, showCurrent, EditorStyles.miniButton ) )

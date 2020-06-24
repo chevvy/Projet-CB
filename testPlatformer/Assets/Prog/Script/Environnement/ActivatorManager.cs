@@ -6,10 +6,10 @@ using System.Runtime.InteropServices;
 using Prog.Script.Environnement;
 using UnityEngine;
 
-public class PressurePlateManager : MonoBehaviour, IPressurePlateManager
+public class ActivatorManager : MonoBehaviour, IActivatorManager
 {
     [SerializeField] private Door targetedDoor; //  la porte qui sera ouverte suite à l'activation
-    [SerializeField] private PressurePlate[] _pressurePlates;
+    [SerializeField] private Activator[] _pressurePlates;
     [SerializeField] private bool _allPlatesMustBeActivated = false;
     
     private Dictionary<string, bool> _listOfPlates = new Dictionary<string, bool>();
@@ -19,20 +19,20 @@ public class PressurePlateManager : MonoBehaviour, IPressurePlateManager
 
     private void Start()
     {
-        addPressurePlatesOnLoad();
+        addActivatorsOnLoad();
     }
 
-    public void addPressurePlatesOnLoad()
+    public void addActivatorsOnLoad()
     {
         if (_pressurePlates == null) { return; }
         foreach (var pressurePlate in _pressurePlates)
         {
             _listOfPlates.Add(pressurePlate.name, false);
-            pressurePlate.PressurePlateManager = this;
+            pressurePlate.ActivatorManager = this;
         }
     }
 
-    public void PressurePlatesStateVerification()
+    public void ActivatorsStateVerification()
     {
         _allPlatesAreActivated = true;
         foreach (var plate in _listOfPlates)
@@ -48,24 +48,24 @@ public class PressurePlateManager : MonoBehaviour, IPressurePlateManager
         targetedDoor.OpenDoor();
     }
 
-    public void PressurePlateIsPressed(string pressurePlateName)
+    public void EnableActivator(string pressurePlateName)
     {
         _listOfPlates[pressurePlateName] = true;
-        PressurePlatesStateVerification();
+        ActivatorsStateVerification();
     }
 
-    public void PresurePlateIsReleased(string pressurePlateName)
+    public void DisableActivator(string pressurePlateName)
     {
         _listOfPlates[pressurePlateName] = false;
-        PressurePlatesStateVerification();
+        ActivatorsStateVerification();
     }
 
-    public bool CheckPressurePlateState(string pressurePlateName)
+    public bool CheckActivatorState(string pressurePlateName)
     {
         return _listOfPlates[pressurePlateName];
     }
 
-    public int GetNbOfPressurePlates()
+    public int GetNbOfActivator()
     {
         return _listOfPlates.Count;
     }
@@ -75,10 +75,10 @@ public class PressurePlateManager : MonoBehaviour, IPressurePlateManager
         return _allPlatesAreActivated;
     }
 
-    public void AddPressurePlate(PressurePlate pressurePlate)
+    public void AddActivator(Activator activator)
     {
-        _listOfPlates.Add(pressurePlate.name, false);
-        pressurePlate.PressurePlateManager = GetComponent<PressurePlateManager>();
+        _listOfPlates.Add(activator.name, false);
+        activator.ActivatorManager = GetComponent<ActivatorManager>();
     }
 
     public void SetDoor(Door door)
