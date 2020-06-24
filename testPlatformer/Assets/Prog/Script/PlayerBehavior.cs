@@ -79,7 +79,7 @@ namespace Prog.Script
         {
             if (context.performed)
             {
-                Jump();
+                 Jump();
             }
 
             if (!context.canceled) return;
