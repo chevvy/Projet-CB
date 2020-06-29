@@ -1,5 +1,6 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
+using NSubstitute;
 using NUnit.Framework;
 using Prog.Script.Environnement;
 using UnityEngine;
@@ -9,7 +10,7 @@ namespace Tests
 {
     public class PressurePlateManagerTests
     {
-        GameObject PressurePlateManagerGameObject = new GameObject();
+        GameObject activatorManagerGameObject = new GameObject();
 
         private ActivatorManager _activatorManager;
         
@@ -23,8 +24,16 @@ namespace Tests
         [SetUp]
         public void Setup()
         {
-            PressurePlateManagerGameObject.AddComponent<ActivatorManager>();
-            _activatorManager = PressurePlateManagerGameObject.GetComponent<ActivatorManager>();
+            activatorManagerGameObject.AddComponent<ActivatorManager>();
+            activatorManagerGameObject.AddComponent<Animator>(); // on vient les ajouter comme ça car pas capable de mock animator
+            
+            _activatorManager = activatorManagerGameObject.GetComponent<ActivatorManager>();
+
+            _activatorManager.animationParam = "test";
+            _activatorManager.SetAnimator(activatorManagerGameObject.GetComponent<Animator>());
+            
+            
+            //_activatorManager.SetAnimator(subAnimator);
 
             DoorObject.AddComponent<Door>();
             _activatorManager.SetDoor(DoorObject.GetComponent<Door>());

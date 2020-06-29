@@ -12,7 +12,7 @@ public class ActivatorManager : MonoBehaviour, IActivatorManager
     //[SerializeField] private Door targetedDoor; //  la porte qui sera ouverte suite à l'activation
     
     [SerializeField] private Animator targetAnimator; // l'animator a qui on va envoyer les changements d'anim
-    [SerializeField] private string animationParam; //Le param qui sera toggled selon le state d'activation
+    [SerializeField] public string animationParam; //Le param qui sera toggled selon le state d'activation
     
     [FormerlySerializedAs("_pressurePlates")] [SerializeField] private Activator[] activators;
     [FormerlySerializedAs("_allPlatesMustBeActivated")] [SerializeField] private bool allActivatorsMustStayEnabled = false;
@@ -91,5 +91,10 @@ public class ActivatorManager : MonoBehaviour, IActivatorManager
     public void SetDoor(Door door)
     {
         //targetedDoor = door;
+    }
+
+    public void SetAnimator(Animator animator)
+    {
+        targetAnimator = animator;
     }
 }
