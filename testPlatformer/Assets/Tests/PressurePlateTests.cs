@@ -10,41 +10,41 @@ namespace Tests
 {
     public class PressurePlateTests
     {
-        private IPressurePlateManager _pressurePlateManager;
+        private IActivatorManager _activatorManager;
         private GameObject pressurePlateObject = new GameObject();
-        private PressurePlate pressurePlate; 
+        private Activator _activator; 
         
         [SetUp]
         public void SetUp()
         {
-            _pressurePlateManager = Substitute.For<IPressurePlateManager>();
-            pressurePlateObject.AddComponent<PressurePlate>();
+            _activatorManager = Substitute.For<IActivatorManager>();
+            pressurePlateObject.AddComponent<Activator>();
 
-            pressurePlate = pressurePlateObject.GetComponent<PressurePlate>();
-            pressurePlate.name = "test";
-            pressurePlate.PressurePlateManager = _pressurePlateManager;
+            _activator = pressurePlateObject.GetComponent<Activator>();
+            _activator.name = "test";
+            _activator.ActivatorManager = _activatorManager;
         }
 
         [Test]
         public void check_that_pressurePlate_is_disabled_by_default()
         {
-            Assert.False(pressurePlate.isPressed);
+            Assert.False(_activator.isPressed);
         }
 
         [Test]
         public void check_that_when_Activate_activates_pressurePlate()
         {
-            pressurePlate.ActivatePressurePlate();
+            _activator.EnableActivator();
             
-            Assert.True(pressurePlate.isPressed);
+            Assert.True(_activator.isPressed);
         }
         
         [Test]
         public void check_that_when_Disable_disables_pressurePlate()
         {
-            pressurePlate.DisablePressurePlate();
+            _activator.DisableActivator();
             
-            Assert.False(pressurePlate.isPressed);
+            Assert.False(_activator.isPressed);
         }
     }
 }
