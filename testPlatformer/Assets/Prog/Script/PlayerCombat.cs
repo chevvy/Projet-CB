@@ -20,16 +20,20 @@ namespace Prog.Script
 
         private bool _isAttacking = false;
 
-        public void Attack()
+        public void Attack(Enemy enemy)
         {
             // on vient checker si le player a appuyé sur la touche d'attack
             // et s'il a attaqué récemment (determiné par next attack time)
-            if (!CheckIfWeCanAttack()) return;
+            if (!CheckIfWeCanAttack())
+            {
+                Debug.LogWarning("Player can't attack (spam attack): voir component PlayerCombat");
+                return;
+            }
             SetNextAttackTime();
             
             // On vient attacké tous les enemis qui sont dans le range de l'épeé
             // determiné par le attackPoint sur l'arme
-            AttackEnemyInRange();
+            AttackEnemy(enemy);
         }
         
         bool CheckIfWeCanAttack()
@@ -47,7 +51,7 @@ namespace Prog.Script
             Collider[] hitEnemies = Physics.OverlapSphere(attackPoint.position, attackRange, enemyLayers);
             foreach (var enemy in hitEnemies)
             {
-                AttackEnemy(enemy);
+                AttackEnemy(enemy.GetComponent<Enemy>());
             }
         }
 
@@ -63,9 +67,9 @@ namespace Prog.Script
             _isAttacking = false;
         }
 
-        private void AttackEnemy(Collider enemy)
+        private void AttackEnemy(Enemy enemy)
         {
-            enemy.GetComponent<Enemy>().TakesDamage(dps, transform.position.x); // on passe le position du player en x 
+            enemy.TakesDamage(dps, transform.position.x); // on passe le position du player en x 
             AudioManager.instance.PlaySingleRandomized(attackImpactSound);
         }
         
