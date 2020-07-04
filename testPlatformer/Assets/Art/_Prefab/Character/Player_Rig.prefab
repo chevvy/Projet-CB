@@ -22332,6 +22332,64 @@ Transform:
   m_Father: {fileID: 6874866942209961249}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5172567120749558814
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9196008841391002383}
+  - component: {fileID: 1445440127084623408}
+  - component: {fileID: 3397095101547030335}
+  m_Layer: 0
+  m_Name: Sword_Collider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9196008841391002383
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5172567120749558814}
+  m_LocalRotation: {x: 0.028333105, y: 0.031932794, z: -0.6297824, w: 0.77559763}
+  m_LocalPosition: {x: -0.34700215, y: 0.3420576, z: 0.47028685}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 761273502175809691}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 4.828, y: 0.79600006, z: -78.119}
+--- !u!65 &1445440127084623408
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5172567120749558814}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.12139772, y: 1, z: 0.0815118}
+  m_Center: {x: 0.43930346, y: -0.000000107610795, z: -0.4592489}
+--- !u!114 &3397095101547030335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5172567120749558814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79d4e7ab48fd5b2419951a5fd362103d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCombat: {fileID: 0}
 --- !u!1 &5186719230663678379
 GameObject:
   m_ObjectHideFlags: 0
@@ -23160,6 +23218,7 @@ Transform:
   m_Children:
   - {fileID: 1591867670971632973}
   - {fileID: 3097870880841561379}
+  - {fileID: 9196008841391002383}
   m_Father: {fileID: 1688787500785765393}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
