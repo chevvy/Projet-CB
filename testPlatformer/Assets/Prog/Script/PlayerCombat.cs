@@ -6,18 +6,14 @@ namespace Prog.Script
 {
     public class PlayerCombat : MonoBehaviour
     {
-        public Transform attackPoint;
+        /*public Transform attackPoint;*/
         public int dps = 5;
-        public float attackRange = 0.5f;
         public float attackDuration = 0.5f;
-
         public AudioClip attackImpactSound;
-        
         public float attackRate = 2f;
+        public bool enableAttackRate = true;
+        
         private float _nextAttackTime = 0f;
-    
-        public LayerMask enemyLayers;
-
         private bool _isAttacking = false;
 
         public void Attack(Enemy enemy)
@@ -31,28 +27,19 @@ namespace Prog.Script
             }
             SetNextAttackTime();
             
-            // On vient attacké tous les enemis qui sont dans le range de l'épeé
-            // determiné par le attackPoint sur l'arme
+            // On vient attacké l'ennemi qui est reçu par la méthode attack (component enemi) 
             AttackEnemy(enemy);
         }
         
         bool CheckIfWeCanAttack()
         {
+            if (!enableAttackRate) return true; // si on desactive l'attack rate, on peut toujours attaquer
             return (Time.time >= _nextAttackTime && _isAttacking);
         }
         
         private void SetNextAttackTime()
         {
             _nextAttackTime = Time.time + 1f / attackRate;
-        }
-
-        private void AttackEnemyInRange()
-        {
-            Collider[] hitEnemies = Physics.OverlapSphere(attackPoint.position, attackRange, enemyLayers);
-            foreach (var enemy in hitEnemies)
-            {
-                AttackEnemy(enemy.GetComponent<Enemy>());
-            }
         }
 
         public void StartAttackTimer()
@@ -71,11 +58,6 @@ namespace Prog.Script
         {
             enemy.TakesDamage(dps, transform.position.x); // on passe le position du player en x 
             AudioManager.instance.PlaySingleRandomized(attackImpactSound);
-        }
-        
-        private void OnDrawGizmosSelected()
-        {
-            Gizmos.DrawWireSphere(attackPoint.position, attackRange);
         }
     }
 }
