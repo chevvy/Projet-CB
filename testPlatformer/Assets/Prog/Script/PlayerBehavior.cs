@@ -20,10 +20,12 @@ namespace Prog.Script
         private static readonly int Horizontal = Animator.StringToHash("horizontal");
         private static readonly int Jumping = Animator.StringToHash("jumping");
         private static readonly int Attacking = Animator.StringToHash("attacking");
+        private static readonly int Landing = Animator.StringToHash("landing");
         private Vector3 _moveDirection = Vector3.zero;
         private bool _isJumping;
         private Transform _groundChecker;
         private bool _isGrounded = true;
+        private bool _lastFrameGrounded = true;
         
         void Start()
         {
@@ -35,11 +37,27 @@ namespace Prog.Script
         void Update()
         {
             _isGrounded = Physics.CheckSphere(_groundChecker.position, groundDistance, groundLayerMask, QueryTriggerInteraction.Ignore);
+            CheckIfLanded();
             if (!_isGrounded)
             {
                 CharacterFall();
             }
             MoveCharacter();
+        }
+
+        private void CheckIfLanded()
+        {
+            // check if lastFrameGrounded est pas null 
+            // si !lastFrameGrounded et currentFrameGrounded -> on start l'anim de landing
+            if ((!_lastFrameGrounded &&  _isGrounded) || (_lastFrameGrounded && _isGrounded))
+            {
+                _playerAnimator.SetBool(Landing, true);
+            }
+            else
+            {
+                 _playerAnimator.SetBool(Landing, false);    
+            }
+            _lastFrameGrounded = _isGrounded;
         }
     
         private void CharacterFall()
