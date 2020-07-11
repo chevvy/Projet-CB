@@ -58,7 +58,7 @@ namespace Prog.Script
                     -impactForceWhenAttackedOnXAxis,
                     impactForceWhenAttackedOnYAxis, 
                     0, 
-                    ForceMode.Impulse
+                    ForceMode.Impulse 
                 );
             }
 

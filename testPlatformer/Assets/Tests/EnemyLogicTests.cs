@@ -9,7 +9,7 @@ using NSubstitute;
 
 namespace Tests
 {
-    public class CombatTests
+    public class EnemyLogicTests
     {
         [Test]
         public void remove_5_health_point_over_100_health_point()
