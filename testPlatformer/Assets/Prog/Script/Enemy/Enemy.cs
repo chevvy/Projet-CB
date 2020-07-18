@@ -15,6 +15,7 @@ namespace Prog.Script
         public Material damageMaterial;
         private Material _enemyMaterial;
         private Rigidbody _rigidbody;
+        private Armor _armor;
 
         private EnemyLogic _enemyLogic;
 
@@ -23,6 +24,10 @@ namespace Prog.Script
             _enemyMesh = GetComponent<MeshRenderer>();
             _enemyMaterial = _enemyMesh.material;
             _rigidbody = GetComponent<Rigidbody>();
+            if (TryGetComponent(out Armor armorComponent))
+            {
+                _armor = armorComponent;
+            }
 
             _enemyLogic = new EnemyLogic
             {
@@ -36,6 +41,7 @@ namespace Prog.Script
         {
             _enemyLogic.ApplyDamage(damage);
             StartCoroutine(ApplyDamageMaterial());
+            ApplyDamageToArmor(damage, xPlayerPosition);
             
             ApplyMovement(xPlayerPosition);
             
@@ -47,6 +53,12 @@ namespace Prog.Script
             _enemyMesh.material = damageMaterial;
             yield return new WaitForSeconds(.1f);
             _enemyMesh.material = _enemyMaterial;
+        }
+
+        private void ApplyDamageToArmor(int damage, float xPlayerPosition)
+        {
+            if (_armor.IsArmorBroken()) return;
+            _armor.TakeDamage(damage, xPlayerPosition);
         }
 
         private void ApplyMovement(float xPlayerPosition)
