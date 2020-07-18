@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using Prog.Script.RigidbodyInteraction;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -50,27 +51,7 @@ namespace Prog.Script
 
         private void ApplyMovement(float xPlayerPosition)
         {
-            var xEnemyPosition = transform.position.x;
-            var movementDirection = xEnemyPosition - xPlayerPosition;
-            if (movementDirection < 0)
-            {
-                _rigidbody.AddForce(
-                    -impactForceWhenAttackedOnXAxis,
-                    impactForceWhenAttackedOnYAxis, 
-                    0, 
-                    ForceMode.Impulse
-                );
-            }
-
-            if (movementDirection > 0)
-            {
-                _rigidbody.AddForce(
-                    impactForceWhenAttackedOnXAxis,
-                    impactForceWhenAttackedOnYAxis, 
-                    0,
-                    ForceMode.Impulse
-                );
-            }
+            ApplyForce.OnAttack(_rigidbody, null, xPlayerPosition, impactForceWhenAttackedOnXAxis, impactForceWhenAttackedOnYAxis);
         }
 
         private void CheckIfDead() // A tester 
