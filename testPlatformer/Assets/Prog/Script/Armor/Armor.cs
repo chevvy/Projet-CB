@@ -32,14 +32,14 @@ public class Armor : MonoBehaviour, IArmor
     /// <param name="xAttackOriginPosition">La position en x de l'origine de l'attaque</param>
     public void TakeDamage(int damage, float xAttackOriginPosition)
     {
-        if (armorPieces.Length < _armorPieceToBeRemovedIndex || IsArmorBroken()) { return; }
+        if (armorPieces.Length - 1 < _armorPieceToBeRemovedIndex || IsArmorBroken())
+        {
+            armorHealth = 0;
+            return;
+        }
 
         armorPieces[_armorPieceToBeRemovedIndex].RemoveArmorPiece(xAttackOriginPosition);
         _armorPieceToBeRemovedIndex += 1;
+        armorHealth -= damage;
     }
-
-    
-
-
-
 }

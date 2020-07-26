@@ -39,11 +39,16 @@ namespace Prog.Script
 
         public void TakesDamage(int damage, float xPlayerPosition)
         {
+            if (_armor != null)
+            {
+                ApplyDamageToArmor(damage, xPlayerPosition);
+                if (!_armor.IsArmorBroken()) return;
+            }
+            
             _enemyLogic.ApplyDamage(damage);
             StartCoroutine(ApplyDamageMaterial());
-            ApplyDamageToArmor(damage, xPlayerPosition);
-            
-            ApplyMovement(xPlayerPosition);
+
+            MoveEnemyAfterAttack(xPlayerPosition);
             
             CheckIfDead();
         }
@@ -61,7 +66,12 @@ namespace Prog.Script
             _armor.TakeDamage(damage, xPlayerPosition);
         }
 
-        private void ApplyMovement(float xPlayerPosition)
+        /// <summary>
+        /// Fonction qui va recevoir la position de l'emeteur de l'attack et va calculer la force du déplacement
+        /// et la direction en fonction de la position initiale de l'attack. Sera appliqué sur le Rigidbody.
+        /// </summary>
+        /// <param name="xPlayerPosition">Position en x de l'emeteur de l'attack (le player)</param>
+        private void MoveEnemyAfterAttack(float xPlayerPosition)
         {
             ApplyForce.OnAttack(_rigidbody, null, xPlayerPosition, impactForceWhenAttackedOnXAxis, impactForceWhenAttackedOnYAxis);
         }
