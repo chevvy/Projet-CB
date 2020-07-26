@@ -15,16 +15,17 @@ namespace Prog.Script
         public Material damageMaterial;
         private Material _enemyMaterial;
         private Rigidbody _rigidbody;
-        private Armor _armor;
+        private Armor.Armor _armor;
 
         private EnemyLogic _enemyLogic;
+        private ApplyForce _applyForce = new ApplyForce();
 
         void Start()
         {
             _enemyMesh = GetComponent<MeshRenderer>();
             _enemyMaterial = _enemyMesh.material;
             _rigidbody = GetComponent<Rigidbody>();
-            if (TryGetComponent(out Armor armorComponent))
+            if (TryGetComponent(out Armor.Armor armorComponent))
             {
                 _armor = armorComponent;
             }
@@ -59,7 +60,7 @@ namespace Prog.Script
             yield return new WaitForSeconds(.1f);
             _enemyMesh.material = _enemyMaterial;
         }
-
+        
         private void ApplyDamageToArmor(int damage, float xPlayerPosition)
         {
             if (_armor.IsArmorBroken()) return;
@@ -73,7 +74,7 @@ namespace Prog.Script
         /// <param name="xPlayerPosition">Position en x de l'emeteur de l'attack (le player)</param>
         private void MoveEnemyAfterAttack(float xPlayerPosition)
         {
-            ApplyForce.OnAttack(_rigidbody, null, xPlayerPosition, impactForceWhenAttackedOnXAxis, impactForceWhenAttackedOnYAxis);
+            _applyForce.OnAttack(_rigidbody, null, xPlayerPosition, impactForceWhenAttackedOnXAxis, impactForceWhenAttackedOnYAxis);
         }
 
         private void CheckIfDead() // A tester 
