@@ -83,11 +83,19 @@ namespace Tests
             public void if_takeDamage_removes_armor_piece()
             {
                 _armor.TakeDamage(5, 1);
-                _armorPieceLogic1.Received().RemoveArmorPiece(1);
+                _armor.armorPieces[0].ArmorPieceLogic.Received().RemoveArmorPiece(1);
             }
-            // if armorPieces > 0, on augmente l'index d'amrmor piece a enlever
-            
-            
+
+            [Test]
+            public void if_has_no_health_then_is_broken_and_does_nothing()
+            {
+                _armor.TakeDamage(100, 1);
+                _armor.TakeDamage(100, 1);
+                
+                Assert.True(_armor.IsArmorBroken());
+            }
+
+
         }
         
         // if armorPIeces index est plus grand que le nb de pieces, on set vie a 0 et is broken
