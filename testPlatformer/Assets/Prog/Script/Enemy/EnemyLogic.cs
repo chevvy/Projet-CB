@@ -19,7 +19,7 @@ namespace Prog.Script
         private int DamageCalculator(int damage, int currentHealth)
         {
             if(damage < 0){ throw new Exception("received damage on enemy cannot be < 0");}
-            return (currentHealth - damage); // devrait-on ajouter un check pour dommage négatif
+            return (currentHealth - damage);
         }
         
         private bool CheckIfDead()
