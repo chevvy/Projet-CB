@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using Prog.Script.RigidbodyInteraction;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -14,14 +15,20 @@ namespace Prog.Script
         public Material damageMaterial;
         private Material _enemyMaterial;
         private Rigidbody _rigidbody;
+        private Armor.Armor _armor;
 
         private EnemyLogic _enemyLogic;
+        private ApplyForce _applyForce = new ApplyForce();
 
         void Start()
         {
             _enemyMesh = GetComponent<MeshRenderer>();
             _enemyMaterial = _enemyMesh.material;
             _rigidbody = GetComponent<Rigidbody>();
+            if (TryGetComponent(out Armor.Armor armorComponent))
+            {
+                _armor = armorComponent;
+            }
 
             _enemyLogic = new EnemyLogic
             {
@@ -33,10 +40,16 @@ namespace Prog.Script
 
         public void TakesDamage(int damage, float xPlayerPosition)
         {
+            if (_armor != null)
+            {
+                ApplyDamageToArmor(damage, xPlayerPosition);
+                if (!_armor.IsArmorBroken()) return;
+            }
+            
             _enemyLogic.ApplyDamage(damage);
             StartCoroutine(ApplyDamageMaterial());
-            
-            ApplyMovement(xPlayerPosition);
+
+            MoveEnemyAfterAttack(xPlayerPosition);
             
             CheckIfDead();
         }
@@ -47,30 +60,21 @@ namespace Prog.Script
             yield return new WaitForSeconds(.1f);
             _enemyMesh.material = _enemyMaterial;
         }
-
-        private void ApplyMovement(float xPlayerPosition)
+        
+        private void ApplyDamageToArmor(int damage, float xPlayerPosition)
         {
-            var xEnemyPosition = transform.position.x;
-            var movementDirection = xEnemyPosition - xPlayerPosition;
-            if (movementDirection < 0)
-            {
-                _rigidbody.AddForce(
-                    -impactForceWhenAttackedOnXAxis,
-                    impactForceWhenAttackedOnYAxis, 
-                    0, 
-                    ForceMode.Impulse
-                );
-            }
+            if (_armor.IsArmorBroken()) return;
+            _armor.TakeDamage(damage, xPlayerPosition);
+        }
 
-            if (movementDirection > 0)
-            {
-                _rigidbody.AddForce(
-                    impactForceWhenAttackedOnXAxis,
-                    impactForceWhenAttackedOnYAxis, 
-                    0,
-                    ForceMode.Impulse
-                );
-            }
+        /// <summary>
+        /// Fonction qui va recevoir la position de l'emeteur de l'attack et va calculer la force du déplacement
+        /// et la direction en fonction de la position initiale de l'attack. Sera appliqué sur le Rigidbody.
+        /// </summary>
+        /// <param name="xPlayerPosition">Position en x de l'emeteur de l'attack (le player)</param>
+        private void MoveEnemyAfterAttack(float xPlayerPosition)
+        {
+            _applyForce.OnAttack(_rigidbody, null, xPlayerPosition, impactForceWhenAttackedOnXAxis, impactForceWhenAttackedOnYAxis);
         }
 
         private void CheckIfDead() // A tester 
