@@ -23,7 +23,6 @@ namespace Prog.Script.Armor
     {
         public ArmorPiece[] armorPieces;
         public int armorHealth = 100;
-        public int ghetto = 12;
         public bool IsArmorBroken() => armorHealth < 1;
 
         private int _armorPieceToBeRemovedIndex = 0;
