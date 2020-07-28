@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4088539676467533933}
-  m_Layer: 0
-  m_Name: PlatformSupportLong
+  m_Layer: 8
+  m_Name: Platform_SupportLong
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -125,6 +125,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 542983410925264607, guid: 165d0c5b504375f45936352d137ff63f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 2546745667052930122, guid: 165d0c5b504375f45936352d137ff63f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -204,6 +209,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 542983410925264607, guid: 165d0c5b504375f45936352d137ff63f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2546745667052930122, guid: 165d0c5b504375f45936352d137ff63f,
         type: 3}

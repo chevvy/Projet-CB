@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5787428158092975521}
   - component: {fileID: 1333811414251117034}
   - component: {fileID: 8465464402650895449}
+  - component: {fileID: 3656675820379137840}
   m_Layer: 0
   m_Name: CeilingSecondFloor
   m_TagString: Untagged
@@ -79,3 +80,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &3656675820379137840
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3427999493338281671}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.999999, y: 0.34145737, z: 13.90265}
+  m_Center: {x: 0, y: 0.16159558, z: 0.00000047683716}
