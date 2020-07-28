@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8139771941863913060}
   - component: {fileID: 5159915562823536679}
   - component: {fileID: 3694625703763040202}
+  - component: {fileID: 6356338614286033685}
   m_Layer: 0
   m_Name: Wall_SideStep
   m_TagString: Untagged
@@ -79,3 +80,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &6356338614286033685
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3328632801445846789}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.1578083, y: 1.8894323, z: 13.90265}
+  m_Center: {x: 0.07506037, y: 0.00000029802322, z: 0.00000047683716}

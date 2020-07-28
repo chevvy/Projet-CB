@@ -126,6 +126,7 @@ GameObject:
   - component: {fileID: 3876867113505070347}
   - component: {fileID: 7962937268357362027}
   - component: {fileID: 4661637395368974222}
+  - component: {fileID: 667375391766974168}
   m_Layer: 0
   m_Name: Motor
   m_TagString: Untagged
@@ -194,6 +195,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &667375391766974168
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7217421115754555156}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 5041565236075717657, guid: 98f5d76c54cdadd4297114ef3aa4c6c0, type: 3}
 --- !u!1 &7799374054904182033
 GameObject:
   m_ObjectHideFlags: 0
@@ -210,7 +225,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &761595756759764883
 Transform:
@@ -285,6 +300,8 @@ GameObject:
   - component: {fileID: 2798592324219101789}
   - component: {fileID: 3471792629877951337}
   - component: {fileID: 1399132170441839289}
+  - component: {fileID: 3846352721550607619}
+  - component: {fileID: 8865894608531655977}
   m_Layer: 0
   m_Name: Frame
   m_TagString: Untagged
@@ -353,6 +370,32 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &3846352721550607619
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8580506568727120349}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.8033645, y: 0.19958353, z: 1.990628}
+  m_Center: {x: 0, y: -1.5770355, z: 0}
+--- !u!65 &8865894608531655977
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8580506568727120349}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.18791986, y: 1.2487087, z: 1.990628}
+  m_Center: {x: -0.0349797, y: 1.052473, z: 0}
 --- !u!1 &9091281571660526000
 GameObject:
   m_ObjectHideFlags: 0

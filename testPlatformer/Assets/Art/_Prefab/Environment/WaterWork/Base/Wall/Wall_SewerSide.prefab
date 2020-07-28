@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3428972906734177631}
   - component: {fileID: 6218252990923047514}
   - component: {fileID: 2258943338294872700}
+  - component: {fileID: 3761979823873002102}
   m_Layer: 0
   m_Name: Wall_SewerSide
   m_TagString: Untagged
@@ -79,3 +80,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &3761979823873002102
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8136534988861347145}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.9230266, y: 1.9213073, z: 13.90265}
+  m_Center: {x: 0, y: 0.00000029802322, z: 0.00000047683716}
