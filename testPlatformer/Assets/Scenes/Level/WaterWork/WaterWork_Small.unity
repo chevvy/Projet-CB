@@ -4073,6 +4073,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 764076001699389141, guid: a3476747c54fbfe43a5bf859715997ab,
+        type: 3}
+      propertyPath: m_Radius
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1492605669770129214, guid: a3476747c54fbfe43a5bf859715997ab,
         type: 3}
       propertyPath: m_DeviceLostEvent.m_PersistentCalls.m_Calls.Array.size
@@ -4131,6 +4136,11 @@ PrefabInstance:
     - target: {fileID: 3962663533000634472, guid: a3476747c54fbfe43a5bf859715997ab,
         type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7485493601944757633, guid: a3476747c54fbfe43a5bf859715997ab,
+        type: 3}
+      propertyPath: m_Radius
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7794426035504719089, guid: a3476747c54fbfe43a5bf859715997ab,
