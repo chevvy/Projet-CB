@@ -54302,7 +54302,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh18498
+  m_Name: pb_Mesh18488
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -85684,6 +85684,12 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!82 &1493537694 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1896797907110686197, guid: 204419b019c0c9c4788de578192bf2d1,
+    type: 3}
+  m_PrefabInstance: {fileID: 3475632246897070260}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1495063506
 GameObject:
   m_ObjectHideFlags: 0
@@ -118364,6 +118370,12 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!82 &2103436846 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1616597357996640668, guid: 204419b019c0c9c4788de578192bf2d1,
+    type: 3}
+  m_PrefabInstance: {fileID: 3475632246897070260}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &2108607371
 Mesh:
   m_ObjectHideFlags: 0
@@ -120768,6 +120780,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Audiomanager
+      objectReference: {fileID: 0}
+    - target: {fileID: 3475632247854156332, guid: 204419b019c0c9c4788de578192bf2d1,
+        type: 3}
+      propertyPath: AudioSources.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3475632247854156332, guid: 204419b019c0c9c4788de578192bf2d1,
+        type: 3}
+      propertyPath: AudioSources.Array.data[0]
+      value: 
+      objectReference: {fileID: 1493537694}
+    - target: {fileID: 3475632247854156332, guid: 204419b019c0c9c4788de578192bf2d1,
+        type: 3}
+      propertyPath: AudioSources.Array.data[1]
+      value: 
+      objectReference: {fileID: 2103436846}
+    - target: {fileID: 3475632247854156333, guid: 204419b019c0c9c4788de578192bf2d1,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3475632247854156334, guid: 204419b019c0c9c4788de578192bf2d1,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3475632247854156335, guid: 204419b019c0c9c4788de578192bf2d1,
         type: 3}
