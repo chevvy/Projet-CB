@@ -57,7 +57,7 @@ namespace Prog.Script
         private void AttackEnemy(Enemy enemy)
         {
             enemy.TakesDamage(dps, transform.position.x); // on passe le position du player en x 
-            AudioManager.instance.PlaySingleRandomized(attackImpactSound);
+            // AudioManager.instance.PlaySingleRandomized(attackImpactSound);
         }
     }
 }
