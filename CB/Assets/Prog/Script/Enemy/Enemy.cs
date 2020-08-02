@@ -47,7 +47,7 @@ namespace Prog.Script
             }
             
             _enemyLogic.ApplyDamage(damage);
-            AudioManager.instance.PlaySound("melee_weapon_impact", true);
+            AudioManager.Instance.PlaySound("melee_weapon_impact", true);
             StartCoroutine(ApplyDamageMaterial());
 
             MoveEnemyAfterAttack(xPlayerPosition);
