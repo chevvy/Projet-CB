@@ -13,7 +13,7 @@ namespace Prog.Script
         [FormerlySerializedAs("jumpSpeed")] public float jumpForce = 9f;
         public float groundDistance = 0.2f;
         [FormerlySerializedAs("Ground")] public LayerMask groundLayerMask; // on vient indiquer ce qu'est le ground
-        [SerializeField]PlayerCombat playerCombat;
+        [SerializeField] private PlayerCombat playerCombat = null;
 
         private CharacterController _characterController;
         private Animator _playerAnimator;
