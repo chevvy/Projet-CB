@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using NSubstitute.ExceptionExtensions;
+using Prog.Script;
 using Prog.Script.Armor;
 using Prog.Script.RigidbodyInteraction;
 using UnityEngine;
@@ -66,6 +67,6 @@ public class ArmorPieceLogic : IArmorPieceLogic
     private void PlayArmorPieceBreakingSound()
     {
         if(ArmorPieceBreakingSound == null) return;
-        AudioManager.instance.PlaySound("armor_piece_breaking", true);
+        AudioManager.Instance.PlaySound("armor_piece_breaking", true);
     }
 }
