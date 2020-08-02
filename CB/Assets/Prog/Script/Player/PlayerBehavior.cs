@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
@@ -127,10 +127,18 @@ namespace Prog.Script
             }
         }
 
+        public void OnChargeAttack(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+            {
+                CancelAttack();
+            }
+        }
+
         private void PerformAttack()
         {
-            _playerAnimator.SetBool(Attacking, true);
             playerCombat.StartAttackTimer();
+            _playerAnimator.SetBool(Attacking, true);
         }
 
         private void CancelAttack()
