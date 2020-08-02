@@ -28,6 +28,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "ChargeAttack",
+                    "type": "Button",
+                    "id": "0e95118d-2224-4a49-b4ff-63dace8741cd",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -237,6 +245,50 @@
                     "processors": "",
                     "groups": "XboxGamePad",
                     "action": "Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4fcb44f3-342b-494e-a271-4a4442642532",
+                    "path": "<XInputController>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "XboxGamePad",
+                    "action": "Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fd9ab604-33b3-4963-9368-57f5f1d34fc3",
+                    "path": "<Keyboard>/f",
+                    "interactions": "Hold(duration=0.1)",
+                    "processors": "",
+                    "groups": "KeyboardMouse",
+                    "action": "ChargeAttack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0f992d5d-c717-43ff-a2f0-0d623ffbc41d",
+                    "path": "<XInputController>/buttonWest",
+                    "interactions": "Hold(duration=0.1)",
+                    "processors": "",
+                    "groups": "XboxGamePad",
+                    "action": "ChargeAttack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e71dc3c2-d10a-460d-991b-ba4fdb7cd164",
+                    "path": "<XInputController>/rightShoulder",
+                    "interactions": "Hold(duration=0.1)",
+                    "processors": "",
+                    "groups": "XboxGamePad",
+                    "action": "ChargeAttack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
