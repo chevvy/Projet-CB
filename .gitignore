@@ -70,3 +70,7 @@ testPlatformer/[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/*/*.bin*
 testPlatformer/[Aa]ssets/[Ss]treamingAssets/aa.meta
 testPlatformer/[Aa]ssets/[Ss]treamingAssets/aa/*
 CB/.idea/
+
+# OS generated
+
+[Dd]esktop.ini
