@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -31,7 +31,7 @@ namespace Prog.Script
             AttackEnemy(enemy);
         }
         
-        bool CheckIfWeCanAttack()
+        private bool CheckIfWeCanAttack()
         {
             if (!enableAttackRate) return true; // si on desactive l'attack rate, on peut toujours attaquer
             return (Time.time >= _nextAttackTime && _isAttacking);
@@ -57,7 +57,6 @@ namespace Prog.Script
         private void AttackEnemy(Enemy enemy)
         {
             enemy.TakesDamage(dps, transform.position.x); // on passe le position du player en x 
-            // AudioManager.instance.PlaySingleRandomized(attackImpactSound);
         }
     }
 }

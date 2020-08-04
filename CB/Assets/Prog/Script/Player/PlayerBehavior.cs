@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
@@ -13,7 +13,7 @@ namespace Prog.Script
         [FormerlySerializedAs("jumpSpeed")] public float jumpForce = 9f;
         public float groundDistance = 0.2f;
         [FormerlySerializedAs("Ground")] public LayerMask groundLayerMask; // on vient indiquer ce qu'est le ground
-        [SerializeField]PlayerCombat playerCombat;
+        [SerializeField] private PlayerCombat playerCombat = null;
 
         private CharacterController _characterController;
         private Animator _playerAnimator;
@@ -127,10 +127,18 @@ namespace Prog.Script
             }
         }
 
+        public void OnChargeAttack(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+            {
+                CancelAttack();
+            }
+        }
+
         private void PerformAttack()
         {
-            _playerAnimator.SetBool(Attacking, true);
             playerCombat.StartAttackTimer();
+            _playerAnimator.SetBool(Attacking, true);
         }
 
         private void CancelAttack()
