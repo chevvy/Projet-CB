@@ -9,21 +9,15 @@ using UnityEngine.Serialization;
 
 public class ActivatorManager : MonoBehaviour, IActivatorManager
 {
-    //[SerializeField] private Door targetedDoor; //  la porte qui sera ouverte suite à l'activation
-    
     [SerializeField] private Animator targetAnimator; // l'animator a qui on va envoyer les changements d'anim
     [SerializeField] public string animationParam; //Le param qui sera toggled selon le state d'activation
-    
-    [FormerlySerializedAs("_pressurePlates")] [SerializeField] private Activator[] activators;
-    [FormerlySerializedAs("_allPlatesMustBeActivated")] [SerializeField] private bool allActivatorsMustStayEnabled = false;
-    
+    [FormerlySerializedAs("_pressurePlates")] [SerializeField] private Activator[] activators = null;
+
     private Dictionary<string, bool> _listOfPlates = new Dictionary<string, bool>();
-    private bool _isDoorActivated = false;
+    // private bool _isDoorActivated = false;
     private bool _allPlatesAreActivated = false;
     private int EnableAnimation => Animator.StringToHash(animationParam);
-
-
-
+    
     private void Start()
     {
         addActivatorsOnLoad();
