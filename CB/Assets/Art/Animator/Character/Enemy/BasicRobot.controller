@@ -157,7 +157,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -3496457805999578187, guid: a6630357f2dc3cf41b077814bc170a26,
+  m_Motion: {fileID: -5205892052758423196, guid: a6630357f2dc3cf41b077814bc170a26,
     type: 3}
   m_Tag: 
   m_SpeedParameter: 
@@ -211,7 +211,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -6298654508863122498, guid: ceb94804ff07be146960b1409953500d,
+  m_Motion: {fileID: 1827226128182048838, guid: ceb94804ff07be146960b1409953500d,
     type: 3}
   m_Tag: 
   m_SpeedParameter: 
@@ -265,7 +265,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -1317382165451149210, guid: a6630357f2dc3cf41b077814bc170a26,
+  m_Motion: {fileID: 2105689892538283422, guid: a6630357f2dc3cf41b077814bc170a26,
     type: 3}
   m_Tag: 
   m_SpeedParameter: 
@@ -286,61 +286,61 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Surprise_L
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Walk_L
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Attack_L
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: HitStun_L
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Idle_R
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Surprise_R
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Walk_R
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Attack_R
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: HitStun_R
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -450,7 +450,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 2106616658634003335, guid: a6630357f2dc3cf41b077814bc170a26,
+  m_Motion: {fileID: 3205763513751975501, guid: a6630357f2dc3cf41b077814bc170a26,
     type: 3}
   m_Tag: 
   m_SpeedParameter: 
@@ -504,7 +504,8 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 28909758462378905, guid: ceb94804ff07be146960b1409953500d, type: 3}
+  m_Motion: {fileID: -2407990264870532366, guid: ceb94804ff07be146960b1409953500d,
+    type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -655,7 +656,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 1389121407789637250, guid: ceb94804ff07be146960b1409953500d,
+  m_Motion: {fileID: 3571696885757550468, guid: ceb94804ff07be146960b1409953500d,
     type: 3}
   m_Tag: 
   m_SpeedParameter: 
@@ -682,7 +683,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7625563936536389251, guid: ceb94804ff07be146960b1409953500d,
+  m_Motion: {fileID: -4855921775026149447, guid: ceb94804ff07be146960b1409953500d,
     type: 3}
   m_Tag: 
   m_SpeedParameter: 
