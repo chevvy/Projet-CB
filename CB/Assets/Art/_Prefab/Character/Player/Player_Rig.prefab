@@ -438,6 +438,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2966922660220218741}
   - component: {fileID: 5739036038624206311}
+  - component: {fileID: 1125003001180207106}
   m_Layer: 0
   m_Name: Sword4_R
   m_TagString: Untagged
@@ -473,6 +474,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCombat: {fileID: 8951039635178015600}
+--- !u!65 &1125003001180207106
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 504042261289053975}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &579920945941359616
 GameObject:
   m_ObjectHideFlags: 0
