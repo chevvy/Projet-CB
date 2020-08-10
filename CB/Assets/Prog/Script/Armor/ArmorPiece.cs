@@ -25,12 +25,12 @@ public class ArmorPiece : MonoBehaviour
     public bool isArmorPieceInTheBack = false;
     public void RemoveArmorPiece(float xAttackOrigin) => ArmorPieceLogic.RemoveArmorPiece(xAttackOrigin);
     public IArmorPieceLogic ArmorPieceLogic { get; set; }
-    public AudioClip ArmorPieceBreakingSound;
+    public AudioClip armorPieceBreakingSound;
 
     private void Awake()
     {
-        ArmorPieceLogic = new ArmorPieceLogic(ArmorPieceBreakingSound) { ApplyForce = new ApplyForce(), Rigidbody = GetComponent<Rigidbody>() };
-        if (ArmorPieceBreakingSound != null)
+        ArmorPieceLogic = new ArmorPieceLogic(armorPieceBreakingSound) { ApplyForce = new ApplyForce(), Rigidbody = GetComponent<Rigidbody>() };
+        if (armorPieceBreakingSound != null)
         {
             
         }
