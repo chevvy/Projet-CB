@@ -73,6 +73,8 @@ GameObject:
   - component: {fileID: 2892245533244166779}
   - component: {fileID: 4085357482294338961}
   - component: {fileID: 3663211598602321531}
+  - component: {fileID: 4636369444979215352}
+  - component: {fileID: 3142174388673984509}
   m_Layer: 0
   m_Name: Armor_Head_02_L
   m_TagString: Untagged
@@ -143,6 +145,36 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &4636369444979215352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 40320438212289335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e7c1d80b0b642509bbce2e844957f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isArmorPieceInTheBack: 0
+  armorPieceBreakingSound: {fileID: 0}
+--- !u!54 &3142174388673984509
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 40320438212289335}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &44257472999180730
 GameObject:
   m_ObjectHideFlags: 0
@@ -1236,6 +1268,8 @@ GameObject:
   - component: {fileID: 4290267602812531452}
   - component: {fileID: 942799122720952077}
   - component: {fileID: 5920457462822785532}
+  - component: {fileID: 2813777374545892663}
+  - component: {fileID: 8413450187827111254}
   m_Layer: 0
   m_Name: Armor_Bracer_L
   m_TagString: Untagged
@@ -1306,6 +1340,36 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &2813777374545892663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 421305783936549376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e7c1d80b0b642509bbce2e844957f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isArmorPieceInTheBack: 0
+  armorPieceBreakingSound: {fileID: 0}
+--- !u!54 &8413450187827111254
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 421305783936549376}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &423764209984393401
 GameObject:
   m_ObjectHideFlags: 0
@@ -3035,6 +3099,8 @@ GameObject:
   - component: {fileID: 3013663936950550485}
   - component: {fileID: 2646461574021455686}
   - component: {fileID: 6270983270760397693}
+  - component: {fileID: 8252754488629388686}
+  - component: {fileID: 8608089381545855885}
   m_Layer: 0
   m_Name: Armor_Knee_L
   m_TagString: Untagged
@@ -3105,6 +3171,36 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8252754488629388686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1023616160873510876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e7c1d80b0b642509bbce2e844957f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isArmorPieceInTheBack: 0
+  armorPieceBreakingSound: {fileID: 0}
+--- !u!54 &8608089381545855885
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1023616160873510876}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1037865727592984825
 GameObject:
   m_ObjectHideFlags: 0
@@ -3706,6 +3802,8 @@ GameObject:
   - component: {fileID: 2074017370127467771}
   - component: {fileID: 4663532922297063947}
   - component: {fileID: 2359094970377406409}
+  - component: {fileID: 4488141843413703945}
+  - component: {fileID: 8356257376603670326}
   m_Layer: 0
   m_Name: Armor_Trochentor_R
   m_TagString: Untagged
@@ -3776,6 +3874,36 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &4488141843413703945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1240213700529732230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e7c1d80b0b642509bbce2e844957f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isArmorPieceInTheBack: 0
+  armorPieceBreakingSound: {fileID: 0}
+--- !u!54 &8356257376603670326
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1240213700529732230}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1251370588265835620
 GameObject:
   m_ObjectHideFlags: 0
@@ -3848,6 +3976,8 @@ GameObject:
   - component: {fileID: 7130504284739841993}
   - component: {fileID: 4527837995250538491}
   - component: {fileID: 2450491843877623695}
+  - component: {fileID: 2264139813613451446}
+  - component: {fileID: 2095977469844617745}
   m_Layer: 0
   m_Name: Armor_Head_03_R
   m_TagString: Untagged
@@ -3918,6 +4048,36 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &2264139813613451446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1268851573931987144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e7c1d80b0b642509bbce2e844957f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isArmorPieceInTheBack: 0
+  armorPieceBreakingSound: {fileID: 0}
+--- !u!54 &2095977469844617745
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1268851573931987144}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1278913618364188402
 GameObject:
   m_ObjectHideFlags: 0
@@ -5577,6 +5737,8 @@ GameObject:
   - component: {fileID: 2207544372949918208}
   - component: {fileID: 3194584398440643803}
   - component: {fileID: 2800767159995651120}
+  - component: {fileID: 2655488695106970589}
+  - component: {fileID: 2623036650368407529}
   m_Layer: 0
   m_Name: Armor_Elbow_L
   m_TagString: Untagged
@@ -5647,6 +5809,36 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &2655488695106970589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1748053160357159366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e7c1d80b0b642509bbce2e844957f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isArmorPieceInTheBack: 0
+  armorPieceBreakingSound: {fileID: 0}
+--- !u!54 &2623036650368407529
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1748053160357159366}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1757860366490720961
 GameObject:
   m_ObjectHideFlags: 0
@@ -6500,8 +6692,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   armorPieces:
+  - {fileID: 5523814004923904182}
   - {fileID: 5763630830496195331}
-  armorHealth: 100
+  - {fileID: 6258700620009541413}
+  - {fileID: 2519938521187989232}
+  - {fileID: 2813777374545892663}
+  - {fileID: 8225157406586390396}
+  - {fileID: 2655488695106970589}
+  - {fileID: 8250183922304602539}
+  - {fileID: 3501799719140447016}
+  - {fileID: 4767479132271361256}
+  - {fileID: 5776822433631057158}
+  - {fileID: 9174220147578210774}
+  - {fileID: 4636369444979215352}
+  - {fileID: 6566574578478947496}
+  - {fileID: 2922009250964623383}
+  - {fileID: 2264139813613451446}
+  - {fileID: 8307662345602652814}
+  - {fileID: 8252754488629388686}
+  - {fileID: 6718049595164869264}
+  - {fileID: 531731919294115965}
+  - {fileID: 724958129231796441}
+  - {fileID: 2348247273858485554}
+  - {fileID: 1070174485446818056}
+  - {fileID: 5837106002469106384}
+  - {fileID: 8656723435232643004}
+  - {fileID: 2635322741642061889}
+  - {fileID: 8422064186884098065}
+  - {fileID: 4488141843413703945}
+  armorHealth: 700
 --- !u!114 &4830907041836619370
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8397,6 +8616,8 @@ GameObject:
   - component: {fileID: 2156286102462840923}
   - component: {fileID: 1191442606100633419}
   - component: {fileID: 449501042776400819}
+  - component: {fileID: 6718049595164869264}
+  - component: {fileID: 3223054953260912875}
   m_Layer: 0
   m_Name: Armor_Knee_R
   m_TagString: Untagged
@@ -8467,6 +8688,36 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6718049595164869264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2945806572631466639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e7c1d80b0b642509bbce2e844957f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isArmorPieceInTheBack: 0
+  armorPieceBreakingSound: {fileID: 0}
+--- !u!54 &3223054953260912875
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2945806572631466639}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &2961560037439935338
 GameObject:
   m_ObjectHideFlags: 0
@@ -9075,6 +9326,8 @@ GameObject:
   - component: {fileID: 6454397420017604046}
   - component: {fileID: 8736107013334409911}
   - component: {fileID: 8770487774803087116}
+  - component: {fileID: 5776822433631057158}
+  - component: {fileID: 6000149538601009636}
   m_Layer: 0
   m_Name: Armor_Head_01_L
   m_TagString: Untagged
@@ -9145,6 +9398,36 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &5776822433631057158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3131757217275770606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e7c1d80b0b642509bbce2e844957f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isArmorPieceInTheBack: 0
+  armorPieceBreakingSound: {fileID: 0}
+--- !u!54 &6000149538601009636
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3131757217275770606}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &3147545560366636672
 GameObject:
   m_ObjectHideFlags: 0
@@ -9840,6 +10123,8 @@ GameObject:
   - component: {fileID: 2313888697171631725}
   - component: {fileID: 6987550419775269174}
   - component: {fileID: 7728897344600148352}
+  - component: {fileID: 6258700620009541413}
+  - component: {fileID: 8134367297363340006}
   m_Layer: 0
   m_Name: Armor_Body_Bot_low
   m_TagString: Untagged
@@ -9910,6 +10195,36 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6258700620009541413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3285241082572527854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e7c1d80b0b642509bbce2e844957f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isArmorPieceInTheBack: 0
+  armorPieceBreakingSound: {fileID: 0}
+--- !u!54 &8134367297363340006
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3285241082572527854}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &3305198955093941529
 GameObject:
   m_ObjectHideFlags: 0
@@ -9921,6 +10236,8 @@ GameObject:
   - component: {fileID: 3462045873732413383}
   - component: {fileID: 4836637468632457454}
   - component: {fileID: 8436510524592519208}
+  - component: {fileID: 8250183922304602539}
+  - component: {fileID: 4196854959050926409}
   m_Layer: 0
   m_Name: Armor_Elbow_R
   m_TagString: Untagged
@@ -9991,6 +10308,36 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8250183922304602539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3305198955093941529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e7c1d80b0b642509bbce2e844957f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isArmorPieceInTheBack: 0
+  armorPieceBreakingSound: {fileID: 0}
+--- !u!54 &4196854959050926409
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3305198955093941529}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &3320111963545003808
 GameObject:
   m_ObjectHideFlags: 0
@@ -10413,6 +10760,8 @@ GameObject:
   - component: {fileID: 1075705066855335687}
   - component: {fileID: 4245092383633706351}
   - component: {fileID: 7241234089782001638}
+  - component: {fileID: 2348247273858485554}
+  - component: {fileID: 8683908605983086899}
   m_Layer: 0
   m_Name: Armor_Pubis_low
   m_TagString: Untagged
@@ -10483,6 +10832,36 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &2348247273858485554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3502226226622123505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e7c1d80b0b642509bbce2e844957f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isArmorPieceInTheBack: 0
+  armorPieceBreakingSound: {fileID: 0}
+--- !u!54 &8683908605983086899
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3502226226622123505}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &3503594706958679322
 GameObject:
   m_ObjectHideFlags: 0
@@ -12957,6 +13336,8 @@ GameObject:
   - component: {fileID: 7280887447861431588}
   - component: {fileID: 5496226388452672269}
   - component: {fileID: 8585479157989870103}
+  - component: {fileID: 8225157406586390396}
+  - component: {fileID: 5917564791923126936}
   m_Layer: 0
   m_Name: Armor_Bracer_R
   m_TagString: Untagged
@@ -13027,6 +13408,36 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8225157406586390396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4317755108859759794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e7c1d80b0b642509bbce2e844957f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isArmorPieceInTheBack: 0
+  armorPieceBreakingSound: {fileID: 0}
+--- !u!54 &5917564791923126936
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4317755108859759794}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &4331895724246566635
 GameObject:
   m_ObjectHideFlags: 0
@@ -13224,6 +13635,8 @@ GameObject:
   - component: {fileID: 9039733820513656373}
   - component: {fileID: 3527592309058761823}
   - component: {fileID: 8418384764899919982}
+  - component: {fileID: 3501799719140447016}
+  - component: {fileID: 3371786736514529597}
   m_Layer: 0
   m_Name: Armor_Hat_L
   m_TagString: Untagged
@@ -13294,6 +13707,36 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &3501799719140447016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4415745585077830673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e7c1d80b0b642509bbce2e844957f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isArmorPieceInTheBack: 0
+  armorPieceBreakingSound: {fileID: 0}
+--- !u!54 &3371786736514529597
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4415745585077830673}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &4428116300743336901
 GameObject:
   m_ObjectHideFlags: 0
@@ -14450,6 +14893,8 @@ GameObject:
   - component: {fileID: 1917970660714917403}
   - component: {fileID: 1272348290447265326}
   - component: {fileID: 8178031324822581751}
+  - component: {fileID: 2519938521187989232}
+  - component: {fileID: 6335678986581208262}
   m_Layer: 0
   m_Name: Armor_Body_Top_low
   m_TagString: Untagged
@@ -14520,6 +14965,36 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &2519938521187989232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4842246900652513567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e7c1d80b0b642509bbce2e844957f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isArmorPieceInTheBack: 0
+  armorPieceBreakingSound: {fileID: 0}
+--- !u!54 &6335678986581208262
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4842246900652513567}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &4844422286699597964
 GameObject:
   m_ObjectHideFlags: 0
@@ -15177,6 +15652,8 @@ GameObject:
   - component: {fileID: 4162698450090478550}
   - component: {fileID: 353333470262680013}
   - component: {fileID: 2643217291351143810}
+  - component: {fileID: 8307662345602652814}
+  - component: {fileID: 4070861268321772314}
   m_Layer: 0
   m_Name: Armor_Hips_low
   m_TagString: Untagged
@@ -15247,6 +15724,36 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8307662345602652814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5157731644993090390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e7c1d80b0b642509bbce2e844957f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isArmorPieceInTheBack: 0
+  armorPieceBreakingSound: {fileID: 0}
+--- !u!54 &4070861268321772314
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5157731644993090390}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &5172583668819742925
 GameObject:
   m_ObjectHideFlags: 0
@@ -15381,6 +15888,8 @@ GameObject:
   - component: {fileID: 7001233406635595059}
   - component: {fileID: 1978302410693297981}
   - component: {fileID: 5746299611399705618}
+  - component: {fileID: 8656723435232643004}
+  - component: {fileID: 3614334507662906317}
   m_Layer: 0
   m_Name: Armor_Tibial_L
   m_TagString: Untagged
@@ -15451,6 +15960,36 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8656723435232643004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5220431587352231857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e7c1d80b0b642509bbce2e844957f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isArmorPieceInTheBack: 0
+  armorPieceBreakingSound: {fileID: 0}
+--- !u!54 &3614334507662906317
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5220431587352231857}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &5231999770727269873
 GameObject:
   m_ObjectHideFlags: 0
@@ -16044,6 +16583,8 @@ GameObject:
   - component: {fileID: 5999787757902874070}
   - component: {fileID: 6190406488752042295}
   - component: {fileID: 7711224105006279975}
+  - component: {fileID: 531731919294115965}
+  - component: {fileID: 5867669327588571241}
   m_Layer: 0
   m_Name: Armor_Legs_L
   m_TagString: Untagged
@@ -16114,6 +16655,36 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &531731919294115965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5449500579115648128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e7c1d80b0b642509bbce2e844957f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isArmorPieceInTheBack: 0
+  armorPieceBreakingSound: {fileID: 0}
+--- !u!54 &5867669327588571241
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5449500579115648128}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &5453492758940252564
 GameObject:
   m_ObjectHideFlags: 0
@@ -17034,6 +17605,8 @@ GameObject:
   - component: {fileID: 9207093148005386585}
   - component: {fileID: 7090301560546338546}
   - component: {fileID: 3119575736927486721}
+  - component: {fileID: 8422064186884098065}
+  - component: {fileID: 5925678245320983833}
   m_Layer: 0
   m_Name: Armor_Trochentor_L
   m_TagString: Untagged
@@ -17104,6 +17677,36 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8422064186884098065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5758243861291451884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e7c1d80b0b642509bbce2e844957f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isArmorPieceInTheBack: 0
+  armorPieceBreakingSound: {fileID: 0}
+--- !u!54 &5925678245320983833
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5758243861291451884}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &5761935890951516921
 GameObject:
   m_ObjectHideFlags: 0
@@ -18018,6 +18621,8 @@ GameObject:
   - component: {fileID: 1156744751175593265}
   - component: {fileID: 7074298344016279392}
   - component: {fileID: 8962623899697445075}
+  - component: {fileID: 9174220147578210774}
+  - component: {fileID: 6117861761737196626}
   m_Layer: 0
   m_Name: Armor_Head_01_R
   m_TagString: Untagged
@@ -18088,6 +18693,36 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &9174220147578210774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5999904705367660225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e7c1d80b0b642509bbce2e844957f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isArmorPieceInTheBack: 0
+  armorPieceBreakingSound: {fileID: 0}
+--- !u!54 &6117861761737196626
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5999904705367660225}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &5999914003920486763
 GameObject:
   m_ObjectHideFlags: 0
@@ -18606,6 +19241,8 @@ GameObject:
   - component: {fileID: 3985975937419291045}
   - component: {fileID: 2669184765766648435}
   - component: {fileID: 2144474899133674211}
+  - component: {fileID: 2922009250964623383}
+  - component: {fileID: 8559327762937600140}
   m_Layer: 0
   m_Name: Armor_Head_03_L
   m_TagString: Untagged
@@ -18676,6 +19313,36 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &2922009250964623383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6195913758851741371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e7c1d80b0b642509bbce2e844957f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isArmorPieceInTheBack: 0
+  armorPieceBreakingSound: {fileID: 0}
+--- !u!54 &8559327762937600140
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6195913758851741371}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &6196175697601988963
 GameObject:
   m_ObjectHideFlags: 0
@@ -20216,6 +20883,8 @@ GameObject:
   - component: {fileID: 1890217065495996503}
   - component: {fileID: 8276366731291670993}
   - component: {fileID: 3046149274589452917}
+  - component: {fileID: 1070174485446818056}
+  - component: {fileID: 4525215999365222843}
   m_Layer: 0
   m_Name: Armor_Shoulder_L
   m_TagString: Untagged
@@ -20286,6 +20955,36 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1070174485446818056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6754804601792334795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e7c1d80b0b642509bbce2e844957f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isArmorPieceInTheBack: 0
+  armorPieceBreakingSound: {fileID: 0}
+--- !u!54 &4525215999365222843
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6754804601792334795}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &6757312793836137767
 GameObject:
   m_ObjectHideFlags: 0
@@ -20989,6 +21688,8 @@ GameObject:
   - component: {fileID: 4333924448211734531}
   - component: {fileID: 5676545877504191026}
   - component: {fileID: 4451477755980572329}
+  - component: {fileID: 6566574578478947496}
+  - component: {fileID: 811711544939182077}
   m_Layer: 0
   m_Name: Armor_Head_02_R
   m_TagString: Untagged
@@ -21059,6 +21760,36 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6566574578478947496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7072108264012870850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e7c1d80b0b642509bbce2e844957f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isArmorPieceInTheBack: 0
+  armorPieceBreakingSound: {fileID: 0}
+--- !u!54 &811711544939182077
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7072108264012870850}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &7091308893171377487
 GameObject:
   m_ObjectHideFlags: 0
@@ -21893,6 +22624,9 @@ GameObject:
   - component: {fileID: 99170045279986652}
   - component: {fileID: 3163139550064081856}
   - component: {fileID: 4159232876375713416}
+  - component: {fileID: 5523814004923904182}
+  - component: {fileID: 240317528345467021}
+  - component: {fileID: 23846613038797083}
   m_Layer: 0
   m_Name: Armor_Ankle_L
   m_TagString: Untagged
@@ -21963,6 +22697,50 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &5523814004923904182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7437552396724555601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e7c1d80b0b642509bbce2e844957f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isArmorPieceInTheBack: 0
+  armorPieceBreakingSound: {fileID: 0}
+--- !u!54 &240317528345467021
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7437552396724555601}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &23846613038797083
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7437552396724555601}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7611424565842580750, guid: ceb94804ff07be146960b1409953500d, type: 3}
 --- !u!1 &7474436577362677371
 GameObject:
   m_ObjectHideFlags: 0
@@ -23265,6 +24043,8 @@ GameObject:
   - component: {fileID: 59459706218969296}
   - component: {fileID: 6477111835450287659}
   - component: {fileID: 5479366323148205659}
+  - component: {fileID: 2635322741642061889}
+  - component: {fileID: 6962735963039011467}
   m_Layer: 0
   m_Name: Armor_Tibial_R
   m_TagString: Untagged
@@ -23335,6 +24115,36 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &2635322741642061889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7937978363503692506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e7c1d80b0b642509bbce2e844957f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isArmorPieceInTheBack: 0
+  armorPieceBreakingSound: {fileID: 0}
+--- !u!54 &6962735963039011467
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7937978363503692506}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &7943270460437572524
 GameObject:
   m_ObjectHideFlags: 0
@@ -23689,8 +24499,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isArmorPieceInTheBack: 0
-  ArmorPieceBreakingSound: {fileID: 8300000, guid: 733c48a35c99ae141a9f72c1b7549e0f,
-    type: 3}
+  armorPieceBreakingSound: {fileID: 0}
 --- !u!54 &2027430834972357478
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -23904,6 +24713,8 @@ GameObject:
   - component: {fileID: 412578888606877599}
   - component: {fileID: 4365692498596822308}
   - component: {fileID: 8106872355578260950}
+  - component: {fileID: 5837106002469106384}
+  - component: {fileID: 5072876549114279482}
   m_Layer: 0
   m_Name: Armor_Ankle_R
   m_TagString: Untagged
@@ -23974,6 +24785,36 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &5837106002469106384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8148406626197881232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e7c1d80b0b642509bbce2e844957f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isArmorPieceInTheBack: 0
+  armorPieceBreakingSound: {fileID: 0}
+--- !u!54 &5072876549114279482
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8148406626197881232}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &8159332111342351387
 GameObject:
   m_ObjectHideFlags: 0
@@ -24046,6 +24887,8 @@ GameObject:
   - component: {fileID: 1727954713158533566}
   - component: {fileID: 3042277239074288745}
   - component: {fileID: 4953511802858086444}
+  - component: {fileID: 4767479132271361256}
+  - component: {fileID: 4496955635757459597}
   m_Layer: 0
   m_Name: Armor_Hat_R
   m_TagString: Untagged
@@ -24116,6 +24959,36 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &4767479132271361256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8171346426185866174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e7c1d80b0b642509bbce2e844957f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isArmorPieceInTheBack: 0
+  armorPieceBreakingSound: {fileID: 0}
+--- !u!54 &4496955635757459597
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8171346426185866174}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &8199394579907777212
 GameObject:
   m_ObjectHideFlags: 0
@@ -25571,6 +26444,8 @@ GameObject:
   - component: {fileID: 4523494456652412054}
   - component: {fileID: 7338712302127315259}
   - component: {fileID: 397192330068205150}
+  - component: {fileID: 724958129231796441}
+  - component: {fileID: 6025545574750932392}
   m_Layer: 0
   m_Name: Armor_Legs_R
   m_TagString: Untagged
@@ -25641,6 +26516,36 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &724958129231796441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8829891715106298212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e7c1d80b0b642509bbce2e844957f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isArmorPieceInTheBack: 0
+  armorPieceBreakingSound: {fileID: 0}
+--- !u!54 &6025545574750932392
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8829891715106298212}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &8856400267043512275
 GameObject:
   m_ObjectHideFlags: 0

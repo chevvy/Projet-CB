@@ -7190,7 +7190,7 @@ PrefabInstance:
     - target: {fileID: 1669676342887037755, guid: fcb288944cedcec4badc0a108b5e1272,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.5126042
+      value: -3.975
       objectReference: {fileID: 0}
     - target: {fileID: 1669676342887037755, guid: fcb288944cedcec4badc0a108b5e1272,
         type: 3}
@@ -7247,7 +7247,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: BasicRobotLeft
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 23846613038797083, guid: fcb288944cedcec4badc0a108b5e1272, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: fcb288944cedcec4badc0a108b5e1272, type: 3}
 --- !u!1001 &1212206205
 PrefabInstance:

@@ -66,7 +66,6 @@ public class ArmorPieceLogic : IArmorPieceLogic
 
     private void PlayArmorPieceBreakingSound()
     {
-        if(ArmorPieceBreakingSound == null) return;
         AudioManager.Instance.PlaySound("armor_piece_breaking", true);
     }
 }
