@@ -4077,10 +4077,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 612453041474443627, guid: a3476747c54fbfe43a5bf859715997ab,
+        type: 3}
+      propertyPath: m_Name
+      value: Scarf_GEO
+      objectReference: {fileID: 0}
     - target: {fileID: 764076001699389141, guid: a3476747c54fbfe43a5bf859715997ab,
         type: 3}
       propertyPath: m_Radius
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 980260508797137619, guid: a3476747c54fbfe43a5bf859715997ab,
+        type: 3}
+      propertyPath: m_Name
+      value: Claw_GEO
       objectReference: {fileID: 0}
     - target: {fileID: 1492605669770129214, guid: a3476747c54fbfe43a5bf859715997ab,
         type: 3}
@@ -4132,6 +4142,31 @@ PrefabInstance:
       propertyPath: groundLayerMask.m_Bits
       value: 256
       objectReference: {fileID: 0}
+    - target: {fileID: 2805516789562018612, guid: a3476747c54fbfe43a5bf859715997ab,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3058617959791635357, guid: a3476747c54fbfe43a5bf859715997ab,
+        type: 3}
+      propertyPath: m_Name
+      value: Eyes_GEO
+      objectReference: {fileID: 0}
+    - target: {fileID: 3479722462365738935, guid: a3476747c54fbfe43a5bf859715997ab,
+        type: 3}
+      propertyPath: m_Name
+      value: Sheat_GEO
+      objectReference: {fileID: 0}
+    - target: {fileID: 3703791780749281430, guid: a3476747c54fbfe43a5bf859715997ab,
+        type: 3}
+      propertyPath: m_Name
+      value: Jewel_GEO
+      objectReference: {fileID: 0}
+    - target: {fileID: 3705321004161688056, guid: a3476747c54fbfe43a5bf859715997ab,
+        type: 3}
+      propertyPath: m_Name
+      value: Player_Eyes_GEO
+      objectReference: {fileID: 0}
     - target: {fileID: 3962663533000634472, guid: a3476747c54fbfe43a5bf859715997ab,
         type: 3}
       propertyPath: m_Name
@@ -4141,6 +4176,56 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4479417690856614074, guid: a3476747c54fbfe43a5bf859715997ab,
+        type: 3}
+      propertyPath: m_Name
+      value: Shoes_2_GEO
+      objectReference: {fileID: 0}
+    - target: {fileID: 4877898890765594712, guid: a3476747c54fbfe43a5bf859715997ab,
+        type: 3}
+      propertyPath: m_Name
+      value: Shoes_GEO
+      objectReference: {fileID: 0}
+    - target: {fileID: 4950048829737904302, guid: a3476747c54fbfe43a5bf859715997ab,
+        type: 3}
+      propertyPath: m_Name
+      value: Tongue_GEO
+      objectReference: {fileID: 0}
+    - target: {fileID: 5106509437823345394, guid: a3476747c54fbfe43a5bf859715997ab,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5984329068782224141, guid: a3476747c54fbfe43a5bf859715997ab,
+        type: 3}
+      propertyPath: m_Name
+      value: Player_GEO
+      objectReference: {fileID: 0}
+    - target: {fileID: 6170650399450663091, guid: a3476747c54fbfe43a5bf859715997ab,
+        type: 3}
+      propertyPath: m_Name
+      value: Helmet_GEO
+      objectReference: {fileID: 0}
+    - target: {fileID: 6266364895798564590, guid: a3476747c54fbfe43a5bf859715997ab,
+        type: 3}
+      propertyPath: m_Name
+      value: Player_Boons_GEO
+      objectReference: {fileID: 0}
+    - target: {fileID: 6525289850391807348, guid: a3476747c54fbfe43a5bf859715997ab,
+        type: 3}
+      propertyPath: m_Name
+      value: Teeth_Top_GEO
+      objectReference: {fileID: 0}
+    - target: {fileID: 6814987661416882427, guid: a3476747c54fbfe43a5bf859715997ab,
+        type: 3}
+      propertyPath: m_Name
+      value: Body_GEO
+      objectReference: {fileID: 0}
+    - target: {fileID: 6915329230886776578, guid: a3476747c54fbfe43a5bf859715997ab,
+        type: 3}
+      propertyPath: m_Name
+      value: Teeth_Bot_GEO
       objectReference: {fileID: 0}
     - target: {fileID: 7485493601944757633, guid: a3476747c54fbfe43a5bf859715997ab,
         type: 3}
@@ -4206,6 +4291,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8123358228912267452, guid: a3476747c54fbfe43a5bf859715997ab,
+        type: 3}
+      propertyPath: m_Name
+      value: Player_Rig
+      objectReference: {fileID: 0}
+    - target: {fileID: 8899111862250112306, guid: a3476747c54fbfe43a5bf859715997ab,
+        type: 3}
+      propertyPath: m_Name
+      value: Player_Base_GEO
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3476747c54fbfe43a5bf859715997ab, type: 3}
