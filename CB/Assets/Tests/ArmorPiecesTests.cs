@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using NSubstitute;
 using NUnit.Framework;
+using Prog.Script.Armor;
 using Prog.Script.RigidbodyInteraction;
 using UnityEngine;
 using UnityEngine.TestTools;
@@ -10,25 +11,26 @@ namespace Tests
 {
     public class ArmorPiecesTests
     {
+        // TODO À RÉPARER SUITE AU REFACTOR QUE J'AVAIS FAIT
         GameObject ArmorPieceInstance = new GameObject();
         private ArmorPiece _armorPiece;
         private Rigidbody _armorPieceRigidbody;
         private IApplyForce _applyForce = Substitute.For<IApplyForce>();
-        private ArmorPieceLogic _armorPieceLogic = new ArmorPieceLogic();
+        // private ArmorPieceLogic _armorPieceLogic = new ArmorPieceLogic();
 
         [SetUp]
         public void Setup()
         {
             ArmorPieceInstance.AddComponent<ArmorPiece>();
             _armorPiece = ArmorPieceInstance.GetComponent<ArmorPiece>();
-            _armorPiece.ArmorPieceLogic = new ArmorPieceLogic();
+            // _armorPiece.ArmorPieceLogic = new ArmorPieceLogic();
 
             ArmorPieceInstance.AddComponent<Rigidbody>();
             _armorPieceRigidbody = ArmorPieceInstance.GetComponent<Rigidbody>();
             _armorPieceRigidbody.isKinematic = true;
-            _armorPiece.ArmorPieceLogic.Rigidbody = _armorPieceRigidbody;
+            // _armorPiece.ArmorPieceLogic.Rigidbody = _armorPieceRigidbody;
             
-            _armorPiece.ArmorPieceLogic.ApplyForce = _applyForce;
+            // _armorPiece.ArmorPieceLogic.ApplyForce = _applyForce;
 
         }
 

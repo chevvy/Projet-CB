@@ -260,9 +260,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2e7c1d80b0b642509bbce2e844957f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isArmorPieceInTheBack: 0
-  ArmorPieceBreakingSound: {fileID: 8300000, guid: 733c48a35c99ae141a9f72c1b7549e0f,
-    type: 3}
+  sparkSfx: {fileID: 604841511640504057, guid: 4ebd12ae021e04143a5982e155905dcb, type: 3}
 --- !u!54 &282414068206213368
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -388,9 +386,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2e7c1d80b0b642509bbce2e844957f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isArmorPieceInTheBack: 1
-  ArmorPieceBreakingSound: {fileID: 8300000, guid: 733c48a35c99ae141a9f72c1b7549e0f,
-    type: 3}
+  sparkSfx: {fileID: 604841511640504057, guid: 4ebd12ae021e04143a5982e155905dcb, type: 3}
 --- !u!54 &4753498143431731443
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -516,9 +512,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2e7c1d80b0b642509bbce2e844957f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isArmorPieceInTheBack: 0
-  ArmorPieceBreakingSound: {fileID: 8300000, guid: 733c48a35c99ae141a9f72c1b7549e0f,
-    type: 3}
+  sparkSfx: {fileID: 604841511640504057, guid: 4ebd12ae021e04143a5982e155905dcb, type: 3}
 --- !u!54 &1666073687857508314
 Rigidbody:
   m_ObjectHideFlags: 0
