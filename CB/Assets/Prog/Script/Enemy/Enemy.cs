@@ -20,10 +20,13 @@ namespace Prog.Script
         private EnemyLogic _enemyLogic;
         private ApplyForce _applyForce = new ApplyForce();
 
-        void Start()
+        void Awake()
         {
-            _enemyMesh = GetComponent<MeshRenderer>();
-            _enemyMaterial = _enemyMesh.material;
+            if (TryGetComponent(out MeshRenderer meshRenderer))
+            {
+                _enemyMesh = meshRenderer;
+                _enemyMaterial = _enemyMesh.material;
+            }
             _rigidbody = GetComponent<Rigidbody>();
             if (TryGetComponent(out Armor.Armor armorComponent))
             {
@@ -48,7 +51,7 @@ namespace Prog.Script
             
             _enemyLogic.ApplyDamage(damage);
             AudioManager.Instance.PlaySound("melee_weapon_impact", true);
-            StartCoroutine(ApplyDamageMaterial());
+            if(_enemyMesh != null) StartCoroutine(ApplyDamageMaterial());
 
             MoveEnemyAfterAttack(xPlayerPosition);
             
