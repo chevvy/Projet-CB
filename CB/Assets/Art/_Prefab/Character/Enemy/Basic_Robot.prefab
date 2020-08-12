@@ -235,6 +235,9 @@ GameObject:
   - component: {fileID: 2112761465811145755}
   - component: {fileID: 8895859477776019843}
   - component: {fileID: 5584393896179362117}
+  - component: {fileID: 181484830148249218}
+  - component: {fileID: 6032610144628652022}
+  - component: {fileID: 6177831605426286632}
   m_Layer: 0
   m_Name: Armor_Elbow_R
   m_TagString: Untagged
@@ -283,7 +286,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -1134714066672644336, guid: 2e53580bdafa2644781bb0eeb2e1671b, type: 3}
+  - {fileID: 2100000, guid: ad7a564197ee1f14f98dd9e578155aad, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -305,6 +308,50 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &181484830148249218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 38225392636407493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e7c1d80b0b642509bbce2e844957f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isArmorPieceInTheBack: 0
+  armorPieceBreakingSound: {fileID: 0}
+--- !u!54 &6032610144628652022
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 38225392636407493}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &6177831605426286632
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 38225392636407493}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2718284842631263892, guid: 2e53580bdafa2644781bb0eeb2e1671b, type: 3}
 --- !u!1 &39083517030305400
 GameObject:
   m_ObjectHideFlags: 0
@@ -347,6 +394,9 @@ GameObject:
   - component: {fileID: 956228462636903857}
   - component: {fileID: 6382591483045296219}
   - component: {fileID: 5992547388577093869}
+  - component: {fileID: 947639605270230415}
+  - component: {fileID: 409756893465343042}
+  - component: {fileID: 8409249440945505364}
   m_Layer: 0
   m_Name: Armor_Body_Bot_low
   m_TagString: Untagged
@@ -395,7 +445,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -1134714066672644336, guid: 2e53580bdafa2644781bb0eeb2e1671b, type: 3}
+  - {fileID: 2100000, guid: ad7a564197ee1f14f98dd9e578155aad, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -417,6 +467,50 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &947639605270230415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 58023844423838514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e7c1d80b0b642509bbce2e844957f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isArmorPieceInTheBack: 0
+  armorPieceBreakingSound: {fileID: 0}
+--- !u!54 &409756893465343042
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 58023844423838514}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &8409249440945505364
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 58023844423838514}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -6869872385980518046, guid: 2e53580bdafa2644781bb0eeb2e1671b, type: 3}
 --- !u!1 &73902133359060171
 GameObject:
   m_ObjectHideFlags: 0
@@ -1407,6 +1501,9 @@ GameObject:
   - component: {fileID: 3509724627075806087}
   - component: {fileID: 2946369599235147302}
   - component: {fileID: 4492256962294444766}
+  - component: {fileID: 4753464278268153775}
+  - component: {fileID: 8138399673469355878}
+  - component: {fileID: 4851460232724254441}
   m_Layer: 0
   m_Name: Armor_Knee_R
   m_TagString: Untagged
@@ -1455,7 +1552,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -1134714066672644336, guid: 2e53580bdafa2644781bb0eeb2e1671b, type: 3}
+  - {fileID: 2100000, guid: ad7a564197ee1f14f98dd9e578155aad, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1477,6 +1574,50 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &4753464278268153775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 412143424160289107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e7c1d80b0b642509bbce2e844957f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isArmorPieceInTheBack: 0
+  armorPieceBreakingSound: {fileID: 0}
+--- !u!54 &8138399673469355878
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 412143424160289107}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &4851460232724254441
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 412143424160289107}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3551057481492605693, guid: 2e53580bdafa2644781bb0eeb2e1671b, type: 3}
 --- !u!1 &424658043824587989
 GameObject:
   m_ObjectHideFlags: 0
@@ -3480,6 +3621,9 @@ GameObject:
   - component: {fileID: 5776490190963928553}
   - component: {fileID: 621434854815819058}
   - component: {fileID: 5530241541712681219}
+  - component: {fileID: 6363868510232325716}
+  - component: {fileID: 3099772599992462896}
+  - component: {fileID: 5110657283446136889}
   m_Layer: 0
   m_Name: Armor_Hat_L
   m_TagString: Untagged
@@ -3528,7 +3672,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -1134714066672644336, guid: 2e53580bdafa2644781bb0eeb2e1671b, type: 3}
+  - {fileID: 2100000, guid: ad7a564197ee1f14f98dd9e578155aad, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3550,6 +3694,50 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6363868510232325716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1161436174497331149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e7c1d80b0b642509bbce2e844957f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isArmorPieceInTheBack: 0
+  armorPieceBreakingSound: {fileID: 0}
+--- !u!54 &3099772599992462896
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1161436174497331149}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &5110657283446136889
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1161436174497331149}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -594646503322869734, guid: 2e53580bdafa2644781bb0eeb2e1671b, type: 3}
 --- !u!1 &1184453068758972491
 GameObject:
   m_ObjectHideFlags: 0
@@ -3841,6 +4029,9 @@ GameObject:
   - component: {fileID: 7059921793487193251}
   - component: {fileID: 4708410314290869210}
   - component: {fileID: 4745748505463905889}
+  - component: {fileID: 2787364494911335474}
+  - component: {fileID: 5522929774460972884}
+  - component: {fileID: 2496689094520056261}
   m_Layer: 0
   m_Name: Armor_Head_01_L
   m_TagString: Untagged
@@ -3889,7 +4080,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1792927195518624714, guid: 2e53580bdafa2644781bb0eeb2e1671b, type: 3}
+  - {fileID: 2100000, guid: ad7a564197ee1f14f98dd9e578155aad, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3911,6 +4102,50 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &2787364494911335474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1377395248597297027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e7c1d80b0b642509bbce2e844957f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isArmorPieceInTheBack: 0
+  armorPieceBreakingSound: {fileID: 0}
+--- !u!54 &5522929774460972884
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1377395248597297027}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &2496689094520056261
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1377395248597297027}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5958417844521710295, guid: 2e53580bdafa2644781bb0eeb2e1671b, type: 3}
 --- !u!1 &1404043329591638637
 GameObject:
   m_ObjectHideFlags: 0
@@ -4355,6 +4590,9 @@ GameObject:
   - component: {fileID: 5211590231245094648}
   - component: {fileID: 8371564922594038368}
   - component: {fileID: 5714785320685181818}
+  - component: {fileID: 8254540782292658550}
+  - component: {fileID: 6375812193029522786}
+  - component: {fileID: 8666270185487039630}
   m_Layer: 0
   m_Name: Armor_Bracer_R
   m_TagString: Untagged
@@ -4403,7 +4641,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -1134714066672644336, guid: 2e53580bdafa2644781bb0eeb2e1671b, type: 3}
+  - {fileID: 2100000, guid: ad7a564197ee1f14f98dd9e578155aad, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4425,6 +4663,50 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8254540782292658550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1635403012246945646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e7c1d80b0b642509bbce2e844957f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isArmorPieceInTheBack: 0
+  armorPieceBreakingSound: {fileID: 0}
+--- !u!54 &6375812193029522786
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1635403012246945646}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &8666270185487039630
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1635403012246945646}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -994107290940797669, guid: 2e53580bdafa2644781bb0eeb2e1671b, type: 3}
 --- !u!1 &1637645094905332843
 GameObject:
   m_ObjectHideFlags: 0
@@ -6028,6 +6310,9 @@ GameObject:
   - component: {fileID: 2572695811676959963}
   - component: {fileID: 180944699819498498}
   - component: {fileID: 6635290161358352011}
+  - component: {fileID: 5165146643548112906}
+  - component: {fileID: 7830675480141631571}
+  - component: {fileID: 6843305875162064001}
   m_Layer: 0
   m_Name: Armor_Pubis_low
   m_TagString: Untagged
@@ -6076,7 +6361,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -1134714066672644336, guid: 2e53580bdafa2644781bb0eeb2e1671b, type: 3}
+  - {fileID: 2100000, guid: ad7a564197ee1f14f98dd9e578155aad, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6098,6 +6383,50 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &5165146643548112906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2144778885030329901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e7c1d80b0b642509bbce2e844957f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isArmorPieceInTheBack: 0
+  armorPieceBreakingSound: {fileID: 0}
+--- !u!54 &7830675480141631571
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2144778885030329901}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &6843305875162064001
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2144778885030329901}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -4411837515797858777, guid: 2e53580bdafa2644781bb0eeb2e1671b, type: 3}
 --- !u!1 &2222620092965303602
 GameObject:
   m_ObjectHideFlags: 0
@@ -7210,6 +7539,9 @@ GameObject:
   - component: {fileID: 327371172951116809}
   - component: {fileID: 2076546393208131115}
   - component: {fileID: 8028866150598715920}
+  - component: {fileID: 1706914901984240369}
+  - component: {fileID: 4470922924994301701}
+  - component: {fileID: 5150242994655889379}
   m_Layer: 0
   m_Name: Armor_Knee_L
   m_TagString: Untagged
@@ -7258,7 +7590,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -1134714066672644336, guid: 2e53580bdafa2644781bb0eeb2e1671b, type: 3}
+  - {fileID: 2100000, guid: ad7a564197ee1f14f98dd9e578155aad, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7280,6 +7612,50 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1706914901984240369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2552762823525860352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e7c1d80b0b642509bbce2e844957f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isArmorPieceInTheBack: 0
+  armorPieceBreakingSound: {fileID: 0}
+--- !u!54 &4470922924994301701
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2552762823525860352}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &5150242994655889379
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2552762823525860352}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -136801599801357234, guid: 2e53580bdafa2644781bb0eeb2e1671b, type: 3}
 --- !u!1 &2563396306916848560
 GameObject:
   m_ObjectHideFlags: 0
@@ -7878,6 +8254,9 @@ GameObject:
   - component: {fileID: 1644859077335056672}
   - component: {fileID: 3854588667437391456}
   - component: {fileID: 7656947879324663953}
+  - component: {fileID: 7660206303262621831}
+  - component: {fileID: 1822289600063996723}
+  - component: {fileID: 2215238834952485724}
   m_Layer: 0
   m_Name: Armor_Bracer_L
   m_TagString: Untagged
@@ -7926,7 +8305,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -1134714066672644336, guid: 2e53580bdafa2644781bb0eeb2e1671b, type: 3}
+  - {fileID: 2100000, guid: ad7a564197ee1f14f98dd9e578155aad, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7948,6 +8327,50 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &7660206303262621831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2918726570287362524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e7c1d80b0b642509bbce2e844957f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isArmorPieceInTheBack: 0
+  armorPieceBreakingSound: {fileID: 0}
+--- !u!54 &1822289600063996723
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2918726570287362524}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &2215238834952485724
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2918726570287362524}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -864092390061217757, guid: 2e53580bdafa2644781bb0eeb2e1671b, type: 3}
 --- !u!1 &2919652148195881348
 GameObject:
   m_ObjectHideFlags: 0
@@ -8397,6 +8820,9 @@ GameObject:
   - component: {fileID: 6530187474275057316}
   - component: {fileID: 485647260141733526}
   - component: {fileID: 1903514591965365986}
+  - component: {fileID: 5683547426353042492}
+  - component: {fileID: 5396211918979526674}
+  - component: {fileID: 3131476537579084895}
   m_Layer: 0
   m_Name: Armor_Head_03_R
   m_TagString: Untagged
@@ -8445,7 +8871,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1792927195518624714, guid: 2e53580bdafa2644781bb0eeb2e1671b, type: 3}
+  - {fileID: 2100000, guid: ad7a564197ee1f14f98dd9e578155aad, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8467,6 +8893,50 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &5683547426353042492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3022087965932667301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e7c1d80b0b642509bbce2e844957f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isArmorPieceInTheBack: 0
+  armorPieceBreakingSound: {fileID: 0}
+--- !u!54 &5396211918979526674
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3022087965932667301}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &3131476537579084895
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3022087965932667301}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2809181404494013785, guid: 2e53580bdafa2644781bb0eeb2e1671b, type: 3}
 --- !u!1 &3041912200911103150
 GameObject:
   m_ObjectHideFlags: 0
@@ -9071,6 +9541,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1981076824807581060}
   - component: {fileID: 2939189753026039171}
+  - component: {fileID: 8024602571792756141}
+  - component: {fileID: 280655941533236057}
+  - component: {fileID: 1834581607496259862}
+  - component: {fileID: 5227258004091606295}
   m_Layer: 0
   m_Name: Basic_Robot
   m_TagString: Untagged
@@ -9091,6 +9565,7 @@ Transform:
   m_Children:
   - {fileID: 5111404997280687816}
   - {fileID: 2744918303649385353}
+  - {fileID: 7326463930904247129}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9104,7 +9579,7 @@ Animator:
   m_GameObject: {fileID: 3253124197613623191}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4b6ef553d19dfec428e4a846385a23e8, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -9113,6 +9588,93 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8024602571792756141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3253124197613623191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16a195e847ef546d28166637d1f9fb7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  armorPieces:
+  - {fileID: 2134539241383883190}
+  - {fileID: 6895231079673436927}
+  - {fileID: 947639605270230415}
+  - {fileID: 7354689983889348941}
+  - {fileID: 7660206303262621831}
+  - {fileID: 8254540782292658550}
+  - {fileID: 8538798022033713343}
+  - {fileID: 181484830148249218}
+  - {fileID: 6363868510232325716}
+  - {fileID: 8757972631793858513}
+  - {fileID: 2787364494911335474}
+  - {fileID: 6851053518755865644}
+  - {fileID: 2987699751036895352}
+  - {fileID: 6189813744555421466}
+  - {fileID: 2659981903422043031}
+  - {fileID: 5683547426353042492}
+  - {fileID: 8538722101400230737}
+  - {fileID: 1706914901984240369}
+  - {fileID: 4753464278268153775}
+  - {fileID: 7563819914176848167}
+  - {fileID: 7284057481960952661}
+  - {fileID: 5165146643548112906}
+  - {fileID: 4711752955376792731}
+  - {fileID: 7203188262737487139}
+  - {fileID: 5699037490289028274}
+  - {fileID: 5116108766254315055}
+  - {fileID: 8888689388563725826}
+  - {fileID: 6041292791181428562}
+  armorHealth: 100
+--- !u!114 &280655941533236057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3253124197613623191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab67ad4b184a48d4098291821b9d1547, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealthPoint: 100
+  impactForceWhenAttackedOnXAxis: 1
+  impactForceWhenAttackedOnYAxis: 1
+  damageMaterial: {fileID: 0}
+--- !u!54 &1834581607496259862
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3253124197613623191}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &5227258004091606295
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3253124197613623191}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3888634, y: 1.0808978, z: 0.330064}
+  m_Center: {x: -0.00131239, y: 0.53668666, z: 0.023542255}
 --- !u!1 &3259178308344474762
 GameObject:
   m_ObjectHideFlags: 0
@@ -10964,6 +11526,9 @@ GameObject:
   - component: {fileID: 3745698376326599132}
   - component: {fileID: 1458656807353331126}
   - component: {fileID: 2212696586592568669}
+  - component: {fileID: 8538798022033713343}
+  - component: {fileID: 8158058692390619046}
+  - component: {fileID: 3714578014614334704}
   m_Layer: 0
   m_Name: Armor_Elbow_L
   m_TagString: Untagged
@@ -11012,7 +11577,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -1134714066672644336, guid: 2e53580bdafa2644781bb0eeb2e1671b, type: 3}
+  - {fileID: 2100000, guid: ad7a564197ee1f14f98dd9e578155aad, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -11034,6 +11599,82 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8538798022033713343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3826920781094687258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e7c1d80b0b642509bbce2e844957f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isArmorPieceInTheBack: 0
+  armorPieceBreakingSound: {fileID: 0}
+--- !u!54 &8158058692390619046
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3826920781094687258}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &3714578014614334704
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3826920781094687258}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4783064063814712820, guid: 2e53580bdafa2644781bb0eeb2e1671b, type: 3}
+--- !u!1 &3829681803380182782
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7326463930904247129}
+  m_Layer: 0
+  m_Name: FX
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7326463930904247129
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3829681803380182782}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 8173507518385765204}
+  - {fileID: 8879241920109968073}
+  m_Father: {fileID: 1981076824807581060}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3877709770403757218
 GameObject:
   m_ObjectHideFlags: 0
@@ -11701,6 +12342,9 @@ GameObject:
   - component: {fileID: 1173206171250950934}
   - component: {fileID: 61180996462867708}
   - component: {fileID: 773799710745374486}
+  - component: {fileID: 2987699751036895352}
+  - component: {fileID: 5931994815467093706}
+  - component: {fileID: 3047019996019335047}
   m_Layer: 0
   m_Name: Armor_Head_02_L
   m_TagString: Untagged
@@ -11749,7 +12393,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1792927195518624714, guid: 2e53580bdafa2644781bb0eeb2e1671b, type: 3}
+  - {fileID: 2100000, guid: ad7a564197ee1f14f98dd9e578155aad, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -11771,6 +12415,50 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &2987699751036895352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4099540165672563290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e7c1d80b0b642509bbce2e844957f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isArmorPieceInTheBack: 0
+  armorPieceBreakingSound: {fileID: 0}
+--- !u!54 &5931994815467093706
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4099540165672563290}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &3047019996019335047
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4099540165672563290}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 5574497842060162112, guid: 2e53580bdafa2644781bb0eeb2e1671b, type: 3}
 --- !u!1 &4105178439525553396
 GameObject:
   m_ObjectHideFlags: 0
@@ -12750,6 +13438,9 @@ GameObject:
   - component: {fileID: 3571850340885329703}
   - component: {fileID: 8706429279695801190}
   - component: {fileID: 1789742518343997092}
+  - component: {fileID: 6041292791181428562}
+  - component: {fileID: 2424266421425139785}
+  - component: {fileID: 6590637029881150862}
   m_Layer: 0
   m_Name: Armor_Trochentor_R
   m_TagString: Untagged
@@ -12798,7 +13489,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -1134714066672644336, guid: 2e53580bdafa2644781bb0eeb2e1671b, type: 3}
+  - {fileID: 2100000, guid: ad7a564197ee1f14f98dd9e578155aad, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -12820,6 +13511,50 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6041292791181428562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4354909306760874330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e7c1d80b0b642509bbce2e844957f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isArmorPieceInTheBack: 0
+  armorPieceBreakingSound: {fileID: 0}
+--- !u!54 &2424266421425139785
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4354909306760874330}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &6590637029881150862
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4354909306760874330}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6985661154900892025, guid: 2e53580bdafa2644781bb0eeb2e1671b, type: 3}
 --- !u!1 &4368977826152105085
 GameObject:
   m_ObjectHideFlags: 0
@@ -14243,6 +14978,9 @@ GameObject:
   - component: {fileID: 3281610596650486540}
   - component: {fileID: 7027889016744785734}
   - component: {fileID: 8386229813072084790}
+  - component: {fileID: 5116108766254315055}
+  - component: {fileID: 481567208224109176}
+  - component: {fileID: 471480308177354419}
   m_Layer: 0
   m_Name: Armor_Tibial_R
   m_TagString: Untagged
@@ -14291,7 +15029,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -1134714066672644336, guid: 2e53580bdafa2644781bb0eeb2e1671b, type: 3}
+  - {fileID: 2100000, guid: ad7a564197ee1f14f98dd9e578155aad, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -14313,6 +15051,50 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &5116108766254315055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4859661596508305670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e7c1d80b0b642509bbce2e844957f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isArmorPieceInTheBack: 0
+  armorPieceBreakingSound: {fileID: 0}
+--- !u!54 &481567208224109176
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4859661596508305670}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &471480308177354419
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4859661596508305670}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 9116136373029043026, guid: 2e53580bdafa2644781bb0eeb2e1671b, type: 3}
 --- !u!1 &4864383527499336708
 GameObject:
   m_ObjectHideFlags: 0
@@ -14386,6 +15168,9 @@ GameObject:
   - component: {fileID: 47488225693679726}
   - component: {fileID: 4594261248014143326}
   - component: {fileID: 5255190641275003123}
+  - component: {fileID: 7203188262737487139}
+  - component: {fileID: 8052047142960872731}
+  - component: {fileID: 2959728409182387201}
   m_Layer: 0
   m_Name: Armor_Shoulder_R
   m_TagString: Untagged
@@ -14434,7 +15219,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -1134714066672644336, guid: 2e53580bdafa2644781bb0eeb2e1671b, type: 3}
+  - {fileID: 2100000, guid: ad7a564197ee1f14f98dd9e578155aad, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -14456,6 +15241,50 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &7203188262737487139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4874326622300750156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e7c1d80b0b642509bbce2e844957f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isArmorPieceInTheBack: 0
+  armorPieceBreakingSound: {fileID: 0}
+--- !u!54 &8052047142960872731
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4874326622300750156}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &2959728409182387201
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4874326622300750156}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 212078215169668406, guid: 2e53580bdafa2644781bb0eeb2e1671b, type: 3}
 --- !u!1 &4894629216585784625
 GameObject:
   m_ObjectHideFlags: 0
@@ -15756,6 +16585,9 @@ GameObject:
   - component: {fileID: 3186846061111414784}
   - component: {fileID: 1409340396030519981}
   - component: {fileID: 131679116025870309}
+  - component: {fileID: 2134539241383883190}
+  - component: {fileID: 2061208662680218180}
+  - component: {fileID: 1042337334188342457}
   m_Layer: 0
   m_Name: Armor_Ankle_L
   m_TagString: Untagged
@@ -15804,7 +16636,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -1134714066672644336, guid: 2e53580bdafa2644781bb0eeb2e1671b, type: 3}
+  - {fileID: 2100000, guid: ad7a564197ee1f14f98dd9e578155aad, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -15826,6 +16658,50 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &2134539241383883190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5363469695405833357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e7c1d80b0b642509bbce2e844957f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isArmorPieceInTheBack: 0
+  armorPieceBreakingSound: {fileID: 0}
+--- !u!54 &2061208662680218180
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5363469695405833357}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &1042337334188342457
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5363469695405833357}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7611424565842580750, guid: 2e53580bdafa2644781bb0eeb2e1671b, type: 3}
 --- !u!1 &5375362698762375578
 GameObject:
   m_ObjectHideFlags: 0
@@ -17840,6 +18716,9 @@ GameObject:
   - component: {fileID: 1413865331613812554}
   - component: {fileID: 6751765288915134550}
   - component: {fileID: 4460918128892088115}
+  - component: {fileID: 7284057481960952661}
+  - component: {fileID: 8459116695183902957}
+  - component: {fileID: 6524084409410975818}
   m_Layer: 0
   m_Name: Armor_Legs_R
   m_TagString: Untagged
@@ -17888,7 +18767,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -1134714066672644336, guid: 2e53580bdafa2644781bb0eeb2e1671b, type: 3}
+  - {fileID: 2100000, guid: ad7a564197ee1f14f98dd9e578155aad, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -17910,6 +18789,50 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &7284057481960952661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6328598171579624120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e7c1d80b0b642509bbce2e844957f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isArmorPieceInTheBack: 0
+  armorPieceBreakingSound: {fileID: 0}
+--- !u!54 &8459116695183902957
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6328598171579624120}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &6524084409410975818
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6328598171579624120}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -6048927884404805559, guid: 2e53580bdafa2644781bb0eeb2e1671b, type: 3}
 --- !u!1 &6349218356947627641
 GameObject:
   m_ObjectHideFlags: 0
@@ -18413,6 +19336,9 @@ GameObject:
   - component: {fileID: 310308999981793646}
   - component: {fileID: 8551321188928289631}
   - component: {fileID: 409144055386699716}
+  - component: {fileID: 6189813744555421466}
+  - component: {fileID: 7373322480607676905}
+  - component: {fileID: 413742530528143745}
   m_Layer: 0
   m_Name: Armor_Head_02_R
   m_TagString: Untagged
@@ -18461,7 +19387,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1792927195518624714, guid: 2e53580bdafa2644781bb0eeb2e1671b, type: 3}
+  - {fileID: 2100000, guid: ad7a564197ee1f14f98dd9e578155aad, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -18483,6 +19409,50 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6189813744555421466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6507259225815147951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e7c1d80b0b642509bbce2e844957f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isArmorPieceInTheBack: 0
+  armorPieceBreakingSound: {fileID: 0}
+--- !u!54 &7373322480607676905
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6507259225815147951}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &413742530528143745
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6507259225815147951}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -665669431028872281, guid: 2e53580bdafa2644781bb0eeb2e1671b, type: 3}
 --- !u!1 &6507985613737821627
 GameObject:
   m_ObjectHideFlags: 0
@@ -18739,6 +19709,9 @@ GameObject:
   - component: {fileID: 4225305068756611682}
   - component: {fileID: 1320423517049087236}
   - component: {fileID: 8995141510026539329}
+  - component: {fileID: 8757972631793858513}
+  - component: {fileID: 3546311159071652706}
+  - component: {fileID: 8723529994303969141}
   m_Layer: 0
   m_Name: Armor_Hat_R
   m_TagString: Untagged
@@ -18787,7 +19760,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -1134714066672644336, guid: 2e53580bdafa2644781bb0eeb2e1671b, type: 3}
+  - {fileID: 2100000, guid: ad7a564197ee1f14f98dd9e578155aad, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -18809,6 +19782,50 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8757972631793858513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6647266308781287522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e7c1d80b0b642509bbce2e844957f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isArmorPieceInTheBack: 0
+  armorPieceBreakingSound: {fileID: 0}
+--- !u!54 &3546311159071652706
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6647266308781287522}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &8723529994303969141
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6647266308781287522}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5245281813712185016, guid: 2e53580bdafa2644781bb0eeb2e1671b, type: 3}
 --- !u!1 &6650146194948683459
 GameObject:
   m_ObjectHideFlags: 0
@@ -18851,6 +19868,9 @@ GameObject:
   - component: {fileID: 2945467865192395843}
   - component: {fileID: 359530426290433097}
   - component: {fileID: 5254051783048838331}
+  - component: {fileID: 6895231079673436927}
+  - component: {fileID: 1013247494427771909}
+  - component: {fileID: 9031953888293534345}
   m_Layer: 0
   m_Name: Armor_Ankle_R
   m_TagString: Untagged
@@ -18899,7 +19919,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -1134714066672644336, guid: 2e53580bdafa2644781bb0eeb2e1671b, type: 3}
+  - {fileID: 2100000, guid: ad7a564197ee1f14f98dd9e578155aad, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -18921,6 +19941,50 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6895231079673436927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6651066359051792972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e7c1d80b0b642509bbce2e844957f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isArmorPieceInTheBack: 0
+  armorPieceBreakingSound: {fileID: 0}
+--- !u!54 &1013247494427771909
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6651066359051792972}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &9031953888293534345
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6651066359051792972}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -6932341124083927715, guid: 2e53580bdafa2644781bb0eeb2e1671b, type: 3}
 --- !u!1 &6671176971759142357
 GameObject:
   m_ObjectHideFlags: 0
@@ -20130,6 +21194,9 @@ GameObject:
   - component: {fileID: 5953630429862476421}
   - component: {fileID: 6489280806031996831}
   - component: {fileID: 1378581612332225132}
+  - component: {fileID: 8888689388563725826}
+  - component: {fileID: 1809809132963540435}
+  - component: {fileID: 3269147752959166654}
   m_Layer: 0
   m_Name: Armor_Trochentor_L
   m_TagString: Untagged
@@ -20178,7 +21245,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -1134714066672644336, guid: 2e53580bdafa2644781bb0eeb2e1671b, type: 3}
+  - {fileID: 2100000, guid: ad7a564197ee1f14f98dd9e578155aad, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -20200,6 +21267,50 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8888689388563725826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7111400906401920560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e7c1d80b0b642509bbce2e844957f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isArmorPieceInTheBack: 0
+  armorPieceBreakingSound: {fileID: 0}
+--- !u!54 &1809809132963540435
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7111400906401920560}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &3269147752959166654
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7111400906401920560}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 624821691061186461, guid: 2e53580bdafa2644781bb0eeb2e1671b, type: 3}
 --- !u!1 &7118849409948194139
 GameObject:
   m_ObjectHideFlags: 0
@@ -20553,6 +21664,9 @@ GameObject:
   - component: {fileID: 5508115145596806895}
   - component: {fileID: 2530766501546514000}
   - component: {fileID: 8635006029404226943}
+  - component: {fileID: 5699037490289028274}
+  - component: {fileID: 8146067456381334653}
+  - component: {fileID: 2838026244516476428}
   m_Layer: 0
   m_Name: Armor_Tibial_L
   m_TagString: Untagged
@@ -20601,7 +21715,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -1134714066672644336, guid: 2e53580bdafa2644781bb0eeb2e1671b, type: 3}
+  - {fileID: 2100000, guid: ad7a564197ee1f14f98dd9e578155aad, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -20623,6 +21737,50 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &5699037490289028274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7289942293840677997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e7c1d80b0b642509bbce2e844957f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isArmorPieceInTheBack: 0
+  armorPieceBreakingSound: {fileID: 0}
+--- !u!54 &8146067456381334653
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7289942293840677997}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &2838026244516476428
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7289942293840677997}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -6213932223377046061, guid: 2e53580bdafa2644781bb0eeb2e1671b, type: 3}
 --- !u!1 &7327720502028430097
 GameObject:
   m_ObjectHideFlags: 0
@@ -20944,6 +22102,9 @@ GameObject:
   - component: {fileID: 9086617081329890826}
   - component: {fileID: 7891428949360222298}
   - component: {fileID: 6010199118974762058}
+  - component: {fileID: 7563819914176848167}
+  - component: {fileID: 2910689445429996815}
+  - component: {fileID: 2897987324347381092}
   m_Layer: 0
   m_Name: Armor_Legs_L
   m_TagString: Untagged
@@ -20992,7 +22153,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -1134714066672644336, guid: 2e53580bdafa2644781bb0eeb2e1671b, type: 3}
+  - {fileID: 2100000, guid: ad7a564197ee1f14f98dd9e578155aad, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -21014,6 +22175,50 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &7563819914176848167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7420000196712118108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e7c1d80b0b642509bbce2e844957f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isArmorPieceInTheBack: 0
+  armorPieceBreakingSound: {fileID: 0}
+--- !u!54 &2910689445429996815
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7420000196712118108}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &2897987324347381092
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7420000196712118108}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7357671937115247783, guid: 2e53580bdafa2644781bb0eeb2e1671b, type: 3}
 --- !u!1 &7444456543636017492
 GameObject:
   m_ObjectHideFlags: 0
@@ -21618,6 +22823,9 @@ GameObject:
   - component: {fileID: 1485415013296748554}
   - component: {fileID: 4362875185780246688}
   - component: {fileID: 2073301976319829231}
+  - component: {fileID: 8538722101400230737}
+  - component: {fileID: 6291457749883196727}
+  - component: {fileID: 4400773498681980143}
   m_Layer: 0
   m_Name: Armor_Hips_low
   m_TagString: Untagged
@@ -21666,7 +22874,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -1134714066672644336, guid: 2e53580bdafa2644781bb0eeb2e1671b, type: 3}
+  - {fileID: 2100000, guid: ad7a564197ee1f14f98dd9e578155aad, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -21688,6 +22896,50 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8538722101400230737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7695051563214651530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e7c1d80b0b642509bbce2e844957f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isArmorPieceInTheBack: 0
+  armorPieceBreakingSound: {fileID: 0}
+--- !u!54 &6291457749883196727
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7695051563214651530}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &4400773498681980143
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7695051563214651530}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -259516030507048015, guid: 2e53580bdafa2644781bb0eeb2e1671b, type: 3}
 --- !u!1 &7702186511525703313
 GameObject:
   m_ObjectHideFlags: 0
@@ -21760,6 +23012,9 @@ GameObject:
   - component: {fileID: 2911247366072925276}
   - component: {fileID: 6505368204321646093}
   - component: {fileID: 4902981581832677822}
+  - component: {fileID: 6851053518755865644}
+  - component: {fileID: 4011309838990219191}
+  - component: {fileID: 1819256235230345221}
   m_Layer: 0
   m_Name: Armor_Head_01_R
   m_TagString: Untagged
@@ -21808,7 +23063,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1792927195518624714, guid: 2e53580bdafa2644781bb0eeb2e1671b, type: 3}
+  - {fileID: 2100000, guid: ad7a564197ee1f14f98dd9e578155aad, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -21830,6 +23085,50 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6851053518755865644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7721615884911724460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e7c1d80b0b642509bbce2e844957f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isArmorPieceInTheBack: 0
+  armorPieceBreakingSound: {fileID: 0}
+--- !u!54 &4011309838990219191
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7721615884911724460}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &1819256235230345221
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7721615884911724460}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4868448612166915252, guid: 2e53580bdafa2644781bb0eeb2e1671b, type: 3}
 --- !u!1 &7738871559067533647
 GameObject:
   m_ObjectHideFlags: 0
@@ -22307,6 +23606,9 @@ GameObject:
   - component: {fileID: 1097267292492708040}
   - component: {fileID: 2117140777441743646}
   - component: {fileID: 2713970429429916558}
+  - component: {fileID: 2659981903422043031}
+  - component: {fileID: 4683322118176350172}
+  - component: {fileID: 6032380902332906798}
   m_Layer: 0
   m_Name: Armor_Head_03_L
   m_TagString: Untagged
@@ -22355,7 +23657,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1792927195518624714, guid: 2e53580bdafa2644781bb0eeb2e1671b, type: 3}
+  - {fileID: 2100000, guid: ad7a564197ee1f14f98dd9e578155aad, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -22377,6 +23679,50 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &2659981903422043031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7896797559662782422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e7c1d80b0b642509bbce2e844957f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isArmorPieceInTheBack: 0
+  armorPieceBreakingSound: {fileID: 0}
+--- !u!54 &4683322118176350172
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7896797559662782422}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &6032380902332906798
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7896797559662782422}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -6071038419111078820, guid: 2e53580bdafa2644781bb0eeb2e1671b, type: 3}
 --- !u!1 &7956379345973603011
 GameObject:
   m_ObjectHideFlags: 0
@@ -22388,6 +23734,9 @@ GameObject:
   - component: {fileID: 4019358341240937927}
   - component: {fileID: 3009261283429080899}
   - component: {fileID: 5266244118767345818}
+  - component: {fileID: 7354689983889348941}
+  - component: {fileID: 5693344357854231374}
+  - component: {fileID: 4121083234183960320}
   m_Layer: 0
   m_Name: Armor_Body_Top_low
   m_TagString: Untagged
@@ -22436,7 +23785,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -1134714066672644336, guid: 2e53580bdafa2644781bb0eeb2e1671b, type: 3}
+  - {fileID: 2100000, guid: ad7a564197ee1f14f98dd9e578155aad, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -22458,6 +23807,50 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &7354689983889348941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7956379345973603011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e7c1d80b0b642509bbce2e844957f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isArmorPieceInTheBack: 0
+  armorPieceBreakingSound: {fileID: 0}
+--- !u!54 &5693344357854231374
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7956379345973603011}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &4121083234183960320
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7956379345973603011}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5679116002901720578, guid: 2e53580bdafa2644781bb0eeb2e1671b, type: 3}
 --- !u!1 &7965538665499091870
 GameObject:
   m_ObjectHideFlags: 0
@@ -23400,6 +24793,9 @@ GameObject:
   - component: {fileID: 3990971378469100427}
   - component: {fileID: 5382028637280086204}
   - component: {fileID: 1309801570186611480}
+  - component: {fileID: 4711752955376792731}
+  - component: {fileID: 1877335790194906488}
+  - component: {fileID: 2972463084532443815}
   m_Layer: 0
   m_Name: Armor_Shoulder_L
   m_TagString: Untagged
@@ -23448,7 +24844,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -1134714066672644336, guid: 2e53580bdafa2644781bb0eeb2e1671b, type: 3}
+  - {fileID: 2100000, guid: ad7a564197ee1f14f98dd9e578155aad, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -23470,6 +24866,50 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &4711752955376792731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8134701344253704215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e7c1d80b0b642509bbce2e844957f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isArmorPieceInTheBack: 0
+  armorPieceBreakingSound: {fileID: 0}
+--- !u!54 &1877335790194906488
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8134701344253704215}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &2972463084532443815
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8134701344253704215}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7229408733649355175, guid: 2e53580bdafa2644781bb0eeb2e1671b, type: 3}
 --- !u!1 &8152831793870119569
 GameObject:
   m_ObjectHideFlags: 0
@@ -26491,3 +27931,268 @@ Transform:
   m_Father: {fileID: 8059143402444237220}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &4621035571162138829
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7326463930904247129}
+    m_Modifications:
+    - target: {fileID: 4258241567715308036, guid: befbdc3b08bc7cf4d9089c5643c2994a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4258241567715308036, guid: befbdc3b08bc7cf4d9089c5643c2994a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.025
+      objectReference: {fileID: 0}
+    - target: {fileID: 4258241567715308036, guid: befbdc3b08bc7cf4d9089c5643c2994a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4258241567715308036, guid: befbdc3b08bc7cf4d9089c5643c2994a,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4258241567715308036, guid: befbdc3b08bc7cf4d9089c5643c2994a,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4258241567715308036, guid: befbdc3b08bc7cf4d9089c5643c2994a,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4258241567715308036, guid: befbdc3b08bc7cf4d9089c5643c2994a,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4258241567715308036, guid: befbdc3b08bc7cf4d9089c5643c2994a,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4258241567715308036, guid: befbdc3b08bc7cf4d9089c5643c2994a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4258241567715308036, guid: befbdc3b08bc7cf4d9089c5643c2994a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4258241567715308036, guid: befbdc3b08bc7cf4d9089c5643c2994a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4258241567715308037, guid: befbdc3b08bc7cf4d9089c5643c2994a,
+        type: 3}
+      propertyPath: m_Name
+      value: FX_BasicRobot_Surprise
+      objectReference: {fileID: 0}
+    - target: {fileID: 4258241568423086280, guid: befbdc3b08bc7cf4d9089c5643c2994a,
+        type: 3}
+      propertyPath: moveWithTransform
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4258241568765688946, guid: befbdc3b08bc7cf4d9089c5643c2994a,
+        type: 3}
+      propertyPath: moveWithTransform
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: befbdc3b08bc7cf4d9089c5643c2994a, type: 3}
+--- !u!4 &8879241920109968073 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4258241567715308036, guid: befbdc3b08bc7cf4d9089c5643c2994a,
+    type: 3}
+  m_PrefabInstance: {fileID: 4621035571162138829}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &5738566284349759274
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7326463930904247129}
+    m_Modifications:
+    - target: {fileID: 4525372610717952390, guid: ae528a31dca863d48a769ad3219f9337,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4525372610717952390, guid: ae528a31dca863d48a769ad3219f9337,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.70710576
+      objectReference: {fileID: 0}
+    - target: {fileID: 4525372610717952390, guid: ae528a31dca863d48a769ad3219f9337,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4525372610717952390, guid: ae528a31dca863d48a769ad3219f9337,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.70710784
+      objectReference: {fileID: 0}
+    - target: {fileID: 4525372610717952390, guid: ae528a31dca863d48a769ad3219f9337,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4525372610717952390, guid: ae528a31dca863d48a769ad3219f9337,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4525372610717952390, guid: ae528a31dca863d48a769ad3219f9337,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4525372610966283390, guid: ae528a31dca863d48a769ad3219f9337,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4525372610966283390, guid: ae528a31dca863d48a769ad3219f9337,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4525372610966283390, guid: ae528a31dca863d48a769ad3219f9337,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4525372610966283390, guid: ae528a31dca863d48a769ad3219f9337,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4525372610966283390, guid: ae528a31dca863d48a769ad3219f9337,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4525372610966283390, guid: ae528a31dca863d48a769ad3219f9337,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4525372610966283390, guid: ae528a31dca863d48a769ad3219f9337,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4525372610966283390, guid: ae528a31dca863d48a769ad3219f9337,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4525372610966283390, guid: ae528a31dca863d48a769ad3219f9337,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4525372610966283390, guid: ae528a31dca863d48a769ad3219f9337,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4525372610966283390, guid: ae528a31dca863d48a769ad3219f9337,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4525372610966283391, guid: ae528a31dca863d48a769ad3219f9337,
+        type: 3}
+      propertyPath: m_Name
+      value: FX_BasicRobot_Attack_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 4525372610988687304, guid: ae528a31dca863d48a769ad3219f9337,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4525372610988687304, guid: ae528a31dca863d48a769ad3219f9337,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.70710576
+      objectReference: {fileID: 0}
+    - target: {fileID: 4525372610988687304, guid: ae528a31dca863d48a769ad3219f9337,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4525372610988687304, guid: ae528a31dca863d48a769ad3219f9337,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.70710784
+      objectReference: {fileID: 0}
+    - target: {fileID: 4525372610988687304, guid: ae528a31dca863d48a769ad3219f9337,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4525372610988687304, guid: ae528a31dca863d48a769ad3219f9337,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4525372610988687304, guid: ae528a31dca863d48a769ad3219f9337,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4525372611494666263, guid: ae528a31dca863d48a769ad3219f9337,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4525372611494666263, guid: ae528a31dca863d48a769ad3219f9337,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.70710576
+      objectReference: {fileID: 0}
+    - target: {fileID: 4525372611494666263, guid: ae528a31dca863d48a769ad3219f9337,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4525372611494666263, guid: ae528a31dca863d48a769ad3219f9337,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.70710784
+      objectReference: {fileID: 0}
+    - target: {fileID: 4525372611494666263, guid: ae528a31dca863d48a769ad3219f9337,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4525372611494666263, guid: ae528a31dca863d48a769ad3219f9337,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4525372611494666263, guid: ae528a31dca863d48a769ad3219f9337,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ae528a31dca863d48a769ad3219f9337, type: 3}
+--- !u!4 &8173507518385765204 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4525372610966283390, guid: ae528a31dca863d48a769ad3219f9337,
+    type: 3}
+  m_PrefabInstance: {fileID: 5738566284349759274}
+  m_PrefabAsset: {fileID: 0}
