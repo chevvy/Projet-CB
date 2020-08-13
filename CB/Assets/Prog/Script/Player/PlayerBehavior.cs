@@ -11,22 +11,30 @@ namespace Prog.Script
         public float fallForce = 18f;
         public float gravity = 20f;
         [FormerlySerializedAs("jumpSpeed")] public float jumpForce = 9f;
+        public float jumpForceResult;
+        public AnimationCurve jumpCurve;
+        public float jumpIndexTimer=1f;
         public float groundDistance = 0.2f;
         [FormerlySerializedAs("Ground")] public LayerMask groundLayerMask; // on vient indiquer ce qu'est le ground
         [SerializeField] private PlayerCombat playerCombat = null;
+        public float attackRotationDelay = 0.5f;
+        public float jumpDelay = 0.1f; 
 
+        private float timerAttackRotation;
         private CharacterController _characterController;
         private Animator _playerAnimator;
         private static readonly int Horizontal = Animator.StringToHash("horizontal");
         private static readonly int Jumping = Animator.StringToHash("jumping");
         private static readonly int Attacking = Animator.StringToHash("attacking");
         private static readonly int Landing = Animator.StringToHash("landing");
+        private static readonly int AttackRotation = Animator.StringToHash("attackRotation");
+        private static readonly int Air = Animator.StringToHash("air");
         private Vector3 _moveDirection = Vector3.zero;
         private bool _isJumping;
         private Transform _groundChecker;
         private bool _isGrounded = true;
         private bool _lastFrameGrounded = true;
-        
+        private bool _isAttackSwitched = false;
         void Start()
         {
             _characterController = GetComponent<CharacterController>();
@@ -41,8 +49,12 @@ namespace Prog.Script
             if (!_isGrounded)
             {
                 CharacterFall();
+                
             }
             MoveCharacter();
+            JumpCurveIndex();
+            timerAttackRotation =+ Time.deltaTime;
+            
         }
 
         private void CheckIfLanded()
@@ -52,10 +64,12 @@ namespace Prog.Script
             if ((!_lastFrameGrounded &&  _isGrounded) || (_lastFrameGrounded && _isGrounded))
             {
                 _playerAnimator.SetBool(Landing, true);
+                _playerAnimator.SetBool(Air, false);
             }
             else
             {
-                 _playerAnimator.SetBool(Landing, false);    
+                 _playerAnimator.SetBool(Landing, false);
+                 _playerAnimator.SetBool(Air, true);
             }
             _lastFrameGrounded = _isGrounded;
         }
@@ -63,6 +77,7 @@ namespace Prog.Script
         private void CharacterFall()
         {
             _moveDirection.y -= fallForce * Time.deltaTime;
+            
         }
     
         private void MoveCharacter()
@@ -98,6 +113,7 @@ namespace Prog.Script
             if (context.performed)
             {
                  Jump();
+                 jumpIndexTimer = 0f;
             }
 
             if (!context.canceled) return;
@@ -105,11 +121,17 @@ namespace Prog.Script
             _isJumping = false;
         }
 
+        private void JumpCurveIndex()
+        {
+            jumpForceResult = jumpForce*jumpCurve.Evaluate(jumpIndexTimer);
+            jumpIndexTimer += Time.deltaTime ;
+        
+        }
         private void Jump()
         {
             if (!_isGrounded || _isJumping) return;
             _playerAnimator.SetBool(Jumping, true);
-            _moveDirection.y = jumpForce;
+            _moveDirection.y = jumpForceResult;
             _moveDirection.y -= gravity * Time.deltaTime;
             _isJumping = true;
         }
@@ -138,7 +160,24 @@ namespace Prog.Script
         private void PerformAttack()
         {
             playerCombat.StartAttackTimer();
+            if (_isAttackSwitched == true)
+            {
+                _playerAnimator.SetBool(AttackRotation, true);
+                _isAttackSwitched = false;
+                
+            }
+            else 
+            {
+                _playerAnimator.SetBool(AttackRotation, false);
+                _isAttackSwitched = true;
+            }
+            
+
             _playerAnimator.SetBool(Attacking, true);
+           
+
+            
+
         }
 
         private void CancelAttack()
