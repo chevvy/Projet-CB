@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1590380909191872992
+--- !u!1 &7362277330271247920
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,48 +8,48 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8089880949156441453}
-  - component: {fileID: 5760684295136778176}
-  - component: {fileID: 6750655265491798664}
-  - component: {fileID: 4747810396798979291}
-  - component: {fileID: 4676449574612522793}
-  - component: {fileID: 5912052099824288212}
+  - component: {fileID: 7757169849340467379}
+  - component: {fileID: 4499572647620840793}
+  - component: {fileID: 3876467061363125743}
+  - component: {fileID: 7765478354867781773}
+  - component: {fileID: 7155529184207225152}
+  - component: {fileID: 1319998444171800918}
   m_Layer: 0
-  m_Name: Armor_Ankle_L
+  m_Name: Armor_Body_Bot_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8089880949156441453
+--- !u!4 &7757169849340467379
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1590380909191872992}
-  m_LocalRotation: {x: 5.551115e-17, y: -8.1929447e-10, z: 5.665114e-10, w: 1}
+  m_GameObject: {fileID: 7362277330271247920}
+  m_LocalRotation: {x: 2.7755576e-17, y: 4.718448e-16, z: -1.3877788e-16, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &5760684295136778176
+--- !u!33 &4499572647620840793
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1590380909191872992}
-  m_Mesh: {fileID: -7611424565842580750, guid: 2e53580bdafa2644781bb0eeb2e1671b, type: 3}
---- !u!23 &6750655265491798664
+  m_GameObject: {fileID: 7362277330271247920}
+  m_Mesh: {fileID: -6869872385980518046, guid: 2e53580bdafa2644781bb0eeb2e1671b, type: 3}
+--- !u!23 &3876467061363125743
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1590380909191872992}
+  m_GameObject: {fileID: 7362277330271247920}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -84,48 +84,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &4747810396798979291
+--- !u!114 &7765478354867781773
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1590380909191872992}
+  m_GameObject: {fileID: 7362277330271247920}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f2e7c1d80b0b642509bbce2e844957f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   sparkSfx: {fileID: 0}
-  isRemovedArmorPiece: 1
+  isRemovedArmorPiece: 0
   armorPiece: {fileID: 0}
---- !u!54 &4676449574612522793
+--- !u!54 &7155529184207225152
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1590380909191872992}
+  m_GameObject: {fileID: 7362277330271247920}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &5912052099824288212
+--- !u!64 &1319998444171800918
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1590380909191872992}
+  m_GameObject: {fileID: 7362277330271247920}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
-  m_Mesh: {fileID: -7611424565842580750, guid: 2e53580bdafa2644781bb0eeb2e1671b, type: 3}
+  m_Mesh: {fileID: -6869872385980518046, guid: 2e53580bdafa2644781bb0eeb2e1671b, type: 3}
