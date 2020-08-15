@@ -9,7 +9,7 @@ namespace Prog.Script.Armor
         private IApplyForce ApplyForce { get; set; }
         public GameObject sparkSfx;
         private AudioClip _armorPieceBreakingSound;
-        public bool isRemovedArmorPiece;
+        private bool _isRemovedArmorPiece;
         public GameObject armorPiece;
 
         private void Awake()
@@ -25,7 +25,7 @@ namespace Prog.Script.Armor
                 Rigidbody = rigidBodyOnObject;
             }
 
-            if (!Rigidbody.isKinematic && !isRemovedArmorPiece)
+            if (!Rigidbody.isKinematic && !_isRemovedArmorPiece)
             {
                 Debug.LogError("The armorPiece '" + name + "' rigidBody must be kinematic");
             }
@@ -41,12 +41,13 @@ namespace Prog.Script.Armor
 
         private void SpawnDestroyedArmorPiece(float xAttackOriginPosition)
         {
-            armorPiece.GetComponent<ArmorPiece>().isRemovedArmorPiece = true; // Va venir empêcher le check-up on awake pour "is kinematic"
+            armorPiece.GetComponent<ArmorPiece>()._isRemovedArmorPiece = true; // Va venir empêcher le check-up on awake pour "is kinematic"
             // Vector3 spawnPosition = transform.TransformVector(Vector3.zero);
             Vector3 spawnPosition = transform.position;
-            Instantiate(armorPiece, spawnPosition, Quaternion.identity);
+            GameObject armorPieceInstance = Instantiate(armorPiece, spawnPosition, Quaternion.identity); 
+            
 
-            Rigidbody armorPieceToSpawnRigidBody = armorPiece.GetComponent<Rigidbody>();
+            Rigidbody armorPieceToSpawnRigidBody = armorPieceInstance.GetComponent<Rigidbody>();
             armorPieceToSpawnRigidBody.isKinematic = false;
             ApplyForce.OnAttack(armorPieceToSpawnRigidBody, null, xAttackOriginPosition, 2, 2);
         }
