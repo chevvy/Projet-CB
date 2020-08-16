@@ -9,6 +9,8 @@ namespace Prog.Script.Armor
         private IApplyForce ApplyForce { get; set; }
         public GameObject sparkSfx;
         private AudioClip _armorPieceBreakingSound;
+        private bool _isRemovedArmorPiece;
+        public GameObject armorPiece;
 
         private void Awake()
         {
@@ -23,7 +25,7 @@ namespace Prog.Script.Armor
                 Rigidbody = rigidBodyOnObject;
             }
 
-            if (!Rigidbody.isKinematic)
+            if (!Rigidbody.isKinematic && !_isRemovedArmorPiece)
             {
                 Debug.LogError("The armorPiece '" + name + "' rigidBody must be kinematic");
             }
@@ -31,15 +33,42 @@ namespace Prog.Script.Armor
 
         public void RemoveArmorPiece(float xAttackOriginPosition)
         {
-            Rigidbody.isKinematic = false;
+            SpawnDestroyedArmorPiece(xAttackOriginPosition);
+            SpawnDestructionFx();
             PlayArmorPieceBreakingSound();
+            DeleteCurrentArmorPiece();
+        }
+
+        private void SpawnDestroyedArmorPiece(float xAttackOriginPosition)
+        {
+            armorPiece.GetComponent<ArmorPiece>()._isRemovedArmorPiece = true; // Va venir empêcher le check-up on awake pour "is kinematic"
+            // Vector3 spawnPosition = transform.TransformVector(Vector3.zero);
+            Vector3 spawnPosition = transform.position;
+            GameObject armorPieceInstance = Instantiate(armorPiece, spawnPosition, Quaternion.identity); 
+            
+
+            Rigidbody armorPieceToSpawnRigidBody = armorPieceInstance.GetComponent<Rigidbody>();
+            armorPieceToSpawnRigidBody.isKinematic = false;
+            ApplyForce.OnAttack(armorPieceToSpawnRigidBody, null, xAttackOriginPosition, 2, 2);
+        }
+
+        private void SpawnDestructionFx()
+        {
             Instantiate(sparkSfx, Rigidbody.transform.position, Quaternion.identity);
-            ApplyForce.OnAttack(Rigidbody, null, xAttackOriginPosition, 5, 5);
         }
 
         private void PlayArmorPieceBreakingSound()
         {
             AudioManager.Instance.PlaySound("armor_piece_breaking", true);
+        }
+
+        /// <summary>
+        /// Fonction qui va venir cleaner et retirer de la mémoire la pièce d'armure
+        /// Pour l'instant, on ne fait que supprimer le mesh renderer
+        /// </summary>
+        private void DeleteCurrentArmorPiece()
+        {
+            Destroy(GetComponent<MeshRenderer>());
         }
     }
 }
