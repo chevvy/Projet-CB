@@ -1,8 +1,12 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using NSubstitute.Exceptions;
 using UnityEngine;
+using UnityEngine.Analytics;
 using UnityEngine.Serialization;
+using Random = System.Random;
 
 namespace Prog.Script.Armor
 {
@@ -24,13 +28,28 @@ namespace Prog.Script.Armor
         public ArmorPiece[] armorPieces;
         public int armorHealth = 100;
         public bool IsArmorBroken() => armorHealth < 1;
+        public int numberOfArmorPiecesToBeRemovedEachHit = 1;
 
         private int _armorPieceToBeRemovedIndex = 0;
 
         private void Awake()
         {
-            if (armorPieces != null) return;
+            if (armorPieces != null)
+            {
+                RandomizeArray();
+                return;
+            }
             armorPieces = new ArmorPiece[]{};
+        }
+
+        private void RandomizeArray()
+        {    
+            var random = new Random();
+            armorPieces = armorPieces.Select(x => new
+            {
+                value = x,
+                order = random.Next()
+            }).OrderBy(x => x.order).Select(x => x.value).ToArray();
         }
 
         /// <summary>
@@ -46,7 +65,27 @@ namespace Prog.Script.Armor
                 armorHealth = 0;
                 return;
             }
+            
+            AdjustNumberOfPiecesToBeRemoved();
 
+            for (int i = 0; i < numberOfArmorPiecesToBeRemovedEachHit; i++)
+            {
+                ApplyDamageToArmorPiece(damage, xAttackOriginPosition);
+            }
+        }
+
+        private void AdjustNumberOfPiecesToBeRemoved()
+        {
+            var indexAtTheEndOfAttack = numberOfArmorPiecesToBeRemovedEachHit + _armorPieceToBeRemovedIndex;
+            
+            if (indexAtTheEndOfAttack <= armorPieces.Length) return; // On check qu'on est pas out of bound de l'array
+            numberOfArmorPiecesToBeRemovedEachHit = armorPieces.Length - _armorPieceToBeRemovedIndex;
+            
+            Debug.Log("Adjusted nb of pieces to be removed " + numberOfArmorPiecesToBeRemovedEachHit);
+        }
+
+        private void ApplyDamageToArmorPiece(int damage, float xAttackOriginPosition)
+        {
             armorPieces[_armorPieceToBeRemovedIndex].RemoveArmorPiece(xAttackOriginPosition);
             _armorPieceToBeRemovedIndex += 1;
             armorHealth -= damage;
