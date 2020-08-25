@@ -8267,7 +8267,7 @@ GameObject:
   - component: {fileID: 5227258004091606295}
   m_Layer: 0
   m_Name: Basic_Robot
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8350,6 +8350,7 @@ MonoBehaviour:
   - {fileID: 8888689388563725826}
   - {fileID: 6041292791181428562}
   armorHealth: 700
+  numberOfArmorPiecesToBeRemovedEachHit: 7
 --- !u!114 &280655941533236057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8363,8 +8364,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealthPoint: 100
-  impactForceWhenAttackedOnXAxis: 1
-  impactForceWhenAttackedOnYAxis: 1
+  impactForceWhenAttackedOnXAxis: 2
+  impactForceWhenAttackedOnYAxis: 2
   damageMaterial: {fileID: 0}
 --- !u!54 &1834581607496259862
 Rigidbody:
@@ -24420,7 +24421,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Armor_Head_03_L
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5933789008304475474, guid: 41abfa0dc4ca6e246a0745040cc3bd70, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 41abfa0dc4ca6e246a0745040cc3bd70, type: 3}
 --- !u!114 &2659981903422043031 stripped
 MonoBehaviour:
@@ -24519,7 +24521,8 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6582002738361175821, guid: c9c22d31df9ce4e06b88f0177356ed42,
         type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 9113062075412394010, guid: c9c22d31df9ce4e06b88f0177356ed42, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c9c22d31df9ce4e06b88f0177356ed42, type: 3}
 --- !u!4 &4225305068756611682 stripped
 Transform:
@@ -24612,7 +24615,8 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7683380228102361145, guid: cd221cd81b2d0fb4ebfdf8c812f1d6c5,
         type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2688161233107087031, guid: cd221cd81b2d0fb4ebfdf8c812f1d6c5, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: cd221cd81b2d0fb4ebfdf8c812f1d6c5, type: 3}
 --- !u!114 &8888689388563725826 stripped
 MonoBehaviour:
@@ -24705,7 +24709,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Armor_Head_02_L
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2809949116374933218, guid: 69f3adc7d9df87246b1e40ca250fd34c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 69f3adc7d9df87246b1e40ca250fd34c, type: 3}
 --- !u!114 &2987699751036895352 stripped
 MonoBehaviour:
@@ -24798,7 +24803,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Armor_Shoulder_L
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4326946757730685166, guid: 60da1a13ffa7d8d409d065fa819c5e70, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 60da1a13ffa7d8d409d065fa819c5e70, type: 3}
 --- !u!114 &4711752955376792731 stripped
 MonoBehaviour:
@@ -24891,7 +24897,8 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6829713810113162096, guid: 7207ed4b226e58f4aaff1701a0e2215d,
         type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3782465084431406653, guid: 7207ed4b226e58f4aaff1701a0e2215d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 7207ed4b226e58f4aaff1701a0e2215d, type: 3}
 --- !u!114 &7203188262737487139 stripped
 MonoBehaviour:
@@ -24990,7 +24997,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Armor_Body_Top_low
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2285312537147613386, guid: 20f61e3ada044408188b41cd5c2eca7f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 20f61e3ada044408188b41cd5c2eca7f, type: 3}
 --- !u!114 &7354689983889348941 stripped
 MonoBehaviour:
@@ -25089,7 +25097,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7696976249696456878, guid: 422e53c2e37244689a9324f6ad94fb4b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 422e53c2e37244689a9324f6ad94fb4b, type: 3}
 --- !u!4 &5776490190963928553 stripped
 Transform:
@@ -25188,7 +25197,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6142288334186373914, guid: 606aadb37c25940b4969b13b8f5647e3, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 606aadb37c25940b4969b13b8f5647e3, type: 3}
 --- !u!4 &5211590231245094648 stripped
 Transform:
@@ -25280,7 +25290,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Armor_Legs_R
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7563355991830174284, guid: 55d36c027a2b46540acb429d04539a05, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 55d36c027a2b46540acb429d04539a05, type: 3}
 --- !u!1 &6328598171579624120 stripped
 GameObject:
@@ -25379,7 +25390,8 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3580908886268602741, guid: 816b88ab2e0932b4e853db3af0143605,
         type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8600206825686873807, guid: 816b88ab2e0932b4e853db3af0143605, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 816b88ab2e0932b4e853db3af0143605, type: 3}
 --- !u!4 &3509724627075806087 stripped
 Transform:
@@ -25472,7 +25484,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Armor_Legs_L
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1587270789732847236, guid: da71ad20266730a4484cddc706b55fd1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: da71ad20266730a4484cddc706b55fd1, type: 3}
 --- !u!4 &9086617081329890826 stripped
 Transform:
@@ -25656,7 +25669,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1722017027522003946, guid: 19f9528ae482149a3a0f902aea5ebeec, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 19f9528ae482149a3a0f902aea5ebeec, type: 3}
 --- !u!114 &181484830148249218 stripped
 MonoBehaviour:
@@ -25749,7 +25763,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Armor_Head_03_R
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7513386913767208559, guid: 2a27c245b4da4bb4ba0b2d500c44f6be, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2a27c245b4da4bb4ba0b2d500c44f6be, type: 3}
 --- !u!4 &6530187474275057316 stripped
 Transform:
@@ -25842,7 +25857,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2124635021228528132, guid: 694036c6741397e48a9b321fac90d264, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 694036c6741397e48a9b321fac90d264, type: 3}
 --- !u!4 &2572695811676959963 stripped
 Transform:
@@ -26115,7 +26131,8 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4869731589023385593, guid: cd8cddf5160214089962f45d9e1610ed,
         type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8228000905798781375, guid: cd8cddf5160214089962f45d9e1610ed, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: cd8cddf5160214089962f45d9e1610ed, type: 3}
 --- !u!114 &2787364494911335474 stripped
 MonoBehaviour:
@@ -26214,7 +26231,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Armor_Elbow_L
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7149787705966401589, guid: 43a5328f8d61f449aa3674ac0a0730b3, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 43a5328f8d61f449aa3674ac0a0730b3, type: 3}
 --- !u!4 &3745698376326599132 stripped
 Transform:
@@ -26313,7 +26331,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Armor_Bracer_L
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5621630128879479621, guid: 5fbf240dc19a2422f8fbef18454f382c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 5fbf240dc19a2422f8fbef18454f382c, type: 3}
 --- !u!4 &1644859077335056672 stripped
 Transform:
@@ -26406,7 +26425,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6728049751193548157, guid: 362ce655956dd204e9febf3c26df169c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 362ce655956dd204e9febf3c26df169c, type: 3}
 --- !u!114 &6189813744555421466 stripped
 MonoBehaviour:
@@ -26443,18 +26463,6 @@ PrefabInstance:
       propertyPath: m_IsKinematic
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4747810396798979291, guid: 938b4857654b844d7846037c9708790a,
-        type: 3}
-      propertyPath: armorPiece
-      value: 
-      objectReference: {fileID: 1590380909191872992, guid: 938b4857654b844d7846037c9708790a,
-        type: 3}
-    - target: {fileID: 4747810396798979291, guid: 938b4857654b844d7846037c9708790a,
-        type: 3}
-      propertyPath: sparkSfx
-      value: 
-      objectReference: {fileID: 604841511640504057, guid: 4ebd12ae021e04143a5982e155905dcb,
-        type: 3}
     - target: {fileID: 8089880949156441453, guid: 938b4857654b844d7846037c9708790a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -26510,7 +26518,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5912052099824288212, guid: 938b4857654b844d7846037c9708790a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 938b4857654b844d7846037c9708790a, type: 3}
 --- !u!114 &2134539241383883190 stripped
 MonoBehaviour:
@@ -26603,7 +26612,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8795438902804624995, guid: 88276a1c4dccf274fa4b4a22a691982c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 88276a1c4dccf274fa4b4a22a691982c, type: 3}
 --- !u!114 &6851053518755865644 stripped
 MonoBehaviour:
@@ -26702,7 +26712,8 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7362277330271247920, guid: 01e8b471869794cefaff01f6e839bafd,
         type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1319998444171800918, guid: 01e8b471869794cefaff01f6e839bafd, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 01e8b471869794cefaff01f6e839bafd, type: 3}
 --- !u!114 &947639605270230415 stripped
 MonoBehaviour:
@@ -26795,7 +26806,8 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 960083103054421448, guid: d158becfde13e6b48a08fafa6002c6c4,
         type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5700224861988874153, guid: d158becfde13e6b48a08fafa6002c6c4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d158becfde13e6b48a08fafa6002c6c4, type: 3}
 --- !u!114 &5699037490289028274 stripped
 MonoBehaviour:
@@ -26888,7 +26900,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5885801161694750853, guid: 15025291da88a9d44ae20d0971cfc594, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 15025291da88a9d44ae20d0971cfc594, type: 3}
 --- !u!4 &1485415013296748554 stripped
 Transform:
@@ -26980,7 +26993,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3961268651443162191, guid: 4f14635fbb7ec974aabca4b61fc0d258, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4f14635fbb7ec974aabca4b61fc0d258, type: 3}
 --- !u!4 &327371172951116809 stripped
 Transform:
@@ -27085,7 +27099,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1149099644022419089, guid: 1b1d469bd8af64e2cad7f41a307f6b2f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b1d469bd8af64e2cad7f41a307f6b2f, type: 3}
 --- !u!4 &2945467865192395843 stripped
 Transform:
@@ -27178,7 +27193,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2785800706909221823, guid: 88dd3d7892101a64889935dab2f1f11f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 88dd3d7892101a64889935dab2f1f11f, type: 3}
 --- !u!114 &6041292791181428562 stripped
 MonoBehaviour:
@@ -27271,7 +27287,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8779441609349610417, guid: 7c2631cc42fa9bb43913643b1c739f1c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 7c2631cc42fa9bb43913643b1c739f1c, type: 3}
 --- !u!114 &5116108766254315055 stripped
 MonoBehaviour:
