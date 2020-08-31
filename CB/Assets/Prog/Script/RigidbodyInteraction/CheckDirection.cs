@@ -4,23 +4,16 @@ namespace Prog.Script.RigidbodyInteraction
 {
     public class CheckDirection
     {
-        private Transform _currentTranform;
-        private Transform _oldTransform;
-
-        public void SetTransform(Transform current, Transform old)
+        public bool IsGoingLeft(Transform current, Transform target)
         {
-            _currentTranform = current;
-            _oldTransform = old;
-        }
-        
-        public bool IsGoingLeft()
-        {
-            return !(_currentTranform.position.x > _oldTransform.position.x);
+            var movementDirection = target.transform.position.x - current.transform.position.x;
+            return (movementDirection < 0);
         }
 
-        public bool IsGoingRight()
+        public bool IsGoingRight(Transform current, Transform target)
         {
-            return (_currentTranform.position.x > _oldTransform.position.x);
+            var movementDirection = target.transform.position.x - current.transform.position.x;
+            return (movementDirection > 0);
         }
     }
 }
