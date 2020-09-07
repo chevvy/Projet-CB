@@ -490,7 +490,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 504042261289053975}
   m_LocalRotation: {x: 0, y: 0, z: 0.026215589, w: 0.9996563}
-  m_LocalPosition: {x: -0.14999999, y: 1.3500312e-15, z: -2.131628e-15}
+  m_LocalPosition: {x: -0.15, y: 0, z: 0.22}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6006752961671415955}
@@ -521,8 +521,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.7894163, y: 0.17351362, z: 0.26919138}
+  m_Center: {x: -0.0617019, y: -0.0363097, z: -0.135612}
 --- !u!1 &579920945941359616
 GameObject:
   m_ObjectHideFlags: 0
@@ -1411,12 +1411,21 @@ MonoBehaviour:
   fallForce: 18
   gravity: 20
   jumpForce: 9
+  jumpForceResult: 0
+  jumpCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  jumpIndexTimer: 1
   groundDistance: 0.2
   groundLayerMask:
     serializedVersion: 2
     m_Bits: 1024
   playerCombat: {fileID: 8951039635178015600}
   attackRotationDelay: 0.5
+  jumpDelay: 0.1
 --- !u!114 &8951039635178015503
 MonoBehaviour:
   m_ObjectHideFlags: 0
