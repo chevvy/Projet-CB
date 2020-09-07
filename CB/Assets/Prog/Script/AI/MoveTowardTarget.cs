@@ -14,29 +14,28 @@ namespace Prog.Script.AI
         private static readonly int MoveLeft = Animator.StringToHash("Walk_L");
         private static readonly int MoveRight = Animator.StringToHash("Walk_R");
         
-        private CheckDirection _direction = new CheckDirection();
-        private Transform _oldTranform;
+        private readonly CheckDirection _direction = new CheckDirection();
 
         public MoveTowardTarget(BasicRobotBehavior robot, NavMeshAgent navMeshAgent, Animator animator)
         {
             _robot = robot;
             _navMeshAgent = navMeshAgent;
             _animator = animator;
-            _oldTranform = _robot.transform;
         }
 
 
-        public void Tick()
-        {
-            
-        }
+        public void Tick() {}
 
         public void OnEnter()
         {
             _navMeshAgent.enabled = true;
             _navMeshAgent.SetDestination(_robot.Target.transform.position);
-            _animator.SetBool(_direction.IsGoingLeft(_robot.transform, _robot.Target.transform) ? 
-                    MoveLeft : MoveRight,true);
+            SetAnimationRelativeToDirection();
+        }
+
+        private void SetAnimationRelativeToDirection()
+        {
+            _animator.SetBool(_direction.IsGoingLeft(_robot.transform, _robot.Target.transform) ? MoveLeft : MoveRight, true);
         }
 
         public void OnExit()
