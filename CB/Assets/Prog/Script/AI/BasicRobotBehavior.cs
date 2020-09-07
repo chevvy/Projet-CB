@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using Prog.Script;
 using Prog.Script.AI;
 using UnityEngine;
@@ -23,21 +21,23 @@ public class BasicRobotBehavior : MonoBehaviour
         
         _stateMachine = new StateMachine();
 
-        var search = new SearchForTarget(this); // State qui cherche le player avec un raycast
-        var moving = new MoveTowardTarget(this, navMeshAgent, animator);
+        var searchForTarget = new SearchForTarget(this); // State qui cherche le player avec un raycast
+        var moveTowardTarget = new MoveTowardTarget(this, navMeshAgent, animator);
+        // idleSearchForTarget
+        
         //var alerted = new AlertedRobot() // State qui vient de détecter le player
         //var moving = new MovingTowardEnemy() // State lorsque l'enemy va vers le player
         //var attacking = new RobotAttacking() // State lorsque le robot attaque le player
         //var attacked = new  RobotGettingAttacked() // State lorsque le robot recoit une attaque
 
-        At(search, moving, HasTarget());
-        At(moving, search, HasReachedDestination());
+        AddTransition(searchForTarget, moveTowardTarget, HasTarget());
+        AddTransition(moveTowardTarget, searchForTarget, HasReachedDestination());
         
         // add anyTransitions pour des escape state
         
-        _stateMachine.SetState(search);
+        _stateMachine.SetState(searchForTarget);
         
-        void At(IState to, IState from, Func<bool> conditon) =>
+        void AddTransition(IState to, IState from, Func<bool> conditon) =>
             _stateMachine.AddTransition(to, from, conditon);
 
         Func<bool> HasTarget() => () => Target != null;
