@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using Prog.Script.RigidbodyInteraction;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.Serialization;
 
 namespace Prog.Script
@@ -8,17 +9,20 @@ namespace Prog.Script
     public class Enemy : MonoBehaviour
     {
         public int maxHealthPoint = 100;
-        [FormerlySerializedAs("impactForceWhenAttacked")] public float impactForceWhenAttackedOnXAxis = 1;
+        public float impactForceWhenAttackedOnXAxis = 1;
         public float impactForceWhenAttackedOnYAxis = 1;
+        public GameObject enemyObjectToBeDisabledOnDeath;
         
         private MeshRenderer _enemyMesh;
         public Material damageMaterial;
         private Material _enemyMaterial;
+        
         private Rigidbody _rigidbody;
         private Armor.Armor _armor;
+        private NavMeshAgent _navMeshAgent;
 
         private EnemyLogic _enemyLogic;
-        private ApplyForce _applyForce = new ApplyForce();
+        private readonly ApplyForce _applyForce = new ApplyForce();
 
         void Awake()
         {
@@ -28,11 +32,10 @@ namespace Prog.Script
                 _enemyMaterial = _enemyMesh.material;
             }
             _rigidbody = GetComponent<Rigidbody>();
-            if (TryGetComponent(out Armor.Armor armorComponent))
-            {
-                _armor = armorComponent;
-            }
+            if (TryGetComponent(out Armor.Armor armorComponent)) { _armor = armorComponent; }
 
+            if (TryGetComponent(out GameObject enemyObject)) { enemyObjectToBeDisabledOnDeath = enemyObject; }
+            
             _enemyLogic = new EnemyLogic
             {
                 CurrentHealth = maxHealthPoint,
@@ -81,7 +84,7 @@ namespace Prog.Script
             _applyForce.OnAttack(_rigidbody, null, xPlayerPosition, impactForceWhenAttackedOnXAxis, impactForceWhenAttackedOnYAxis);
         }
 
-        private void CheckIfDead() // A tester 
+        private void CheckIfDead()
         {
             if (!_enemyLogic.IsDead) return;
             Die();
@@ -90,7 +93,7 @@ namespace Prog.Script
         private void Die() 
         {
             GetComponent<Collider>().enabled = false;
-            this.enabled = false;
+            Destroy(enemyObjectToBeDisabledOnDeath);
         }
     }
 }

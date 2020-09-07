@@ -46,11 +46,7 @@ namespace Prog.Script
         {
             _isGrounded = Physics.CheckSphere(_groundChecker.position, groundDistance, groundLayerMask, QueryTriggerInteraction.Ignore);
             CheckIfLanded();
-            if (!_isGrounded)
-            {
-                CharacterFall();
-                
-            }
+            if (!_isGrounded) { CharacterFall(); }
             MoveCharacter();
             JumpCurveIndex();
             timerAttackRotation =+ Time.deltaTime;
@@ -77,7 +73,6 @@ namespace Prog.Script
         private void CharacterFall()
         {
             _moveDirection.y -= fallForce * Time.deltaTime;
-            
         }
     
         private void MoveCharacter()
