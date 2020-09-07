@@ -10,7 +10,7 @@ public class BasicRobotBehavior : MonoBehaviour
     
     public Target Target { get; set; }
     public Target[] patrolPoints;
-
+    public bool IsSearching = false;
     private void Awake()
     {
         var navMeshAgent = GetComponent<NavMeshAgent>();
@@ -23,7 +23,7 @@ public class BasicRobotBehavior : MonoBehaviour
 
         var searchForTarget = new SearchForTarget(this); // State qui cherche le player avec un raycast
         var moveTowardTarget = new MoveTowardTarget(this, navMeshAgent, animator);
-        // idleSearchForTarget
+        var idleSearch = new IdleSearch(this, animator);
         
         //var alerted = new AlertedRobot() // State qui vient de détecter le player
         //var moving = new MovingTowardEnemy() // State lorsque l'enemy va vers le player
@@ -31,8 +31,9 @@ public class BasicRobotBehavior : MonoBehaviour
         //var attacked = new  RobotGettingAttacked() // State lorsque le robot recoit une attaque
 
         AddTransition(searchForTarget, moveTowardTarget, HasTarget());
-        AddTransition(moveTowardTarget, searchForTarget, HasReachedDestination());
-        
+        AddTransition(moveTowardTarget, idleSearch, HasReachedDestination());
+        AddTransition(idleSearch, searchForTarget, HasFinishedSearching());
+        // AddTransition(moveTowardTarget, searchForTarget, HasReachedDestination());
         // add anyTransitions pour des escape state
         
         _stateMachine.SetState(searchForTarget);
@@ -42,6 +43,7 @@ public class BasicRobotBehavior : MonoBehaviour
 
         Func<bool> HasTarget() => () => Target != null;
         Func<bool> HasReachedDestination() => () => !navMeshAgent.pathPending && navMeshAgent.remainingDistance < 0.5f;
+        Func<bool> HasFinishedSearching() => () => !IsSearching;
     }
     
     private void Update() => _stateMachine.Tick();
