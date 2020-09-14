@@ -48,8 +48,10 @@ namespace Prog.Script
         {
             if (_armor != null)
             {
+                bool isArmorBrokenBeforeAttack = _armor.IsArmorBroken();
                 ApplyDamageToArmor(damage, xPlayerPosition);
-                if (!_armor.IsArmorBroken()) return;
+                // On veut pas qu'il y ait une attaque sur l'ennemi suivant la dernière pièce d'armure détruite
+                if (!_armor.IsArmorBroken() || !isArmorBrokenBeforeAttack && _armor.IsArmorBroken()) return;
             }
             
             _enemyLogic.ApplyDamage(damage);
