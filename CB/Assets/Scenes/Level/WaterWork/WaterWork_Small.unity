@@ -5146,21 +5146,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1492605669770129214, guid: a3476747c54fbfe43a5bf859715997ab,
         type: 3}
-      propertyPath: m_DeviceLostEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1492605669770129214, guid: a3476747c54fbfe43a5bf859715997ab,
-        type: 3}
-      propertyPath: m_DeviceRegainedEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1492605669770129214, guid: a3476747c54fbfe43a5bf859715997ab,
-        type: 3}
-      propertyPath: m_ControlsChangedEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1492605669770129214, guid: a3476747c54fbfe43a5bf859715997ab,
-        type: 3}
       propertyPath: m_DeviceLostEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
       objectReference: {fileID: 0}
@@ -5272,7 +5257,7 @@ PrefabInstance:
     - target: {fileID: 1492605669770129217, guid: a3476747c54fbfe43a5bf859715997ab,
         type: 3}
       propertyPath: enableAttackRate
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1502881810396986470, guid: a3476747c54fbfe43a5bf859715997ab,
         type: 3}
