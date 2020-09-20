@@ -589,7 +589,14 @@ MonoBehaviour:
   patrolPoints:
   - {fileID: 563991930}
   - {fileID: 1080978420}
-  IsSearching: 0
+  groundLayerMask:
+    serializedVersion: 2
+    m_Bits: 256
+  isSearching: 0
+  isGrounded: 0
+  isGettingAttacked: 0
+  groundCheckerRadius: 1
+  playerPosition: 0
 --- !u!1001 &111400449
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8595,7 +8602,14 @@ MonoBehaviour:
   patrolPoints:
   - {fileID: 496093280}
   - {fileID: 1868566539}
-  IsSearching: 0
+  groundLayerMask:
+    serializedVersion: 2
+    m_Bits: 256
+  isSearching: 0
+  isGrounded: 0
+  isGettingAttacked: 0
+  groundCheckerRadius: 1
+  playerPosition: 0
 --- !u!4 &928769263 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2367920670193312708, guid: 8e64c13887da96940a0d4fd041c1ec6d,
@@ -8799,6 +8813,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 604841511640504057, guid: 4ebd12ae021e04143a5982e155905dcb,
         type: 3}
+    - target: {fileID: 280655941533236057, guid: 88103a4ad9701924a814f23b2f46f30f,
+        type: 3}
+      propertyPath: impactForceWhenAttackedOnXAxis
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 280655941533236057, guid: 88103a4ad9701924a814f23b2f46f30f,
+        type: 3}
+      propertyPath: impactForceWhenAttackedOnYAxis
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 947639605270230415, guid: 88103a4ad9701924a814f23b2f46f30f,
         type: 3}
       propertyPath: sparkSfx
@@ -8825,7 +8849,7 @@ PrefabInstance:
     - target: {fileID: 1834581607496259862, guid: 88103a4ad9701924a814f23b2f46f30f,
         type: 3}
       propertyPath: m_IsKinematic
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1981076824807581060, guid: 88103a4ad9701924a814f23b2f46f30f,
         type: 3}
@@ -8914,6 +8938,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 3880316137798803913, guid: 88103a4ad9701924a814f23b2f46f30f,
+        type: 3}
+      propertyPath: m_AutoTraverseOffMeshLink
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4711752955376792731, guid: 88103a4ad9701924a814f23b2f46f30f,
         type: 3}
@@ -9029,6 +9058,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8663649633277862341, guid: 5fbf240dc19a2422f8fbef18454f382c,
         type: 3}
+    - target: {fileID: 8024602571792756141, guid: 88103a4ad9701924a814f23b2f46f30f,
+        type: 3}
+      propertyPath: numberOfArmorPiecesToBeRemovedEachHit
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8254540782292658550, guid: 88103a4ad9701924a814f23b2f46f30f,
         type: 3}
       propertyPath: sparkSfx
@@ -13437,6 +13471,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 861098123}
     m_Modifications:
+    - target: {fileID: 280655941533236057, guid: 88103a4ad9701924a814f23b2f46f30f,
+        type: 3}
+      propertyPath: impactForceWhenAttackedOnXAxis
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 280655941533236057, guid: 88103a4ad9701924a814f23b2f46f30f,
+        type: 3}
+      propertyPath: impactForceWhenAttackedOnYAxis
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1834581607496259862, guid: 88103a4ad9701924a814f23b2f46f30f,
         type: 3}
       propertyPath: m_Constraints
@@ -13445,7 +13489,7 @@ PrefabInstance:
     - target: {fileID: 1834581607496259862, guid: 88103a4ad9701924a814f23b2f46f30f,
         type: 3}
       propertyPath: m_IsKinematic
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1981076824807581060, guid: 88103a4ad9701924a814f23b2f46f30f,
         type: 3}
