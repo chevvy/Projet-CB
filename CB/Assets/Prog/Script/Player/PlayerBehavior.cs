@@ -166,8 +166,9 @@ namespace Prog.Script
 
         private void PerformAttack()
         {
+            AudioManager.Instance.PlaySound("Strike", true);
             playerCombat.StartAttackTimer();
-            if (_isAttackSwitched == true)
+            if (_isAttackSwitched)
             {
                 _playerAnimator.SetBool(AttackRotation, true);
                 _isAttackSwitched = false;
