@@ -276,7 +276,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""name"": """",
                     ""id"": ""fd9ab604-33b3-4963-9368-57f5f1d34fc3"",
                     ""path"": ""<Keyboard>/f"",
-                    ""interactions"": ""Hold(duration=0.1)"",
+                    ""interactions"": ""Hold(duration=0.05)"",
                     ""processors"": """",
                     ""groups"": ""KeyboardMouse"",
                     ""action"": ""ChargeAttack"",

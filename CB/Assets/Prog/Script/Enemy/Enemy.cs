@@ -24,6 +24,8 @@ namespace Prog.Script
         private EnemyLogic _enemyLogic;
         private readonly ApplyForce _applyForce = new ApplyForce();
 
+        public BasicRobotBehavior robotBehavior;
+
         void Awake()
         {
             if (TryGetComponent(out MeshRenderer meshRenderer))
@@ -32,7 +34,14 @@ namespace Prog.Script
                 _enemyMaterial = _enemyMesh.material;
             }
             _rigidbody = GetComponent<Rigidbody>();
+            
             if (TryGetComponent(out Armor.Armor armorComponent)) { _armor = armorComponent; }
+
+            if (TryGetComponent(out BasicRobotBehavior behavior))
+            {
+                robotBehavior = behavior;
+                _navMeshAgent = behavior.GetComponent<NavMeshAgent>();
+            }
 
             if (TryGetComponent(out GameObject enemyObject)) { enemyObjectToBeDisabledOnDeath = enemyObject; }
             
@@ -46,10 +55,14 @@ namespace Prog.Script
 
         public void TakesDamage(int damage, float xPlayerPosition)
         {
+            GoToTakesDamageState(xPlayerPosition);
             if (_armor != null)
             {
+                bool isArmorBrokenBeforeAttack = _armor.IsArmorBroken();
                 ApplyDamageToArmor(damage, xPlayerPosition);
-                if (!_armor.IsArmorBroken()) return;
+                MoveEnemyAfterAttack(xPlayerPosition);
+                // On veut pas qu'il y ait une attaque sur l'ennemi suivant la dernière pièce d'armure détruite
+                if (!_armor.IsArmorBroken() || !isArmorBrokenBeforeAttack && _armor.IsArmorBroken()) return;
             }
             
             _enemyLogic.ApplyDamage(damage);
@@ -59,6 +72,13 @@ namespace Prog.Script
             MoveEnemyAfterAttack(xPlayerPosition);
             
             CheckIfDead();
+        }
+
+        void GoToTakesDamageState(float xPlayerPosition)
+        {
+            robotBehavior.isGettingAttacked = true;
+            _navMeshAgent.enabled = false;
+            robotBehavior.playerPosition = xPlayerPosition;
         }
 
         IEnumerator ApplyDamageMaterial()

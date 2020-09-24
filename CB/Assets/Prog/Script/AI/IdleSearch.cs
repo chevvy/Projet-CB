@@ -22,7 +22,7 @@ namespace Prog.Script.AI
 
         public void OnEnter()
         {
-            _robot.IsSearching = true;
+            _robot.isSearching = true;
             _robot.StartCoroutine(SearchForTarget());
         }
 
@@ -30,20 +30,21 @@ namespace Prog.Script.AI
         {
             SetAnimationRelativeToDirection();
             yield return new WaitForSeconds(2);
-            _robot.IsSearching = false;
+            _robot.isSearching = false;
         }
 
         private void SetAnimationRelativeToDirection()
         {
+            
             _animator.SetBool(
-                _direction.IsGoingLeft(_robot.transform, _robot.Target.transform) ? 
+                _direction.IsGoingLeft(_robot.transform, _robot.playerPosition) ? 
                     IdleLeft : IdleRight, true
             );
         }
 
         public void OnExit()
         {
-            _robot.IsSearching = false;
+            _robot.isSearching = false;
         }
     }
 }
