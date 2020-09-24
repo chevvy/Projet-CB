@@ -78,7 +78,7 @@ namespace Prog.Script
         {
             _playerAnimator.SetBool(Landing, true);
             _playerAnimator.SetBool(Air, false);
-            AudioManager.Instance.PlaySound("Landing_metal", true);
+            if(_moveDirection.y < 0) AudioManager.Instance.PlaySound("Landing_metal", true);
             _moveDirection.y = 0; // comme ça, il n'y a pas de force qui accumulé si on saute pas avant la prochaine chute
         }
     

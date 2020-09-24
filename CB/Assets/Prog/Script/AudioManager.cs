@@ -5,24 +5,32 @@ namespace Prog.Script
     public class AudioManager : MonoBehaviour
     {
         public AudioSource[] audioSources;
-        public AudioSource efxSource;                    //Drag a reference to the audio source which will play the sound effects.
-        public AudioSource musicSource;                    //Drag a reference to the audio source which will play the music.
-        public static AudioManager Instance = null;        //Allows other scripts to call functions from SoundManager.                
-        public float lowPitchRange = .95f;                //The lowest a sound effect will be randomly pitched.
-        public float highPitchRange = 1.05f;            //The highest a sound effect will be randomly pitched.
+        public AudioSource efxSource; //Drag a reference to the audio source which will play the sound effects.
+        public AudioSource musicSource; //Drag a reference to the audio source which will play the music.
 
-        void Awake ()
+        public AudioClips hitSfxClips;
+        public AudioClips walkSfxClips;
+
+        public static AudioManager
+            Instance = null; //Allows other scripts to call functions from SoundManager.                
+
+        public float lowPitchRange = .95f; //The lowest a sound effect will be randomly pitched.
+        public float highPitchRange = 1.05f; //The highest a sound effect will be randomly pitched.
+
+        void Awake()
         {
             //Check if there is already an instance of SoundManager
             if (Instance == null)
             {
                 Instance = this;
-            } else if (Instance != this)
-            {
-                Destroy (gameObject);
             }
+            else if (Instance != this)
+            {
+                Destroy(gameObject);
+            }
+
             //Set SoundManager to DontDestroyOnLoad so that it won't be destroyed when reloading our scene.
-            DontDestroyOnLoad (gameObject);
+            DontDestroyOnLoad(gameObject);
         }
 
         public void PlaySound(string clipName, bool randomizePitch = false)
@@ -34,6 +42,7 @@ namespace Prog.Script
                 {
                     audioSource.pitch = GetRandomPitch();
                 }
+
                 audioSource.Play();
             }
         }
@@ -51,9 +60,19 @@ namespace Prog.Script
             efxSource.Play();
         }
 
+        public void PlayHitSfx()
+        {
+            RandomizeSfx(hitSfxClips.audioClips, hitSfxClips.audioSource);
+        }
+
+        public void WalkSfxClips()
+        {
+            RandomizeSfx(walkSfxClips.audioClips, walkSfxClips.audioSource);
+        }
+
 
         //RandomizeSfx chooses randomly between various audio clips and slightly changes their pitch.
-        public void RandomizeSfx (params AudioClip[] clips)
+        public void RandomizeSfx (AudioClip[] clips, AudioSource audioSource)
         {
             //Generate a random number between 0 and the length of our array of clips passed in.
             int randomIndex = Random.Range(0, clips.Length);
@@ -62,13 +81,13 @@ namespace Prog.Script
             float randomPitch = Random.Range(lowPitchRange, highPitchRange);
 
             //Set the pitch of the audio source to the randomly chosen pitch.
-            efxSource.pitch = randomPitch;
+            audioSource.pitch = randomPitch;
 
             //Set the clip to the clip at our randomly chosen index.
-            efxSource.clip = clips[randomIndex];
+            audioSource.clip = clips[randomIndex];
 
             //Play the clip.
-            efxSource.Play();
+            audioSource.Play();
         }
     }
 }
