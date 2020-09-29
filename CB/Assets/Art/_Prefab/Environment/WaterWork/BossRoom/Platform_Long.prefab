@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2817309633042109101}
   - component: {fileID: 7869313842675609740}
   - component: {fileID: 4708859181741157460}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Long_Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 726327070979619506}
   - component: {fileID: 3243342783268288819}
   - component: {fileID: 9144276502280906472}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Long_Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -187,7 +187,7 @@ GameObject:
   - component: {fileID: 9202190783263702539}
   - component: {fileID: 2144768364191542315}
   - component: {fileID: 3791456934688288282}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Long_Beam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -268,7 +268,7 @@ GameObject:
   - component: {fileID: 7525504841753561067}
   - component: {fileID: 7501736344286018420}
   - component: {fileID: 1440955072207430588}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Long_FullSupport
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -349,7 +349,7 @@ GameObject:
   - component: {fileID: 5650495218419243358}
   - component: {fileID: 3362776566151176943}
   - component: {fileID: 6758503960870808260}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Long_RailV
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -430,7 +430,7 @@ GameObject:
   - component: {fileID: 4758022341578982707}
   - component: {fileID: 2846955174131237523}
   - component: {fileID: 8470251849537598608}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Long_Holder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -509,7 +509,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2434898263036956125}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -543,7 +543,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2625025059849712872}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Platform_Long
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -578,7 +578,7 @@ GameObject:
   - component: {fileID: 8909252376274226876}
   - component: {fileID: 996715953898880943}
   - component: {fileID: 7265755336323807687}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Long_RailH
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -657,7 +657,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2695440307090581098}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RailGuard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -691,7 +691,7 @@ GameObject:
   - component: {fileID: 2966733989929721154}
   - component: {fileID: 3335657310759847803}
   - component: {fileID: 1966501415801958183}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Long_FullGuard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -770,7 +770,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5149963741752897815}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FullGuard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
