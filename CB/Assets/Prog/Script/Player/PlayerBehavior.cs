@@ -180,17 +180,17 @@ namespace Prog.Script
                 _isAttackSwitched = true;
             }
             
-
             _playerAnimator.SetBool(Attacking, true);
-           
-
-            
-
         }
 
         private void CancelAttack()
         {
             _playerAnimator.SetBool(Attacking, false);
+        }
+
+        public void PlayStepSound() // Call par l'event d'animation 
+        {
+            AudioManager.Instance.PlayWalkSfxClips();
         }
     }
 }

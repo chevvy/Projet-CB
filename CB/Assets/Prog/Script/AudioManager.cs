@@ -65,9 +65,10 @@ namespace Prog.Script
             RandomizeSfx(hitSfxClips.audioClips, hitSfxClips.audioSource);
         }
 
-        public void WalkSfxClips()
+        public void PlayWalkSfxClips()
         {
-            RandomizeSfx(walkSfxClips.audioClips, walkSfxClips.audioSource);
+            // RandomizeSfx(walkSfxClips.audioClips, walkSfxClips.audioSource);
+            PlayRandomSfx(walkSfxClips.audioClips, walkSfxClips.audioSource);
         }
 
 
@@ -84,6 +85,16 @@ namespace Prog.Script
             audioSource.pitch = randomPitch;
 
             //Set the clip to the clip at our randomly chosen index.
+            audioSource.clip = clips[randomIndex];
+
+            //Play the clip.
+            audioSource.Play();
+        }
+
+        public void PlayRandomSfx(AudioClip[] clips, AudioSource audioSource)
+        {
+            //Generate a random number between 0 and the length of our array of clips passed in.
+            int randomIndex = Random.Range(0, clips.Length);
             audioSource.clip = clips[randomIndex];
 
             //Play the clip.
