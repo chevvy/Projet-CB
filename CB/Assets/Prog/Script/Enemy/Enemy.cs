@@ -26,6 +26,8 @@ namespace Prog.Script
 
         public BasicRobotBehavior robotBehavior;
 
+        public AudioClips hitClips;
+        
         void Awake()
         {
             if (TryGetComponent(out MeshRenderer meshRenderer))
@@ -66,7 +68,7 @@ namespace Prog.Script
             }
             
             _enemyLogic.ApplyDamage(damage);
-            AudioManager.Instance.PlaySound("melee_weapon_impact", true);
+            AudioManager.Instance.PlayHitSfx();
             if(_enemyMesh != null) StartCoroutine(ApplyDamageMaterial());
 
             MoveEnemyAfterAttack(xPlayerPosition);
@@ -114,6 +116,7 @@ namespace Prog.Script
         {
             GetComponent<Collider>().enabled = false;
             Destroy(enemyObjectToBeDisabledOnDeath);
+            AudioManager.Instance.PlaySound("EnemyDestroyed", true);
         }
     }
 }

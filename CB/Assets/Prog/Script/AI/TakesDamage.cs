@@ -38,7 +38,6 @@ namespace Prog.Script.AI
         public void OnEnter()
         {
             _navMeshAgent.enabled = false;
-            Debug.Log("navmesh disabled" + _robot.isGrounded);
             _robot.StartCoroutine(WaitBeforeCheckingForGround());
             _robot.isGettingAttacked = false;
             SetAnimationRelativeToDirection();
@@ -60,7 +59,6 @@ namespace Prog.Script.AI
 
         public void OnExit()
         {
-            Debug.unityLogger.Log("EXITED takes damage state");
             _robot.isGrounded = false;
             _robot.isGettingAttacked = false;
             _isCheckingForGround = false;
