@@ -57,7 +57,11 @@ namespace Prog.Script
         {
             // check if lastFrameGrounded est pas null 
             // si !lastFrameGrounded et currentFrameGrounded -> on start l'anim de landing
-            if ((!_lastFrameGrounded &&  _isGrounded) || (_lastFrameGrounded && _isGrounded))
+            if ((!_lastFrameGrounded &&  _isGrounded))
+            {
+                OnLanding();
+            } 
+            else if((!_lastFrameGrounded &&  _isGrounded)|| (_lastFrameGrounded && _isGrounded))
             {
                 _playerAnimator.SetBool(Landing, true);
                 _playerAnimator.SetBool(Air, false);
@@ -68,6 +72,14 @@ namespace Prog.Script
                  _playerAnimator.SetBool(Air, true);
             }
             _lastFrameGrounded = _isGrounded;
+        }
+
+        private void OnLanding()
+        {
+            _playerAnimator.SetBool(Landing, true);
+            _playerAnimator.SetBool(Air, false);
+            if(_moveDirection.y < 0) AudioManager.Instance.PlaySound("Landing_metal", true);
+            _moveDirection.y = 0; // comme ça, il n'y a pas de force qui accumulé si on saute pas avant la prochaine chute
         }
     
         private void CharacterFall()
@@ -154,8 +166,9 @@ namespace Prog.Script
 
         private void PerformAttack()
         {
+            AudioManager.Instance.PlaySound("Strike", true);
             playerCombat.StartAttackTimer();
-            if (_isAttackSwitched == true)
+            if (_isAttackSwitched)
             {
                 _playerAnimator.SetBool(AttackRotation, true);
                 _isAttackSwitched = false;
@@ -167,17 +180,17 @@ namespace Prog.Script
                 _isAttackSwitched = true;
             }
             
-
             _playerAnimator.SetBool(Attacking, true);
-           
-
-            
-
         }
 
         private void CancelAttack()
         {
             _playerAnimator.SetBool(Attacking, false);
+        }
+
+        public void PlayStepSound() // Call par l'event d'animation 
+        {
+            AudioManager.Instance.PlayWalkSfxClips();
         }
     }
 }

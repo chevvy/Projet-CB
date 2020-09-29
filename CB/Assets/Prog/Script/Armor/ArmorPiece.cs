@@ -59,7 +59,8 @@ namespace Prog.Script.Armor
 
         private void PlayArmorPieceBreakingSound()
         {
-            AudioManager.Instance.PlaySound("armor_piece_breaking", true);
+            // AudioManager.Instance.PlaySound("armor_piece_breaking", true);
+            AudioManager.Instance.PlayHitSfx();
         }
 
         /// <summary>
