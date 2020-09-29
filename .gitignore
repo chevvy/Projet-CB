@@ -75,3 +75,7 @@ CB/.idea/
 # OS generated
 
 [Dd]esktop.ini
+
+
+# Large files
+/[Aa]ssets/Audio/SFX/WaterStream.WAV
