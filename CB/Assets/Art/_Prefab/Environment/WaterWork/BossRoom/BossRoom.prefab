@@ -4203,7 +4203,7 @@ GameObject:
   - component: {fileID: 6419992861784667154}
   - component: {fileID: 158087505578554699}
   - component: {fileID: 4018976742540424067}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BR_FloorSquare (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5018,7 +5018,7 @@ GameObject:
   - component: {fileID: 4809626310028436315}
   - component: {fileID: 7308579079842330519}
   - component: {fileID: 1226275174226473383}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BR_FloorSquare
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4596818117512368384}
   - component: {fileID: 3780275421587039357}
   - component: {fileID: 3070918015927643478}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Shirt_RailH
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 8851516303513730067}
   - component: {fileID: 7456818501612675725}
   - component: {fileID: 204078793035492786}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Short_Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -173,7 +173,7 @@ GameObject:
   - component: {fileID: 5737157069216850131}
   - component: {fileID: 1249957573591992155}
   - component: {fileID: 3337340925479165017}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Shirt_RailV
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -254,7 +254,7 @@ GameObject:
   - component: {fileID: 6444865457221190216}
   - component: {fileID: 6822030382992678006}
   - component: {fileID: 5761693354084239567}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Short_FullGuard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -335,7 +335,7 @@ GameObject:
   - component: {fileID: 2710330903777835728}
   - component: {fileID: 4252395390432087709}
   - component: {fileID: 1591798979348519826}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Short_FullSupport
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -416,7 +416,7 @@ GameObject:
   - component: {fileID: 4470332678289882412}
   - component: {fileID: 389143547848163382}
   - component: {fileID: 4383374351353727293}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Short_Beam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -497,7 +497,7 @@ GameObject:
   - component: {fileID: 7894612898839791778}
   - component: {fileID: 4372222512846653860}
   - component: {fileID: 4726229058317200071}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Short_Holder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -576,7 +576,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4660794894039468911}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RailGuard 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -608,7 +608,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4043244580607977873}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FullGuard 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -640,7 +640,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6735395323922339548}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Floor 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -677,7 +677,7 @@ GameObject:
   - component: {fileID: 4995712161835630425}
   - component: {fileID: 6645621810707305745}
   - component: {fileID: 8148917073924807186}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Short_Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -769,7 +769,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8400211608142336008}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Platform_Short
   m_TagString: Untagged
   m_Icon: {fileID: 0}

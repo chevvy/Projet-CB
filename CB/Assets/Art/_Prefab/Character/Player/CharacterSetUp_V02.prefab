@@ -310,6 +310,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4171893879039171121, guid: d5d0873889d227d489ad5e60dd590865,
+        type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4171893880503877890, guid: d5d0873889d227d489ad5e60dd590865,
+        type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4171893880521668099, guid: d5d0873889d227d489ad5e60dd590865,
+        type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8345018216329509963, guid: d5d0873889d227d489ad5e60dd590865,
+        type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8345018216906209977, guid: d5d0873889d227d489ad5e60dd590865,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8345018217809651576, guid: d5d0873889d227d489ad5e60dd590865,
+        type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8345018217825357945, guid: d5d0873889d227d489ad5e60dd590865,
+        type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.9
+      objectReference: {fileID: 0}
     - target: {fileID: 8951039635178015503, guid: d5d0873889d227d489ad5e60dd590865,
         type: 3}
       propertyPath: m_Camera
