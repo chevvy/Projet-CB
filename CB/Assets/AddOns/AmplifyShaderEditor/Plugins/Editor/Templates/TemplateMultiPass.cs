@@ -381,14 +381,44 @@ namespace AmplifyShaderEditor
 					m_templateIdManager.SetReplacementText( prefix + m_subShaders[ subShaderId ].Modules.BlendData.BlendModeId, text );
 				}
 				break;
+				case TemplateModuleDataType.ModuleBlendMode1:
+				{
+					m_templateIdManager.SetReplacementText( prefix + m_subShaders[ subShaderId ].Modules.BlendData1.BlendModeId, text );
+				}
+				break;
+				case TemplateModuleDataType.ModuleBlendMode2:
+				{
+					m_templateIdManager.SetReplacementText( prefix + m_subShaders[ subShaderId ].Modules.BlendData2.BlendModeId, text );
+				}
+				break;
+				case TemplateModuleDataType.ModuleBlendMode3:
+				{
+					m_templateIdManager.SetReplacementText( prefix + m_subShaders[ subShaderId ].Modules.BlendData3.BlendModeId, text );
+				}
+				break;
 				case TemplateModuleDataType.ModuleBlendOp:
 				{
 					m_templateIdManager.SetReplacementText( prefix + m_subShaders[ subShaderId ].Modules.BlendData.BlendOpId, text );
 				}
 				break;
+				case TemplateModuleDataType.ModuleBlendOp1:
+				{
+					m_templateIdManager.SetReplacementText( prefix + m_subShaders[ subShaderId ].Modules.BlendData1.BlendOpId, text );
+				}
+				break;
+				case TemplateModuleDataType.ModuleBlendOp2:
+				{
+					m_templateIdManager.SetReplacementText( prefix + m_subShaders[ subShaderId ].Modules.BlendData2.BlendOpId, text );
+				}
+				break;
+				case TemplateModuleDataType.ModuleBlendOp3:
+				{
+					m_templateIdManager.SetReplacementText( prefix + m_subShaders[ subShaderId ].Modules.BlendData3.BlendOpId, text );
+				}
+				break;
 				case TemplateModuleDataType.ModuleAlphaToMask:
 				{
-					m_templateIdManager.SetReplacementText( prefix + m_subShaders[ subShaderId ].Modules.BlendData.AlphaToMaskId, text );
+					m_templateIdManager.SetReplacementText( prefix + m_subShaders[ subShaderId ].Modules.AlphaToMaskData.AlphaToMaskId, text );
 				}
 				break;
 				case TemplateModuleDataType.ModuleCullMode:
@@ -399,6 +429,21 @@ namespace AmplifyShaderEditor
 				case TemplateModuleDataType.ModuleColorMask:
 				{
 					m_templateIdManager.SetReplacementText( prefix + m_subShaders[ subShaderId ].Modules.ColorMaskData.ColorMaskId, text );
+				}
+				break;
+				case TemplateModuleDataType.ModuleColorMask1:
+				{
+					m_templateIdManager.SetReplacementText( prefix + m_subShaders[ subShaderId ].Modules.ColorMaskData1.ColorMaskId, text );
+				}
+				break;
+				case TemplateModuleDataType.ModuleColorMask2:
+				{
+					m_templateIdManager.SetReplacementText( prefix + m_subShaders[ subShaderId ].Modules.ColorMaskData2.ColorMaskId, text );
+				}
+				break;
+				case TemplateModuleDataType.ModuleColorMask3:
+				{
+					m_templateIdManager.SetReplacementText( prefix + m_subShaders[ subShaderId ].Modules.ColorMaskData3.ColorMaskId, text );
 				}
 				break;
 				case TemplateModuleDataType.ModuleStencil:
@@ -500,15 +545,45 @@ namespace AmplifyShaderEditor
 					prefix = addPrefix ? m_subShaders[ subShaderId ].Modules.UniquePrefix : string.Empty;
 					return prefix + m_subShaders[ subShaderId ].Modules.BlendData.BlendModeId;
 				}
+				case TemplateModuleDataType.ModuleBlendMode1:
+				{
+					prefix = addPrefix ? m_subShaders[ subShaderId ].Modules.UniquePrefix : string.Empty;
+					return prefix + m_subShaders[ subShaderId ].Modules.BlendData1.BlendModeId;
+				}
+				case TemplateModuleDataType.ModuleBlendMode2:
+				{
+					prefix = addPrefix ? m_subShaders[ subShaderId ].Modules.UniquePrefix : string.Empty;
+					return prefix + m_subShaders[ subShaderId ].Modules.BlendData2.BlendModeId;
+				}
+				case TemplateModuleDataType.ModuleBlendMode3:
+				{
+					prefix = addPrefix ? m_subShaders[ subShaderId ].Modules.UniquePrefix : string.Empty;
+					return prefix + m_subShaders[ subShaderId ].Modules.BlendData3.BlendModeId;
+				}
 				case TemplateModuleDataType.ModuleBlendOp:
 				{
 					prefix = addPrefix ? m_subShaders[ subShaderId ].Modules.UniquePrefix : string.Empty;
 					return prefix + m_subShaders[ subShaderId ].Modules.BlendData.BlendOpId;
 				}
+				case TemplateModuleDataType.ModuleBlendOp1:
+				{
+					prefix = addPrefix ? m_subShaders[ subShaderId ].Modules.UniquePrefix : string.Empty;
+					return prefix + m_subShaders[ subShaderId ].Modules.BlendData1.BlendOpId;
+				}
+				case TemplateModuleDataType.ModuleBlendOp2:
+				{
+					prefix = addPrefix ? m_subShaders[ subShaderId ].Modules.UniquePrefix : string.Empty;
+					return prefix + m_subShaders[ subShaderId ].Modules.BlendData2.BlendOpId;
+				}
+				case TemplateModuleDataType.ModuleBlendOp3:
+				{
+					prefix = addPrefix ? m_subShaders[ subShaderId ].Modules.UniquePrefix : string.Empty;
+					return prefix + m_subShaders[ subShaderId ].Modules.BlendData3.BlendOpId;
+				}
 				case TemplateModuleDataType.ModuleAlphaToMask:
 				{
 					prefix = addPrefix ? m_subShaders[ subShaderId ].Modules.UniquePrefix : string.Empty;
-					return prefix + m_subShaders[ subShaderId ].Modules.BlendData.AlphaToMaskId;
+					return prefix + m_subShaders[ subShaderId ].Modules.AlphaToMaskData.AlphaToMaskId;
 				}
 				case TemplateModuleDataType.ModuleCullMode:
 				{
@@ -519,6 +594,21 @@ namespace AmplifyShaderEditor
 				{
 					prefix = addPrefix ? m_subShaders[ subShaderId ].Modules.UniquePrefix : string.Empty;
 					return prefix + m_subShaders[ subShaderId ].Modules.ColorMaskData.ColorMaskId;
+				}
+				case TemplateModuleDataType.ModuleColorMask1:
+				{
+					prefix = addPrefix ? m_subShaders[ subShaderId ].Modules.UniquePrefix : string.Empty;
+					return prefix + m_subShaders[ subShaderId ].Modules.ColorMaskData1.ColorMaskId;
+				}
+				case TemplateModuleDataType.ModuleColorMask2:
+				{
+					prefix = addPrefix ? m_subShaders[ subShaderId ].Modules.UniquePrefix : string.Empty;
+					return prefix + m_subShaders[ subShaderId ].Modules.ColorMaskData2.ColorMaskId;
+				}
+				case TemplateModuleDataType.ModuleColorMask3:
+				{
+					prefix = addPrefix ? m_subShaders[ subShaderId ].Modules.UniquePrefix : string.Empty;
+					return prefix + m_subShaders[ subShaderId ].Modules.ColorMaskData3.ColorMaskId;
 				}
 				case TemplateModuleDataType.ModuleStencil:
 				{
@@ -607,15 +697,45 @@ namespace AmplifyShaderEditor
 					prefix = addPrefix ? m_subShaders[ subShaderId ].Passes[ passId ].Modules.UniquePrefix : string.Empty;
 					return prefix + m_subShaders[ subShaderId ].Passes[ passId ].Modules.BlendData.BlendModeId;
 				}
+				case TemplateModuleDataType.ModuleBlendMode1:
+				{
+					prefix = addPrefix ? m_subShaders[ subShaderId ].Passes[ passId ].Modules.UniquePrefix : string.Empty;
+					return prefix + m_subShaders[ subShaderId ].Passes[ passId ].Modules.BlendData1.BlendModeId;
+				}
+				case TemplateModuleDataType.ModuleBlendMode2:
+				{
+					prefix = addPrefix ? m_subShaders[ subShaderId ].Passes[ passId ].Modules.UniquePrefix : string.Empty;
+					return prefix + m_subShaders[ subShaderId ].Passes[ passId ].Modules.BlendData2.BlendModeId;
+				}
+				case TemplateModuleDataType.ModuleBlendMode3:
+				{
+					prefix = addPrefix ? m_subShaders[ subShaderId ].Passes[ passId ].Modules.UniquePrefix : string.Empty;
+					return prefix + m_subShaders[ subShaderId ].Passes[ passId ].Modules.BlendData3.BlendModeId;
+				}
 				case TemplateModuleDataType.ModuleBlendOp:
 				{
 					prefix = addPrefix ? m_subShaders[ subShaderId ].Passes[ passId ].Modules.UniquePrefix : string.Empty;
 					return prefix + m_subShaders[ subShaderId ].Passes[ passId ].Modules.BlendData.BlendOpId;
 				}
+				case TemplateModuleDataType.ModuleBlendOp1:
+				{
+					prefix = addPrefix ? m_subShaders[ subShaderId ].Passes[ passId ].Modules.UniquePrefix : string.Empty;
+					return prefix + m_subShaders[ subShaderId ].Passes[ passId ].Modules.BlendData1.BlendOpId;
+				}
+				case TemplateModuleDataType.ModuleBlendOp2:
+				{
+					prefix = addPrefix ? m_subShaders[ subShaderId ].Passes[ passId ].Modules.UniquePrefix : string.Empty;
+					return prefix + m_subShaders[ subShaderId ].Passes[ passId ].Modules.BlendData2.BlendOpId;
+				}
+				case TemplateModuleDataType.ModuleBlendOp3:
+				{
+					prefix = addPrefix ? m_subShaders[ subShaderId ].Passes[ passId ].Modules.UniquePrefix : string.Empty;
+					return prefix + m_subShaders[ subShaderId ].Passes[ passId ].Modules.BlendData3.BlendOpId;
+				}
 				case TemplateModuleDataType.ModuleAlphaToMask:
 				{
 					prefix = addPrefix ? m_subShaders[ subShaderId ].Passes[ passId ].Modules.UniquePrefix : string.Empty;
-					return prefix + m_subShaders[ subShaderId ].Passes[ passId ].Modules.BlendData.AlphaToMaskId;
+					return prefix + m_subShaders[ subShaderId ].Passes[ passId ].Modules.AlphaToMaskData.AlphaToMaskId;
 				}
 				case TemplateModuleDataType.ModuleCullMode:
 				{
@@ -626,6 +746,21 @@ namespace AmplifyShaderEditor
 				{
 					prefix = addPrefix ? m_subShaders[ subShaderId ].Passes[ passId ].Modules.UniquePrefix : string.Empty;
 					return prefix + m_subShaders[ subShaderId ].Passes[ passId ].Modules.ColorMaskData.ColorMaskId;
+				}
+				case TemplateModuleDataType.ModuleColorMask1:
+				{
+					prefix = addPrefix ? m_subShaders[ subShaderId ].Passes[ passId ].Modules.UniquePrefix : string.Empty;
+					return prefix + m_subShaders[ subShaderId ].Passes[ passId ].Modules.ColorMaskData1.ColorMaskId;
+				}
+				case TemplateModuleDataType.ModuleColorMask2:
+				{
+					prefix = addPrefix ? m_subShaders[ subShaderId ].Passes[ passId ].Modules.UniquePrefix : string.Empty;
+					return prefix + m_subShaders[ subShaderId ].Passes[ passId ].Modules.ColorMaskData2.ColorMaskId;
+				}
+				case TemplateModuleDataType.ModuleColorMask3:
+				{
+					prefix = addPrefix ? m_subShaders[ subShaderId ].Passes[ passId ].Modules.UniquePrefix : string.Empty;
+					return prefix + m_subShaders[ subShaderId ].Passes[ passId ].Modules.ColorMaskData3.ColorMaskId;
 				}
 				case TemplateModuleDataType.ModuleStencil:
 				{
@@ -712,6 +847,21 @@ namespace AmplifyShaderEditor
 					prefix = addPrefix ? m_subShaders[ subShaderId ].Passes[ passId ].UniquePrefix : string.Empty;
 					return prefix + m_subShaders[ subShaderId ].Passes[ passId ].InterpolatorDataContainer.InterpDataId;
 				}
+				case TemplateModuleDataType.VControl:
+				{
+					prefix = addPrefix ? m_subShaders[ subShaderId ].Passes[ passId ].UniquePrefix : string.Empty;
+					return prefix + m_subShaders[ subShaderId ].Passes[ passId ].TessVControlTag.Id;
+				}
+				case TemplateModuleDataType.ControlData:
+				{
+					prefix = addPrefix ? m_subShaders[ subShaderId ].Passes[ passId ].UniquePrefix : string.Empty;
+					return prefix + m_subShaders[ subShaderId ].Passes[ passId ].TessControlData.Id;
+				}
+				case TemplateModuleDataType.DomainData:
+				{
+					prefix = addPrefix ? m_subShaders[ subShaderId ].Passes[ passId ].UniquePrefix : string.Empty;
+					return prefix + m_subShaders[ subShaderId ].Passes[ passId ].TessDomainData.Id;
+				}
 			}
 			return string.Empty;
 		}
@@ -770,16 +920,52 @@ namespace AmplifyShaderEditor
 					m_templateIdManager.SetReplacementText( prefix + m_subShaders[ subShaderId ].Passes[ passId ].Modules.BlendData.BlendModeId, text );
 				}
 				break;
+				case TemplateModuleDataType.ModuleBlendMode1:
+				{
+					prefix = m_subShaders[ subShaderId ].Passes[ passId ].Modules.UniquePrefix;
+					m_templateIdManager.SetReplacementText( prefix + m_subShaders[ subShaderId ].Passes[ passId ].Modules.BlendData1.BlendModeId, text );
+				}
+				break;
+				case TemplateModuleDataType.ModuleBlendMode2:
+				{
+					prefix = m_subShaders[ subShaderId ].Passes[ passId ].Modules.UniquePrefix;
+					m_templateIdManager.SetReplacementText( prefix + m_subShaders[ subShaderId ].Passes[ passId ].Modules.BlendData2.BlendModeId, text );
+				}
+				break;
+				case TemplateModuleDataType.ModuleBlendMode3:
+				{
+					prefix = m_subShaders[ subShaderId ].Passes[ passId ].Modules.UniquePrefix;
+					m_templateIdManager.SetReplacementText( prefix + m_subShaders[ subShaderId ].Passes[ passId ].Modules.BlendData3.BlendModeId, text );
+				}
+				break;
 				case TemplateModuleDataType.ModuleBlendOp:
 				{
 					prefix = m_subShaders[ subShaderId ].Passes[ passId ].Modules.UniquePrefix;
 					m_templateIdManager.SetReplacementText( prefix + m_subShaders[ subShaderId ].Passes[ passId ].Modules.BlendData.BlendOpId, text );
 				}
 				break;
+				case TemplateModuleDataType.ModuleBlendOp1:
+				{
+					prefix = m_subShaders[ subShaderId ].Passes[ passId ].Modules.UniquePrefix;
+					m_templateIdManager.SetReplacementText( prefix + m_subShaders[ subShaderId ].Passes[ passId ].Modules.BlendData1.BlendOpId, text );
+				}
+				break;
+				case TemplateModuleDataType.ModuleBlendOp2:
+				{
+					prefix = m_subShaders[ subShaderId ].Passes[ passId ].Modules.UniquePrefix;
+					m_templateIdManager.SetReplacementText( prefix + m_subShaders[ subShaderId ].Passes[ passId ].Modules.BlendData2.BlendOpId, text );
+				}
+				break;
+				case TemplateModuleDataType.ModuleBlendOp3:
+				{
+					prefix = m_subShaders[ subShaderId ].Passes[ passId ].Modules.UniquePrefix;
+					m_templateIdManager.SetReplacementText( prefix + m_subShaders[ subShaderId ].Passes[ passId ].Modules.BlendData3.BlendOpId, text );
+				}
+				break;
 				case TemplateModuleDataType.ModuleAlphaToMask:
 				{
 					prefix = m_subShaders[ subShaderId ].Passes[ passId ].Modules.UniquePrefix;
-					m_templateIdManager.SetReplacementText( prefix + m_subShaders[ subShaderId ].Passes[ passId ].Modules.BlendData.AlphaToMaskId, text );
+					m_templateIdManager.SetReplacementText( prefix + m_subShaders[ subShaderId ].Passes[ passId ].Modules.AlphaToMaskData.AlphaToMaskId, text );
 				}
 				break;
 				case TemplateModuleDataType.ModuleCullMode:
@@ -792,6 +978,24 @@ namespace AmplifyShaderEditor
 				{
 					prefix = m_subShaders[ subShaderId ].Passes[ passId ].Modules.UniquePrefix;
 					m_templateIdManager.SetReplacementText( prefix + m_subShaders[ subShaderId ].Passes[ passId ].Modules.ColorMaskData.ColorMaskId, text );
+				}
+				break;
+				case TemplateModuleDataType.ModuleColorMask1:
+				{
+					prefix = m_subShaders[ subShaderId ].Passes[ passId ].Modules.UniquePrefix;
+					m_templateIdManager.SetReplacementText( prefix + m_subShaders[ subShaderId ].Passes[ passId ].Modules.ColorMaskData1.ColorMaskId, text );
+				}
+				break;
+				case TemplateModuleDataType.ModuleColorMask2:
+				{
+					prefix = m_subShaders[ subShaderId ].Passes[ passId ].Modules.UniquePrefix;
+					m_templateIdManager.SetReplacementText( prefix + m_subShaders[ subShaderId ].Passes[ passId ].Modules.ColorMaskData2.ColorMaskId, text );
+				}
+				break;
+				case TemplateModuleDataType.ModuleColorMask3:
+				{
+					prefix = m_subShaders[ subShaderId ].Passes[ passId ].Modules.UniquePrefix;
+					m_templateIdManager.SetReplacementText( prefix + m_subShaders[ subShaderId ].Passes[ passId ].Modules.ColorMaskData3.ColorMaskId, text );
 				}
 				break;
 				case TemplateModuleDataType.ModuleStencil:
@@ -900,6 +1104,24 @@ namespace AmplifyShaderEditor
 				{
 					prefix = m_subShaders[ subShaderId ].Passes[ passId ].UniquePrefix;
 					m_templateIdManager.SetReplacementText( prefix + m_subShaders[ subShaderId ].Passes[ passId ].PassNameContainer.Id, text );
+				}
+				break;
+				case TemplateModuleDataType.VControl:
+				{
+					prefix = m_subShaders[ subShaderId ].Passes[ passId ].UniquePrefix;
+					m_templateIdManager.SetReplacementText( prefix + m_subShaders[ subShaderId ].Passes[ passId ].TessVControlTag.Id, text );
+				}
+				break;
+				case TemplateModuleDataType.ControlData:
+				{
+					prefix = m_subShaders[ subShaderId ].Passes[ passId ].UniquePrefix;
+					m_templateIdManager.SetReplacementText( prefix + m_subShaders[ subShaderId ].Passes[ passId ].TessControlData.Id, text );
+				}
+				break;
+				case TemplateModuleDataType.DomainData:
+				{
+					prefix = m_subShaders[ subShaderId ].Passes[ passId ].UniquePrefix;
+					m_templateIdManager.SetReplacementText( prefix + m_subShaders[ subShaderId ].Passes[ passId ].TessDomainData.Id, text );
 				}
 				break;
 			}

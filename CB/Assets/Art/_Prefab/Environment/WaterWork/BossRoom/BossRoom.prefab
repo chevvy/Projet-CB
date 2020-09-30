@@ -4203,6 +4203,7 @@ GameObject:
   - component: {fileID: 6419992861784667154}
   - component: {fileID: 158087505578554699}
   - component: {fileID: 4018976742540424067}
+  - component: {fileID: 4151829902989778904}
   m_Layer: 8
   m_Name: BR_FloorSquare (1)
   m_TagString: Untagged
@@ -4273,6 +4274,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &4151829902989778904
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7621498302077149061}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5, y: 0, z: 13.924145}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7728284869899852836
 GameObject:
   m_ObjectHideFlags: 0

@@ -308,6 +308,16 @@ namespace AmplifyShaderEditor
 						PreviewMaterial.SetTexture( SamplerCubePropertyId, value );
 					}
 					break;
+					case WirePortDataType.SAMPLER2DARRAY:
+					{
+						Texture value = currMat.GetTexture( m_propertyNameId );
+						if( value )
+							SetAdditonalTitleText( string.Format( Constants.SubTitleValueFormatStr, value.name ) );
+						else
+							SetAdditonalTitleText( string.Empty );
+						PreviewMaterial.SetTexture( SamplerCubePropertyId, value );
+					}
+					break;
 				}
 			}
 			else
@@ -423,6 +433,7 @@ namespace AmplifyShaderEditor
 					case WirePortDataType.SAMPLER2D:
 					case WirePortDataType.SAMPLER3D:
 					case WirePortDataType.SAMPLERCUBE:
+					case WirePortDataType.SAMPLER2DARRAY:
 					m_outputPorts[ 0 ].ChangeProperties( "Tex", m_shaderProperties[ m_currentPropertyIdx ].PropertyDataType, false );
 					m_headerColor = UIUtils.GetColorFromCategory( "Textures" );
 					break;
