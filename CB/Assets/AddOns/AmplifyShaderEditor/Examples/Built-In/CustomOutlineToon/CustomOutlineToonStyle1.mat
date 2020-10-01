@@ -1,0 +1,81 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: CustomOutlineToonStyle1
+  m_Shader: {fileID: 4800000, guid: 8b2f353da1dd05244a7bee1562a2306a, type: 3}
+  m_ShaderKeywords: _KEYWORD0_ON _STATICHIGHLIGHTS_ON
+  m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BaseColor:
+        m_Texture: {fileID: 2800000, guid: b20d2974a8b655d43bf94dca50a48814, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BaseColorRGBOutlineWidthA:
+        m_Texture: {fileID: 2800000, guid: b2d65324b0fd0f84a8224f6598e08384, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Highlight:
+        m_Texture: {fileID: 2800000, guid: e2d18501c95c6ef468d83bec7254783a, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NormalMap:
+        m_Texture: {fileID: 2800000, guid: 1cdebfd4e41d386428f34136311aeee3, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Specular:
+        m_Texture: {fileID: 2800000, guid: d0e02d16b9b1ab349a4dc2481cc01d37, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _texcoord:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _BaseCellOffset: -0.482
+    - _BaseCellSharpness: 0.143
+    - _BaseCellshadeOffset: 0
+    - _BaseCellshadeSharpness: 0.01
+    - _DiffuseCellshadeOffset: 0
+    - _DiffuseCellshadeSharpness: 0.01
+    - _Float0: 1
+    - _HighlightCellOffset: -0.827
+    - _HighlightCellSharpness: 0.377
+    - _IndirectContribution: 0.762
+    - _IndirectDiffuseContribution: 0.473
+    - _IndirectSpecularContribution: 0.546
+    - _Keyword0: 1
+    - _NormalScale: 1
+    - _OutlineWidth: 0.005
+    - _RimOff: 0.6
+    - _RimOffset: 0.557
+    - _RimPower: 0.571
+    - _ShadowContribution: 0.758
+    - _SpecularOffset: -0.95
+    - _SpecularSharpness: 0.01
+    - _StaticHighLights: 1
+    - _TessMax: 25
+    - _TessMin: 10
+    - _TessPhongStrength: 0.459
+    - _TessValue: 2.9
+    - __dirty: 0
+    m_Colors:
+    - _BaseTint: {r: 1, g: 1, b: 1, a: 1}
+    - _HighlightTint: {r: 1, g: 1, b: 1, a: 1}
+    - _OutlineTint: {r: 0.5754717, g: 0.5754717, b: 0.5754717, a: 0}
+    - _RimColor: {r: 1.292, g: 1.9380004, b: 2.584, a: 1}
+    - _SpecularTint: {r: 1, g: 1, b: 1, a: 1}
+    - _TintBaseColor: {r: 1, g: 1, b: 1, a: 0}
+  m_BuildTextureStacks: []

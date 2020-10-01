@@ -71,6 +71,10 @@ namespace AmplifyShaderEditor
 			Dictionary<string, TemplateShaderPropertyData> ownDuplicatesDict = new Dictionary<string, TemplateShaderPropertyData>( duplicatesHelper );
 
 			TemplateHelperFunctions.CreateShaderGlobalsList( subShaderInfo.Modules, ref m_availableShaderGlobals, ref ownDuplicatesDict );
+			if( m_modules.SRPType == TemplateSRPType.BuiltIn )
+			{
+				TemplateHelperFunctions.CheckUnityBuiltinGlobalMacros( subShaderInfo.Modules, ref m_availableShaderGlobals, ref ownDuplicatesDict );
+			}
 
 			m_passAmount = subShaderInfo.Passes.Count;
 			
