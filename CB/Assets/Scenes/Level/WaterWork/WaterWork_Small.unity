@@ -734,7 +734,7 @@ MonoBehaviour:
   isSearching: 0
   isGrounded: 0
   isGettingAttacked: 0
-  groundCheckerRadius: 1
+  groundCheckerRadius: 0.2
   playerPosition: 0
 --- !u!1001 &111400449
 PrefabInstance:
@@ -6416,6 +6416,11 @@ PrefabInstance:
       propertyPath: jumpCurve.m_Curve.Array.data[3].value
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1492605669770129215, guid: a3476747c54fbfe43a5bf859715997ab,
+        type: 3}
+      propertyPath: groundDistance
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 1492605669770129217, guid: a3476747c54fbfe43a5bf859715997ab,
         type: 3}
       propertyPath: enableAttackRate
@@ -9990,7 +9995,7 @@ MonoBehaviour:
   isSearching: 0
   isGrounded: 0
   isGettingAttacked: 0
-  groundCheckerRadius: 1
+  groundCheckerRadius: 0.2
   playerPosition: 0
 --- !u!4 &928769263 stripped
 Transform:
