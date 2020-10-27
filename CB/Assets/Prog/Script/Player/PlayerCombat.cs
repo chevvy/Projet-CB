@@ -1,20 +1,19 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Prog.Script
 {
     public class PlayerCombat : MonoBehaviour
     {
-        /*public Transform attackPoint;*/
         public int dps = 5;
         public float attackDuration = 0.5f;
-        public AudioClip attackImpactSound;
         public float attackRate = 2f;
         public bool enableAttackRate = true;
         
         private float _nextAttackTime = 0f;
         private bool _isAttacking = false;
+
+        public WeaponImpactDetector WeaponImpactDetector;
 
         public void Attack(Enemy enemy)
         {
@@ -28,7 +27,7 @@ namespace Prog.Script
             SetNextAttackTime();
             
             // On vient attacké l'ennemi qui est reçu par la méthode attack (component enemi) 
-            AttackEnemy(enemy);
+            ApplyAttackToEnemy(enemy);
         }
         
         private bool CheckIfWeCanAttack()
@@ -54,9 +53,18 @@ namespace Prog.Script
             _isAttacking = false;
         }
 
-        private void AttackEnemy(Enemy enemy)
+        private void ApplyAttackToEnemy(Enemy enemy)
         {
             enemy.TakesDamage(dps, transform.position.x); // on passe le position du player en x
+        }
+        
+        /// <summary>
+        /// Vérifie avec le WeaponImpactDetector (assigné) si on a des ennemis
+        /// Si on a des ennemis, on les attaque.
+        /// </summary>
+        public void CheckForEnemies()
+        {
+            WeaponImpactDetector.CheckForEnemies();
         }
     }
 }

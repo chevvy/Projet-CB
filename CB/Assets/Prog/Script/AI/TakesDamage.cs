@@ -3,6 +3,7 @@ using System.Collections;
 using Prog.Script.RigidbodyInteraction;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Rendering;
 
 namespace Prog.Script.AI
 {
@@ -31,7 +32,6 @@ namespace Prog.Script.AI
             
             _robot.isGrounded = Physics.CheckSphere(_robot.transform.position, _robot.groundCheckerRadius, _robot.groundLayerMask,
                 QueryTriggerInteraction.Ignore);
-
             if (_robot.isGrounded) _robot.isGettingAttacked = false;
         }
 

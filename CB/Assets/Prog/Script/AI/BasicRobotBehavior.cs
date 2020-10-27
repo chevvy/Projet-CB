@@ -54,4 +54,9 @@ public class BasicRobotBehavior : MonoBehaviour
     }
     
     private void Update() => _stateMachine.Tick();
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawSphere(transform.position, groundCheckerRadius);
+    }
 }

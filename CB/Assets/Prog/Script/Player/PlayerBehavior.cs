@@ -53,6 +53,11 @@ namespace Prog.Script
             
         }
 
+        // private void OnDrawGizmos()
+        // {
+        //     Gizmos.DrawSphere(_groundChecker.position, groundDistance); 
+        // }
+
         private void CheckIfLanded()
         {
             // check if lastFrameGrounded est pas null 
