@@ -28,6 +28,10 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - _AlphaCutoff: 0.5
+    - _BaseColor: 1
+    - _Metallic: 0
+    - _Smoothnes: 0
     - __dirty: 0
     m_Colors:
     - _Base_Water: {r: 0.2754015, g: 0.3301887, b: 0.2227216, a: 0}
@@ -35,6 +39,7 @@ Material:
     - _Base_Water2: {r: 0.2754015, g: 0.3301887, b: 0.2227216, a: 0}
     - _Color0: {r: 0.5301709, g: 0.6981132, b: 0.6330701, a: 0}
     - _Color1: {r: 0.2754015, g: 0.3301887, b: 0.2227216, a: 0}
+    - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
     - _Water_Tip: {r: 0.5301709, g: 0.6981132, b: 0.6330701, a: 0}
     - _Water_Tip1: {r: 0.5301709, g: 0.6981132, b: 0.6330701, a: 0}
     - _Water_Tip2: {r: 0.5301709, g: 0.6981132, b: 0.6330701, a: 0}

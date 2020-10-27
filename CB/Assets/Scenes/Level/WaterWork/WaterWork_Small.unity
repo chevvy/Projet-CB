@@ -10248,6 +10248,11 @@ PrefabInstance:
       propertyPath: m_IsKinematic
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1834581607496259862, guid: 88103a4ad9701924a814f23b2f46f30f,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1981076824807581060, guid: 88103a4ad9701924a814f23b2f46f30f,
         type: 3}
       propertyPath: m_LocalPosition.x

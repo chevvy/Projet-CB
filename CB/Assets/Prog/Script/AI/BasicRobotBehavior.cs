@@ -16,11 +16,14 @@ public class BasicRobotBehavior : MonoBehaviour
     public bool isGettingAttacked;
     public float groundCheckerRadius = 1f;
     public float playerPosition;
+    
     private void Awake()
     {
         var navMeshAgent = GetComponent<NavMeshAgent>();
         navMeshAgent.autoBraking = false;
-        
+
+        var rigidbody = GetComponent<Rigidbody>();
+
         var animator = GetComponent<Animator>();
         var enemyDetector = gameObject.AddComponent<EnemyDetector>();
         
@@ -29,7 +32,7 @@ public class BasicRobotBehavior : MonoBehaviour
         var searchForTarget = new SearchForTarget(this); // State qui cherche le player avec un raycast
         var moveTowardTarget = new MoveTowardTarget(this, navMeshAgent, animator);
         var idleSearch = new IdleSearch(this, animator);
-        var takesDamage = new TakesDamage(this, animator, navMeshAgent);
+        var takesDamage = new TakesDamage(this, animator, navMeshAgent, rigidbody);
 
         AddTransition(idleSearch, searchForTarget, HasFinishedSearching());
         AddTransition(searchForTarget, moveTowardTarget, HasTarget());
