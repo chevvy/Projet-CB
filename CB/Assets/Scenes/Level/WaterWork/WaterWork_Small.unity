@@ -736,6 +736,10 @@ MonoBehaviour:
   isGettingAttacked: 0
   groundCheckerRadius: 0.2
   playerPosition: 0
+  playerDetected: 0
+  isInAttackState: 0
+  isMovingTowardEnemy: 0
+  playerTransform: {fileID: 0}
 --- !u!1001 &111400449
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2460,10 +2464,40 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 202231404}
     m_Modifications:
+    - target: {fileID: 593797219840439654, guid: d3c065760f660054a82f08cad99edbd7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1327531022250120601, guid: d3c065760f660054a82f08cad99edbd7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4368321376076948415, guid: d3c065760f660054a82f08cad99edbd7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 6709847339524348029, guid: d3c065760f660054a82f08cad99edbd7,
         type: 3}
       propertyPath: m_Name
       value: Door (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6709847339524348029, guid: d3c065760f660054a82f08cad99edbd7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7217421115754555156, guid: d3c065760f660054a82f08cad99edbd7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7362204972373295732, guid: d3c065760f660054a82f08cad99edbd7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 7614782126985619284, guid: d3c065760f660054a82f08cad99edbd7,
         type: 3}
@@ -2519,6 +2553,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7799374054904182033, guid: d3c065760f660054a82f08cad99edbd7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 8580506568727120349, guid: d3c065760f660054a82f08cad99edbd7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 9091281571660526000, guid: d3c065760f660054a82f08cad99edbd7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d3c065760f660054a82f08cad99edbd7, type: 3}
@@ -10002,6 +10051,10 @@ MonoBehaviour:
   isGettingAttacked: 0
   groundCheckerRadius: 0.2
   playerPosition: 0
+  playerDetected: 0
+  isInAttackState: 0
+  isMovingTowardEnemy: 0
+  playerTransform: {fileID: 0}
 --- !u!4 &928769263 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2367920670193312708, guid: 8e64c13887da96940a0d4fd041c1ec6d,
@@ -12894,10 +12947,40 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 202231404}
     m_Modifications:
+    - target: {fileID: 593797219840439654, guid: d3c065760f660054a82f08cad99edbd7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1327531022250120601, guid: d3c065760f660054a82f08cad99edbd7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4368321376076948415, guid: d3c065760f660054a82f08cad99edbd7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 6709847339524348029, guid: d3c065760f660054a82f08cad99edbd7,
         type: 3}
       propertyPath: m_Name
       value: Door (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6709847339524348029, guid: d3c065760f660054a82f08cad99edbd7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7217421115754555156, guid: d3c065760f660054a82f08cad99edbd7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7362204972373295732, guid: d3c065760f660054a82f08cad99edbd7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 7614782126985619284, guid: d3c065760f660054a82f08cad99edbd7,
         type: 3}
@@ -12907,7 +12990,7 @@ PrefabInstance:
     - target: {fileID: 7614782126985619284, guid: d3c065760f660054a82f08cad99edbd7,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -14.270237
+      value: -12.058
       objectReference: {fileID: 0}
     - target: {fileID: 7614782126985619284, guid: d3c065760f660054a82f08cad99edbd7,
         type: 3}
@@ -12953,6 +13036,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7799374054904182033, guid: d3c065760f660054a82f08cad99edbd7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 8580506568727120349, guid: d3c065760f660054a82f08cad99edbd7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 9091281571660526000, guid: d3c065760f660054a82f08cad99edbd7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d3c065760f660054a82f08cad99edbd7, type: 3}
