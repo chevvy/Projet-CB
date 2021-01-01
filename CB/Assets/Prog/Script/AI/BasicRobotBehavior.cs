@@ -12,9 +12,10 @@ public class BasicRobotBehavior : MonoBehaviour
     public Target[] patrolPoints;
     public LayerMask groundLayerMask;
     public bool isSearching = false;
-    public bool isGrounded;
+    public bool isGrounded = true;
     public bool isGettingAttacked;
     public float groundCheckerRadius = 1f;
+    public float groundDistance = 2f;
     public float playerPosition;
     private void Awake()
     {
@@ -52,8 +53,12 @@ public class BasicRobotBehavior : MonoBehaviour
         Func<bool> HasTakenDamage() => () => isGettingAttacked;
         Func<bool> HasLanded() => () => isGrounded;
     }
-    
-    private void Update() => _stateMachine.Tick();
+
+    private void Update()
+    {
+        _stateMachine.Tick();  
+        isGrounded = Physics.CheckSphere(transform.position, groundDistance, groundLayerMask, QueryTriggerInteraction.Ignore);
+    } 
 
     private void OnDrawGizmos()
     {
