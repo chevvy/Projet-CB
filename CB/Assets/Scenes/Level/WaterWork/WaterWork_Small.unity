@@ -8190,12 +8190,12 @@ PrefabInstance:
     - target: {fileID: 7794426035504719089, guid: a3476747c54fbfe43a5bf859715997ab,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.084
       objectReference: {fileID: 0}
     - target: {fileID: 7794426035504719089, guid: a3476747c54fbfe43a5bf859715997ab,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.218
+      value: 4.214
       objectReference: {fileID: 0}
     - target: {fileID: 7794426035504719089, guid: a3476747c54fbfe43a5bf859715997ab,
         type: 3}
@@ -10465,7 +10465,7 @@ PrefabInstance:
     - target: {fileID: 8024602571792756141, guid: 88103a4ad9701924a814f23b2f46f30f,
         type: 3}
       propertyPath: numberOfArmorPiecesToBeRemovedEachHit
-      value: 1
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8254540782292658550, guid: 88103a4ad9701924a814f23b2f46f30f,
         type: 3}
@@ -15512,6 +15512,11 @@ PrefabInstance:
       propertyPath: m_Height
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8024602571792756141, guid: 88103a4ad9701924a814f23b2f46f30f,
+        type: 3}
+      propertyPath: numberOfArmorPiecesToBeRemovedEachHit
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88103a4ad9701924a814f23b2f46f30f, type: 3}
 --- !u!1001 &1743374802
@@ -18000,7 +18005,7 @@ PrefabInstance:
     - target: {fileID: 7225472278907657828, guid: 8b50d0ba2f619dc4ebb693abb18bab65,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 119
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7908039396445889273, guid: 8b50d0ba2f619dc4ebb693abb18bab65,
         type: 3}
