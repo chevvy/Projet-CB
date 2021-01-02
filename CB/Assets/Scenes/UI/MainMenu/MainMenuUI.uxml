@@ -1,0 +1,5 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="Text">
+        <ui:Label text="get fuckd&#10;" display-tooltip-when-elided="true" name="Label" style="color: rgb(204, 26, 26); font-size: 50px;" />
+    </ui:VisualElement>
+</ui:UXML>

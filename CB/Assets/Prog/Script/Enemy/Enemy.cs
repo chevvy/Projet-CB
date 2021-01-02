@@ -27,7 +27,9 @@ namespace Prog.Script
         public BasicRobotBehavior robotBehavior;
 
         public AudioClips hitClips;
-        
+
+        public Encounter Encounter;
+
         void Awake()
         {
             if (TryGetComponent(out MeshRenderer meshRenderer))
@@ -117,6 +119,7 @@ namespace Prog.Script
             GetComponent<Collider>().enabled = false;
             Destroy(enemyObjectToBeDisabledOnDeath);
             AudioManager.Instance.PlaySound("EnemyDestroyed", true);
+            Encounter.EnemyKilled();
         }
     }
 }
