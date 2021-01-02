@@ -4,15 +4,28 @@ using UnityEngine;
 
 public class Encounter : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    //TODO faire une interface de ça (begin, end)
+
+    public int nbOfEnemiesToDestroy = 2;
+
+    private int _nbOfEnemiesDestroyed = 0;
+    private Animator _exitPod;
+    private static readonly int Close = Animator.StringToHash("Close");
+
+    private void Start()
     {
-        
+        _exitPod = GetComponent<Animator>();
+    }
+    
+    
+
+    public void EnemyKilled()
+    {
+        _nbOfEnemiesDestroyed++;
+        if (_nbOfEnemiesDestroyed == nbOfEnemiesToDestroy)
+        {
+            _exitPod.SetBool(Close, true);
+        } ;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
