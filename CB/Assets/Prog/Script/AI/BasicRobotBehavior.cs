@@ -16,20 +16,24 @@ public class BasicRobotBehavior : MonoBehaviour
     public bool isGettingAttacked;
     public float groundCheckerRadius = 1f;
     public float playerPosition;
+
+    private Rigidbody _robotRigidBody;
+    private NavMeshAgent _robotNavMeshAgent;
     private void Awake()
     {
-        var navMeshAgent = GetComponent<NavMeshAgent>();
-        navMeshAgent.autoBraking = false;
-        
+        _robotNavMeshAgent = GetComponent<NavMeshAgent>();
+        _robotNavMeshAgent.autoBraking = false;
+
+        _robotRigidBody = GetComponent<Rigidbody>();
         var animator = GetComponent<Animator>();
         var enemyDetector = gameObject.AddComponent<EnemyDetector>();
         
         _stateMachine = new StateMachine();
 
         var searchForTarget = new SearchForTarget(this); // State qui cherche le player avec un raycast
-        var moveTowardTarget = new MoveTowardTarget(this, navMeshAgent, animator);
+        var moveTowardTarget = new MoveTowardTarget(this, _robotNavMeshAgent, animator);
         var idleSearch = new IdleSearch(this, animator);
-        var takesDamage = new TakesDamage(this, animator, navMeshAgent);
+        var takesDamage = new TakesDamage(this, animator);
 
         AddTransition(idleSearch, searchForTarget, HasFinishedSearching());
         AddTransition(searchForTarget, moveTowardTarget, HasTarget());
@@ -47,7 +51,7 @@ public class BasicRobotBehavior : MonoBehaviour
             _stateMachine.AddAnyTransition(to, condition);
 
         Func<bool> HasTarget() => () => Target != null;
-        Func<bool> HasReachedDestination() => () => !navMeshAgent.pathPending && navMeshAgent.remainingDistance < 0.5f;
+        Func<bool> HasReachedDestination() => () => !_robotNavMeshAgent.pathPending && _robotNavMeshAgent.remainingDistance < 0.5f;
         Func<bool> HasFinishedSearching() => () => !isSearching;
         Func<bool> HasTakenDamage() => () => isGettingAttacked;
         Func<bool> HasLanded() => () => isGrounded;
@@ -58,5 +62,19 @@ public class BasicRobotBehavior : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.DrawSphere(transform.position, groundCheckerRadius);
+    }
+
+    public void EnterCombatState()
+    {
+        _robotRigidBody.isKinematic = false;
+        _robotNavMeshAgent.enabled = false;
+        isGettingAttacked = false;
+    }
+    public void ExitCombatState()
+    {
+        _robotRigidBody.isKinematic = true;
+        isGrounded = false;
+        isGettingAttacked = false;
+        _robotNavMeshAgent.enabled = true;
     }
 }

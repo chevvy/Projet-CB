@@ -15,15 +15,15 @@ namespace Prog.Script.AI
 
         private readonly BasicRobotBehavior _robot;
         private readonly CheckDirection _direction = new CheckDirection();
-        private readonly NavMeshAgent _navMeshAgent;
 
         private bool _isCheckingForGround = false;
 
-        public TakesDamage( BasicRobotBehavior robot, Animator animator, NavMeshAgent agent)
+        private float WAIT_TIME_BEFORE_CHECKING_GROUND = 0.5f;
+
+        public TakesDamage( BasicRobotBehavior robot, Animator animator)
         {
             _animator = animator;
             _robot = robot;
-            _navMeshAgent = agent;
         }
 
         public void Tick()
@@ -32,14 +32,13 @@ namespace Prog.Script.AI
             
             _robot.isGrounded = Physics.CheckSphere(_robot.transform.position, _robot.groundCheckerRadius, _robot.groundLayerMask,
                 QueryTriggerInteraction.Ignore);
-            if (_robot.isGrounded) _robot.isGettingAttacked = false;
+            if (_robot.isGrounded) { _robot.isGettingAttacked = false; }
         }
 
         public void OnEnter()
         {
-            _navMeshAgent.enabled = false;
+            _robot.EnterCombatState();
             _robot.StartCoroutine(WaitBeforeCheckingForGround());
-            _robot.isGettingAttacked = false;
             SetAnimationRelativeToDirection();
         }
 
@@ -53,16 +52,14 @@ namespace Prog.Script.AI
 
         IEnumerator WaitBeforeCheckingForGround()
         {
-            yield return new WaitForSeconds(0.4f);
+            yield return new WaitForSeconds(WAIT_TIME_BEFORE_CHECKING_GROUND);
             _isCheckingForGround = true;
         }
 
         public void OnExit()
         {
-            _robot.isGrounded = false;
-            _robot.isGettingAttacked = false;
+            _robot.ExitCombatState();
             _isCheckingForGround = false;
-            _navMeshAgent.enabled = true;
         }
     }
 }

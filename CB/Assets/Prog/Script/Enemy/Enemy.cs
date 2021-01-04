@@ -105,6 +105,7 @@ namespace Prog.Script
         /// <param name="xPlayerPosition">Position en x de l'emeteur de l'attack (le player)</param>
         private void MoveEnemyAfterAttack(float xPlayerPosition)
         {
+            _rigidbody.isKinematic = false;
             _applyForce.OnAttack(_rigidbody, null, xPlayerPosition, impactForceWhenAttackedOnXAxis, impactForceWhenAttackedOnYAxis);
         }
 
