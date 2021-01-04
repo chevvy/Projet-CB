@@ -33,7 +33,7 @@ public class BasicRobotBehavior : MonoBehaviour
         var searchForTarget = new SearchForTarget(this); // State qui cherche le player avec un raycast
         var moveTowardTarget = new MoveTowardTarget(this, _robotNavMeshAgent, animator);
         var idleSearch = new IdleSearch(this, animator);
-        var takesDamage = new TakesDamage(this, animator, _robotNavMeshAgent);
+        var takesDamage = new TakesDamage(this, animator);
 
         AddTransition(idleSearch, searchForTarget, HasFinishedSearching());
         AddTransition(searchForTarget, moveTowardTarget, HasTarget());
@@ -67,9 +67,14 @@ public class BasicRobotBehavior : MonoBehaviour
     public void EnterCombatState()
     {
         _robotRigidBody.isKinematic = false;
+        _robotNavMeshAgent.enabled = false;
+        isGettingAttacked = false;
     }
     public void ExitCombatState()
     {
         _robotRigidBody.isKinematic = true;
+        isGrounded = false;
+        isGettingAttacked = false;
+        _robotNavMeshAgent.enabled = true;
     }
 }

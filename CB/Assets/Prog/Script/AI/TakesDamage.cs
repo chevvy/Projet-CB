@@ -15,17 +15,15 @@ namespace Prog.Script.AI
 
         private readonly BasicRobotBehavior _robot;
         private readonly CheckDirection _direction = new CheckDirection();
-        private readonly NavMeshAgent _navMeshAgent;
 
         private bool _isCheckingForGround = false;
 
         private float WAIT_TIME_BEFORE_CHECKING_GROUND = 0.5f;
 
-        public TakesDamage( BasicRobotBehavior robot, Animator animator, NavMeshAgent agent)
+        public TakesDamage( BasicRobotBehavior robot, Animator animator)
         {
             _animator = animator;
             _robot = robot;
-            _navMeshAgent = agent;
         }
 
         public void Tick()
@@ -40,9 +38,7 @@ namespace Prog.Script.AI
         public void OnEnter()
         {
             _robot.EnterCombatState();
-            _navMeshAgent.enabled = false;
             _robot.StartCoroutine(WaitBeforeCheckingForGround());
-            _robot.isGettingAttacked = false; // TODO mettre dans EnterCombatState()
             SetAnimationRelativeToDirection();
         }
 
@@ -63,10 +59,7 @@ namespace Prog.Script.AI
         public void OnExit()
         {
             _robot.ExitCombatState();
-            _robot.isGrounded = false;
-            _robot.isGettingAttacked = false;
             _isCheckingForGround = false;
-            _navMeshAgent.enabled = true;
         }
     }
 }
