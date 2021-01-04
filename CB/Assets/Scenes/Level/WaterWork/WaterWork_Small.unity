@@ -9459,6 +9459,44 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d3c065760f660054a82f08cad99edbd7, type: 3}
+--- !u!1 &864917347 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5176325006620655035, guid: f27147f6c0625d441a178cbdaf48b45c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1355250850}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &864917348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 864917347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
 --- !u!1001 &871140816
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10329,7 +10367,7 @@ PrefabInstance:
     - target: {fileID: 1834581607496259862, guid: 88103a4ad9701924a814f23b2f46f30f,
         type: 3}
       propertyPath: m_Constraints
-      value: 112
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 1834581607496259862, guid: 88103a4ad9701924a814f23b2f46f30f,
         type: 3}
@@ -10551,7 +10589,7 @@ PrefabInstance:
     - target: {fileID: 8024602571792756141, guid: 88103a4ad9701924a814f23b2f46f30f,
         type: 3}
       propertyPath: numberOfArmorPiecesToBeRemovedEachHit
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8254540782292658550, guid: 88103a4ad9701924a814f23b2f46f30f,
         type: 3}
@@ -15531,7 +15569,7 @@ PrefabInstance:
     - target: {fileID: 1834581607496259862, guid: 88103a4ad9701924a814f23b2f46f30f,
         type: 3}
       propertyPath: m_Constraints
-      value: 112
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 1834581607496259862, guid: 88103a4ad9701924a814f23b2f46f30f,
         type: 3}
@@ -15606,7 +15644,7 @@ PrefabInstance:
     - target: {fileID: 8024602571792756141, guid: 88103a4ad9701924a814f23b2f46f30f,
         type: 3}
       propertyPath: numberOfArmorPiecesToBeRemovedEachHit
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88103a4ad9701924a814f23b2f46f30f, type: 3}

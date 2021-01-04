@@ -19,6 +19,8 @@ namespace Prog.Script.AI
 
         private bool _isCheckingForGround = false;
 
+        private float WAIT_TIME_BEFORE_CHECKING_GROUND = 0.5f;
+
         public TakesDamage( BasicRobotBehavior robot, Animator animator, NavMeshAgent agent)
         {
             _animator = animator;
@@ -32,14 +34,15 @@ namespace Prog.Script.AI
             
             _robot.isGrounded = Physics.CheckSphere(_robot.transform.position, _robot.groundCheckerRadius, _robot.groundLayerMask,
                 QueryTriggerInteraction.Ignore);
-            if (_robot.isGrounded) _robot.isGettingAttacked = false;
+            if (_robot.isGrounded) { _robot.isGettingAttacked = false; }
         }
 
         public void OnEnter()
         {
+            _robot.EnterCombatState();
             _navMeshAgent.enabled = false;
             _robot.StartCoroutine(WaitBeforeCheckingForGround());
-            _robot.isGettingAttacked = false;
+            _robot.isGettingAttacked = false; // TODO mettre dans EnterCombatState()
             SetAnimationRelativeToDirection();
         }
 
@@ -53,12 +56,13 @@ namespace Prog.Script.AI
 
         IEnumerator WaitBeforeCheckingForGround()
         {
-            yield return new WaitForSeconds(0.4f);
+            yield return new WaitForSeconds(WAIT_TIME_BEFORE_CHECKING_GROUND);
             _isCheckingForGround = true;
         }
 
         public void OnExit()
         {
+            _robot.ExitCombatState();
             _robot.isGrounded = false;
             _robot.isGettingAttacked = false;
             _isCheckingForGround = false;
