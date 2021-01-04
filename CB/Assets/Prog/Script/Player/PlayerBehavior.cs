@@ -83,7 +83,7 @@ namespace Prog.Script
         {
             _playerAnimator.SetBool(Landing, true);
             _playerAnimator.SetBool(Air, false);
-            if(_moveDirection.y < 0) AudioManager.Instance.PlaySound("Landing_metal", true);
+            if(_moveDirection.y < 0) { AudioManager.Instance.PlaySound("Landing_metal", true); }
             _moveDirection.y = 0; // comme ça, il n'y a pas de force qui accumulé si on saute pas avant la prochaine chute
         }
     
@@ -131,6 +131,14 @@ namespace Prog.Script
             if (!context.canceled) return;
             _playerAnimator.SetBool(Jumping, false);
             _isJumping = false;
+        }
+
+        public void OnLongJump(InputAction.CallbackContext context)
+        {
+            if(context.performed)
+            {
+                _playerAnimator.SetBool(Jumping, false);
+            }
         }
 
         private void JumpCurveIndex()

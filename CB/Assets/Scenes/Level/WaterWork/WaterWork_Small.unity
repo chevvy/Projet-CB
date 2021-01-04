@@ -6340,7 +6340,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1492605669770129214, guid: a3476747c54fbfe43a5bf859715997ab,
         type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1492605669770129214, guid: a3476747c54fbfe43a5bf859715997ab,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_ActionId
+      value: bae2b849-6fd7-41f6-88a0-93b343431854
+      objectReference: {fileID: 0}
+    - target: {fileID: 1492605669770129214, guid: a3476747c54fbfe43a5bf859715997ab,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_ActionName
+      value: Player/LongJump[/Keyboard/space]
+      objectReference: {fileID: 0}
+    - target: {fileID: 1492605669770129214, guid: a3476747c54fbfe43a5bf859715997ab,
+        type: 3}
       propertyPath: m_DeviceLostEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1492605669770129214, guid: a3476747c54fbfe43a5bf859715997ab,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1492605669770129214, guid: a3476747c54fbfe43a5bf859715997ab,
@@ -6367,6 +6387,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ControlsChangedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1492605669770129214, guid: a3476747c54fbfe43a5bf859715997ab,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1492605669770129214, guid: a3476747c54fbfe43a5bf859715997ab,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1806364210}
+    - target: {fileID: 1492605669770129214, guid: a3476747c54fbfe43a5bf859715997ab,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1492605669770129214, guid: a3476747c54fbfe43a5bf859715997ab,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnLongJump
+      objectReference: {fileID: 0}
+    - target: {fileID: 1492605669770129214, guid: a3476747c54fbfe43a5bf859715997ab,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Prog.Script.PlayerBehavior, Scripts
+      objectReference: {fileID: 0}
+    - target: {fileID: 1492605669770129214, guid: a3476747c54fbfe43a5bf859715997ab,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 1492605669770129215, guid: a3476747c54fbfe43a5bf859715997ab,
         type: 3}
@@ -15975,6 +16025,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d07555d6edec66428303c524ba9e972, type: 3}
+--- !u!114 &1806364210 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1492605669770129215, guid: a3476747c54fbfe43a5bf859715997ab,
+    type: 3}
+  m_PrefabInstance: {fileID: 785010386}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b08dd1ebaebeb5b4e859b459f0a73ea2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1807677084 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3135617792651861480, guid: 29d8d47dcee8b3045938be31a7548aa8,

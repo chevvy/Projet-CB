@@ -36,6 +36,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "LongJump",
+                    "type": "Button",
+                    "id": "bae2b849-6fd7-41f6-88a0-93b343431854",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -289,6 +297,28 @@
                     "processors": "",
                     "groups": "XboxGamePad",
                     "action": "ChargeAttack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "70f7bf91-9ce0-4163-beaf-cd0738cfe240",
+                    "path": "<Keyboard>/space",
+                    "interactions": "Hold(duration=0.05)",
+                    "processors": "",
+                    "groups": "KeyboardMouse",
+                    "action": "LongJump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5e60d4a1-c5ca-4a85-9301-92c9446bccec",
+                    "path": "<XInputController>/buttonSouth",
+                    "interactions": "Hold(duration=0.05)",
+                    "processors": "",
+                    "groups": "XboxGamePad",
+                    "action": "LongJump",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
