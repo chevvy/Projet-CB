@@ -49,6 +49,14 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""LongJump"",
+                    ""type"": ""Button"",
+                    ""id"": ""bae2b849-6fd7-41f6-88a0-93b343431854"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -304,6 +312,28 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""action"": ""ChargeAttack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""70f7bf91-9ce0-4163-beaf-cd0738cfe240"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": ""Hold(duration=0.05)"",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""LongJump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5e60d4a1-c5ca-4a85-9301-92c9446bccec"",
+                    ""path"": ""<XInputController>/buttonSouth"",
+                    ""interactions"": ""Hold(duration=0.05)"",
+                    ""processors"": """",
+                    ""groups"": ""XboxGamePad"",
+                    ""action"": ""LongJump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -344,6 +374,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
         m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
         m_Player_Attack = m_Player.FindAction("Attack", throwIfNotFound: true);
         m_Player_ChargeAttack = m_Player.FindAction("ChargeAttack", throwIfNotFound: true);
+        m_Player_LongJump = m_Player.FindAction("LongJump", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -397,6 +428,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_Jump;
     private readonly InputAction m_Player_Attack;
     private readonly InputAction m_Player_ChargeAttack;
+    private readonly InputAction m_Player_LongJump;
     public struct PlayerActions
     {
         private @InputMaster m_Wrapper;
@@ -405,6 +437,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
         public InputAction @Jump => m_Wrapper.m_Player_Jump;
         public InputAction @Attack => m_Wrapper.m_Player_Attack;
         public InputAction @ChargeAttack => m_Wrapper.m_Player_ChargeAttack;
+        public InputAction @LongJump => m_Wrapper.m_Player_LongJump;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -426,6 +459,9 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @ChargeAttack.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnChargeAttack;
                 @ChargeAttack.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnChargeAttack;
                 @ChargeAttack.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnChargeAttack;
+                @LongJump.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLongJump;
+                @LongJump.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLongJump;
+                @LongJump.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLongJump;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -442,6 +478,9 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @ChargeAttack.started += instance.OnChargeAttack;
                 @ChargeAttack.performed += instance.OnChargeAttack;
                 @ChargeAttack.canceled += instance.OnChargeAttack;
+                @LongJump.started += instance.OnLongJump;
+                @LongJump.performed += instance.OnLongJump;
+                @LongJump.canceled += instance.OnLongJump;
             }
         }
     }
@@ -470,5 +509,6 @@ public class @InputMaster : IInputActionCollection, IDisposable
         void OnJump(InputAction.CallbackContext context);
         void OnAttack(InputAction.CallbackContext context);
         void OnChargeAttack(InputAction.CallbackContext context);
+        void OnLongJump(InputAction.CallbackContext context);
     }
 }

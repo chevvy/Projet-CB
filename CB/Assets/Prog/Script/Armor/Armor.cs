@@ -79,8 +79,6 @@ namespace Prog.Script.Armor
             
             if (indexAtTheEndOfAttack <= armorPieces.Length) return; // On check qu'on est pas out of bound de l'array
             numberOfArmorPiecesToBeRemovedEachHit = armorPieces.Length - _armorPieceToBeRemovedIndex;
-            
-            Debug.Log("Adjusted nb of pieces to be removed " + numberOfArmorPiecesToBeRemovedEachHit);
         }
 
         private void ApplyDamageToArmorPiece(int damage, float xAttackOriginPosition)
