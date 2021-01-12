@@ -25,6 +25,8 @@ namespace Prog.Script.AI
             _animator = animator;
             _robot = robot;
         }
+        
+        //test jira
 
         public void Tick()
         {
