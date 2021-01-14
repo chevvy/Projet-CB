@@ -39,7 +39,7 @@ namespace Prog.Script.AI
 
         public void OnEnter()
         {
-            _robot.EnterCombatState();
+            _robot.EnterTakesDamageState();
             _robot.StartCoroutine(WaitBeforeCheckingForGround());
             SetAnimationRelativeToDirection();
         }
@@ -60,7 +60,7 @@ namespace Prog.Script.AI
 
         public void OnExit()
         {
-            _robot.ExitCombatState();
+            _robot.ExitTakesDamageState();
             _isCheckingForGround = false;
         }
     }

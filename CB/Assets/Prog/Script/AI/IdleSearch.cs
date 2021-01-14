@@ -37,7 +37,7 @@ namespace Prog.Script.AI
         {
             
             _animator.SetBool(
-                _direction.IsGoingLeft(_robot.transform, _robot.playerPosition) ? 
+                _direction.IsGoingLeft(_robot.transform, _robot.Target.transform) ? 
                     IdleLeft : IdleRight, true
             );
         }
