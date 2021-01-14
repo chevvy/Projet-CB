@@ -127,11 +127,12 @@ namespace Prog.Script
             Encounter.EnemyKilled();
         }
 
-        public void OnCollisionEnter(Collision other)
+        private void OnTriggerEnter(Collider other)
         {
-            if(CompareTag("Player"))
+            // Trigger de l'animation d'attaque
+            if (other.CompareTag("Player"))
             {
-                Debug.Log("this is the player");
+                robotBehavior.EnterAttackState();
             }
         }
     }

@@ -19,21 +19,24 @@ public class BasicRobotBehavior : MonoBehaviour
 
     private Rigidbody _robotRigidBody;
     private NavMeshAgent _robotNavMeshAgent;
+    
+    private Animator _robotAnimator;
+    private static readonly int Attack = Animator.StringToHash("Attack");
     private void Awake()
     {
         _robotNavMeshAgent = GetComponent<NavMeshAgent>();
         _robotNavMeshAgent.autoBraking = false;
 
         _robotRigidBody = GetComponent<Rigidbody>();
-        var animator = GetComponent<Animator>();
+        _robotAnimator = GetComponent<Animator>();
         var enemyDetector = gameObject.AddComponent<EnemyDetector>();
         
         _stateMachine = new StateMachine();
 
         var searchForTarget = new SearchForTarget(this); // State qui cherche le player avec un raycast
-        var moveTowardTarget = new MoveTowardTarget(this, _robotNavMeshAgent, animator);
-        var idleSearch = new IdleSearch(this, animator);
-        var takesDamage = new TakesDamage(this, animator);
+        var moveTowardTarget = new MoveTowardTarget(this, _robotNavMeshAgent, _robotAnimator);
+        var idleSearch = new IdleSearch(this, _robotAnimator);
+        var takesDamage = new TakesDamage(this, _robotAnimator);
 
         AddTransition(idleSearch, searchForTarget, HasFinishedSearching());
         AddTransition(searchForTarget, moveTowardTarget, HasTarget());
@@ -64,17 +67,22 @@ public class BasicRobotBehavior : MonoBehaviour
         Gizmos.DrawSphere(transform.position, groundCheckerRadius);
     }
 
-    public void EnterCombatState()
+    public void EnterTakesDamageState()
     {
         _robotRigidBody.isKinematic = false;
         _robotNavMeshAgent.enabled = false;
         isGettingAttacked = false;
     }
-    public void ExitCombatState()
+    public void ExitTakesDamageState()
     {
         _robotRigidBody.isKinematic = true;
         isGrounded = false;
         isGettingAttacked = false;
         _robotNavMeshAgent.enabled = true;
+    }
+
+    public void EnterAttackState()
+    {
+        _robotAnimator.SetTrigger(Attack);
     }
 }
