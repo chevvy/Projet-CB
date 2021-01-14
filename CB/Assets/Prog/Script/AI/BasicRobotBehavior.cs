@@ -53,6 +53,7 @@ public class BasicRobotBehavior : MonoBehaviour
         
         AddAnyTransition(attackPlayer, IsAttackingPlayer());
         AddTransition(attackPlayer, idleSearch, HasFinishedAttacking());
+        AddTransition(attackPlayer, takesDamage, HasTakenDamage());
 
         _stateMachine.SetState(searchForTarget);
         
@@ -82,7 +83,7 @@ public class BasicRobotBehavior : MonoBehaviour
     {
         _robotRigidBody.isKinematic = false;
         _robotNavMeshAgent.enabled = false;
-        isGettingAttacked = false;
+        isGettingAttacked = true;
     }
     public void ExitTakesDamageState()
     {
@@ -97,9 +98,7 @@ public class BasicRobotBehavior : MonoBehaviour
         playerPosition = xPlayerPosition; // pourra être utilisé depuis les autres components
         if (_direction.IsBetweenTargets(Target.transform, playerPosition, transform))
         {
-            Debug.Log("player is between target (so, in enemy field of view)");
             isAttacking = true;
-            Debug.Log("Is attacking");
         }
 
     }
