@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using Prog.Script.RigidbodyInteraction;
 using UnityEngine;
 using UnityEngine.AI;
@@ -20,6 +21,7 @@ namespace Prog.Script
         private Rigidbody _rigidbody;
         private Armor.Armor _armor;
         private NavMeshAgent _navMeshAgent;
+        private Collider _collider;
 
         private EnemyLogic _enemyLogic;
         private readonly ApplyForce _applyForce = new ApplyForce();
@@ -48,6 +50,8 @@ namespace Prog.Script
             }
 
             if (TryGetComponent(out GameObject enemyObject)) { enemyObjectToBeDisabledOnDeath = enemyObject; }
+
+            if(TryGetComponent(out Collider outCollider)) { _collider = outCollider; }
             
             _enemyLogic = new EnemyLogic
             {
@@ -121,6 +125,15 @@ namespace Prog.Script
             Destroy(enemyObjectToBeDisabledOnDeath);
             AudioManager.Instance.PlaySound("EnemyDestroyed", true);
             Encounter.EnemyKilled();
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            // Trigger de l'animation d'attaque
+            if (other.CompareTag("Player"))
+            {
+                robotBehavior.EnterAttackState(other.transform.position.x);
+            }
         }
     }
 }
