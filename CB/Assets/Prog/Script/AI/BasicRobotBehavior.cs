@@ -1,8 +1,11 @@
 ﻿using System;
-using Prog.Script;
+using Bolt;
 using Prog.Script.AI;
+using Prog.Script.RigidbodyInteraction;
 using UnityEngine;
 using UnityEngine.AI;
+using IState = Prog.Script.IState;
+using StateMachine = Prog.Script.StateMachine;
 
 public class BasicRobotBehavior : MonoBehaviour
 {
@@ -13,9 +16,11 @@ public class BasicRobotBehavior : MonoBehaviour
     public LayerMask groundLayerMask;
     public bool isSearching = false;
     public bool isGrounded;
+    public bool isAttacking;
     public bool isGettingAttacked;
     public float groundCheckerRadius = 1f;
     public float playerPosition;
+    private CheckDirection _direction = new CheckDirection();
 
     private Rigidbody _robotRigidBody;
     private NavMeshAgent _robotNavMeshAgent;
@@ -37,6 +42,7 @@ public class BasicRobotBehavior : MonoBehaviour
         var moveTowardTarget = new MoveTowardTarget(this, _robotNavMeshAgent, _robotAnimator);
         var idleSearch = new IdleSearch(this, _robotAnimator);
         var takesDamage = new TakesDamage(this, _robotAnimator);
+        var attackPlayer = new AttackPlayer(_robotAnimator, _robotNavMeshAgent);
 
         AddTransition(idleSearch, searchForTarget, HasFinishedSearching());
         AddTransition(searchForTarget, moveTowardTarget, HasTarget());
@@ -44,6 +50,9 @@ public class BasicRobotBehavior : MonoBehaviour
 
         AddTransition(takesDamage, searchForTarget, HasLanded());
         AddAnyTransition(takesDamage, HasTakenDamage());
+        
+        AddAnyTransition(attackPlayer, IsAttackingPlayer());
+        AddTransition(attackPlayer, idleSearch, HasFinishedAttacking());
 
         _stateMachine.SetState(searchForTarget);
         
@@ -58,6 +67,8 @@ public class BasicRobotBehavior : MonoBehaviour
         Func<bool> HasFinishedSearching() => () => !isSearching;
         Func<bool> HasTakenDamage() => () => isGettingAttacked;
         Func<bool> HasLanded() => () => isGrounded;
+        Func<bool> IsAttackingPlayer() => () => isAttacking;
+        Func<bool> HasFinishedAttacking() => () => !isAttacking;
     }
     
     private void Update() => _stateMachine.Tick();
@@ -81,8 +92,14 @@ public class BasicRobotBehavior : MonoBehaviour
         _robotNavMeshAgent.enabled = true;
     }
 
-    public void EnterAttackState()
+    public void EnterAttackState(float xPlayerPosition)
     {
-        _robotAnimator.SetTrigger(Attack);
+        isAttacking = true;
+        Debug.Log("Is attacking");
+    }
+
+    public void ExitAttackState() // est callé par l'animator à la fin de l'Attaque
+    {
+        isAttacking = false;
     }
 }

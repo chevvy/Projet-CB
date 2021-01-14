@@ -132,7 +132,7 @@ namespace Prog.Script
             // Trigger de l'animation d'attaque
             if (other.CompareTag("Player"))
             {
-                robotBehavior.EnterAttackState();
+                robotBehavior.EnterAttackState(other.transform.position.x);
             }
         }
     }
