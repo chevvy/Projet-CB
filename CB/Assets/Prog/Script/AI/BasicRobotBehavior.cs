@@ -94,8 +94,14 @@ public class BasicRobotBehavior : MonoBehaviour
 
     public void EnterAttackState(float xPlayerPosition)
     {
-        isAttacking = true;
-        Debug.Log("Is attacking");
+        playerPosition = xPlayerPosition; // pourra être utilisé depuis les autres components
+        if (_direction.IsBetweenTargets(Target.transform, playerPosition, transform))
+        {
+            Debug.Log("player is between target (so, in enemy field of view)");
+            isAttacking = true;
+            Debug.Log("Is attacking");
+        }
+
     }
 
     public void ExitAttackState() // est callé par l'animator à la fin de l'Attaque
