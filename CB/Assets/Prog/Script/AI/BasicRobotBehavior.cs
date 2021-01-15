@@ -20,6 +20,8 @@ public class BasicRobotBehavior : MonoBehaviour
     public bool isGettingAttacked;
     public float groundCheckerRadius = 1f;
     public float playerPosition;
+    public float viewDistance = 3f;
+    
     private CheckDirection _direction = new CheckDirection();
 
     private Rigidbody _robotRigidBody;
@@ -106,5 +108,34 @@ public class BasicRobotBehavior : MonoBehaviour
     public void ExitAttackState() // est callé par l'animator à la fin de l'Attaque
     {
         isAttacking = false;
+    }
+    
+    void FixedUpdate()
+    {
+        int playerLayerMask = LayerMask.GetMask("PlayerCharacter");
+        int environmentMask = LayerMask.GetMask("Default");
+
+        Vector3 startingPosition = transform.position;
+        startingPosition.y += 0.5f;
+        
+        RaycastHit hit;
+        // si on pogne l'envionnement mais pas de joueur, cho bye
+        if (Physics.Raycast(
+                startingPosition, 
+                transform.TransformDirection(Vector3.left), 
+                out hit, 
+                viewDistance,
+                environmentMask
+        )) { return; }
+        
+        // Does the ray intersect with the player layer
+        if (Physics.Raycast(
+                startingPosition, 
+                transform.TransformDirection(Vector3.left), 
+                out hit, viewDistance, 
+                playerLayerMask
+        )) {
+            Debug.DrawRay(startingPosition, transform.TransformDirection(Vector3.left) * hit.distance, Color.yellow);
+        }
     }
 }
