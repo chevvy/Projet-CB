@@ -9,6 +9,7 @@ namespace Prog.Script
         public float attackDuration = 0.5f;
         public float attackRate = 2f;
         public bool enableAttackRate = true;
+        public float gettingHitBlockAttackTimer = 0.5f;
         
         private float _nextAttackTime = 0f;
         private bool _isAttacking = false;
@@ -33,11 +34,7 @@ namespace Prog.Script
         
         private bool CheckIfWeCanAttack()
         {
-            if(!enableAttackRate)
-            {
-                Debug.Log("timer disabled and canAttack = " + !_isGettingAttacked);
-                return !_isGettingAttacked;
-            }; // si on desactive l'attack rate, on peut toujours attaquer
+            if(!enableAttackRate) { return !_isGettingAttacked; }; // si on desactive l'attack rate, on peut toujours attaquer
             return ((Time.time >= _nextAttackTime && _isAttacking) && !_isGettingAttacked);
         }
         
@@ -64,7 +61,7 @@ namespace Prog.Script
             IEnumerator GettingAttackedTimer()
             {
                 _isGettingAttacked = true;
-                yield return new WaitForSeconds(1f);
+                yield return new WaitForSeconds(gettingHitBlockAttackTimer);
                 _isGettingAttacked = false;
             }
         }

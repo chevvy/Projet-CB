@@ -139,7 +139,6 @@ namespace Prog.Script
 
         public void CheckForPlayer()
         {
-            Debug.Log("check for player");
             WeaponImpactDetector.CheckForPlayer();
         }
         

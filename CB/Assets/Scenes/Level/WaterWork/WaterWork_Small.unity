@@ -6448,6 +6448,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1492605669770129215, guid: a3476747c54fbfe43a5bf859715997ab,
         type: 3}
+      propertyPath: gettingHitForceX
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1492605669770129215, guid: a3476747c54fbfe43a5bf859715997ab,
+        type: 3}
+      propertyPath: gettingHitForceY
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1492605669770129215, guid: a3476747c54fbfe43a5bf859715997ab,
+        type: 3}
       propertyPath: groundLayerMask.m_Bits
       value: 256
       objectReference: {fileID: 0}
@@ -8404,7 +8414,7 @@ PrefabInstance:
     - target: {fileID: 8515130152268585826, guid: a3476747c54fbfe43a5bf859715997ab,
         type: 3}
       propertyPath: m_Size.x
-      value: 1.4
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 8548554834373025711, guid: a3476747c54fbfe43a5bf859715997ab,
         type: 3}
