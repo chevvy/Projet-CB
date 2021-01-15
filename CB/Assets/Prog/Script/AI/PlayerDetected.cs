@@ -23,12 +23,13 @@ namespace Prog.Script.AI
 
         public void OnEnter()
         {
+            _robot.canAttackPlayer = true;
             _robot.isPlayerDetected = false;
             // Debug.Log("Enter player detected");
             _robotNavMeshAgent.enabled = false; // stop agent 
             _robot.Target = _robot.playerTarget;  // remove target & set target player
             SetAnimationRelativeToDirection();// trigger anim de surprise
-            // _robot.detectionEnded = true;
+            
         }
         
         private void SetAnimationRelativeToDirection()

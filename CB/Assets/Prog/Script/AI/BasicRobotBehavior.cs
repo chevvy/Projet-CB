@@ -151,7 +151,7 @@ public class BasicRobotBehavior : MonoBehaviour
                 out hit, viewDistance, 
                 playerLayerMask))
         {
-            if (!_direction.IsGoingRight(transform, Target.transform)) return;
+            if (Target == null || !_direction.IsGoingRight(transform, Target.transform)) return;
             playerTarget = hit.collider.GetComponent<Target>();
             isPlayerDetected = true;
             Debug.DrawRay(startingPosition, transform.TransformDirection(Vector3.left) * hit.distance, Color.yellow);
@@ -163,11 +163,10 @@ public class BasicRobotBehavior : MonoBehaviour
             out hit, viewDistance, 
             playerLayerMask))
         {
-            if (!_direction.IsGoingLeft(transform, Target.transform)) return;
+            if (Target == null || !_direction.IsGoingLeft(transform, Target.transform)) return;
             playerTarget = hit.collider.GetComponent<Target>();
             isPlayerDetected = true;
             Debug.DrawRay(startingPosition, transform.TransformDirection(Vector3.right) * hit.distance, Color.red);
-            return;
         }
     }
 }
