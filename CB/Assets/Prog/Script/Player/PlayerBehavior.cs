@@ -1,4 +1,5 @@
 using System;
+using Prog.Script.RigidbodyInteraction;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
@@ -18,7 +19,10 @@ namespace Prog.Script
         [FormerlySerializedAs("Ground")] public LayerMask groundLayerMask; // on vient indiquer ce qu'est le ground
         [SerializeField] private PlayerCombat playerCombat = null;
         public float attackRotationDelay = 0.5f;
-        public float jumpDelay = 0.1f; 
+        public float jumpDelay = 0.1f;
+        public float gettingHitForceX = 2f;
+        public float gettingHitForceY = 3f;
+        
 
         private float timerAttackRotation;
         private CharacterController _characterController;
@@ -35,11 +39,14 @@ namespace Prog.Script
         private bool _isGrounded = true;
         private bool _lastFrameGrounded = true;
         private bool _isAttackSwitched = false;
+
+        private CheckDirection _direction;
         void Start()
         {
             _characterController = GetComponent<CharacterController>();
             _playerAnimator = GetComponent<Animator>();
             _groundChecker = transform.GetChild(0);
+            _direction = new CheckDirection();
         }
         
         void Update()
@@ -199,6 +206,23 @@ namespace Prog.Script
         private void CancelAttack()
         {
             _playerAnimator.SetBool(Attacking, false);
+        }
+
+        public void OnGetsAttacked(float enemyPosition)
+        {
+            var characterWillBeMovedRight = _direction.IsGoingLeft(transform, enemyPosition);
+            if(characterWillBeMovedRight)
+            {
+                _moveDirection.x = gettingHitForceX;
+                _moveDirection.y += gettingHitForceY;
+                _moveDirection.x *= horizontalSpeed + 1;
+            }
+            else
+            {
+                _moveDirection.x = -gettingHitForceX;
+                _moveDirection.y += gettingHitForceY;
+                _moveDirection.x *= horizontalSpeed + 1;
+            }
         }
 
         public void PlayStepSound() // Call par l'event d'animation 
