@@ -223,6 +223,7 @@ namespace Prog.Script
                 _moveDirection.y += gettingHitForceY;
                 _moveDirection.x *= horizontalSpeed + 1;
             }
+            playerCombat.ReceivesAttack();
         }
 
         public void PlayStepSound() // Call par l'event d'animation 
