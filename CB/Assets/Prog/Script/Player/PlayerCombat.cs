@@ -9,9 +9,11 @@ namespace Prog.Script
         public float attackDuration = 0.5f;
         public float attackRate = 2f;
         public bool enableAttackRate = true;
+        public float gettingHitBlockAttackTimer = 0.5f;
         
         private float _nextAttackTime = 0f;
         private bool _isAttacking = false;
+        private bool _isGettingAttacked { get; set; }
 
         public WeaponImpactDetector WeaponImpactDetector;
 
@@ -32,8 +34,8 @@ namespace Prog.Script
         
         private bool CheckIfWeCanAttack()
         {
-            if (!enableAttackRate) return true; // si on desactive l'attack rate, on peut toujours attaquer
-            return (Time.time >= _nextAttackTime && _isAttacking);
+            if(!enableAttackRate) { return !_isGettingAttacked; }; // si on desactive l'attack rate, on peut toujours attaquer
+            return ((Time.time >= _nextAttackTime && _isAttacking) && !_isGettingAttacked);
         }
         
         private void SetNextAttackTime()
@@ -51,6 +53,17 @@ namespace Prog.Script
             _isAttacking = true;
             yield return new WaitForSeconds(attackDuration);
             _isAttacking = false;
+        }
+
+        public void ReceivesAttack()
+        {
+            StartCoroutine(GettingAttackedTimer());
+            IEnumerator GettingAttackedTimer()
+            {
+                _isGettingAttacked = true;
+                yield return new WaitForSeconds(gettingHitBlockAttackTimer);
+                _isGettingAttacked = false;
+            }
         }
 
         private void ApplyAttackToEnemy(Enemy enemy)

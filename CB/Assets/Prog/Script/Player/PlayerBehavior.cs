@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using Prog.Script.RigidbodyInteraction;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
@@ -18,7 +20,11 @@ namespace Prog.Script
         [FormerlySerializedAs("Ground")] public LayerMask groundLayerMask; // on vient indiquer ce qu'est le ground
         [SerializeField] private PlayerCombat playerCombat = null;
         public float attackRotationDelay = 0.5f;
-        public float jumpDelay = 0.1f; 
+        public float jumpDelay = 0.1f;
+        public float gettingHitForceX = 2f;
+        public float gettingHitForceY = 3f;
+        public float gettingHitBlockMovementTimer = 1f;
+
 
         private float timerAttackRotation;
         private CharacterController _characterController;
@@ -35,11 +41,15 @@ namespace Prog.Script
         private bool _isGrounded = true;
         private bool _lastFrameGrounded = true;
         private bool _isAttackSwitched = false;
+        private bool _isMovementBlocked = false;
+
+        private CheckDirection _direction;
         void Start()
         {
             _characterController = GetComponent<CharacterController>();
             _playerAnimator = GetComponent<Animator>();
             _groundChecker = transform.GetChild(0);
+            _direction = new CheckDirection();
         }
         
         void Update()
@@ -50,13 +60,7 @@ namespace Prog.Script
             MoveCharacter();
             JumpCurveIndex();
             timerAttackRotation =+ Time.deltaTime;
-            
         }
-
-        // private void OnDrawGizmos()
-        // {
-        //     Gizmos.DrawSphere(_groundChecker.position, groundDistance); 
-        // }
 
         private void CheckIfLanded()
         {
@@ -83,6 +87,7 @@ namespace Prog.Script
         {
             _playerAnimator.SetBool(Landing, true);
             _playerAnimator.SetBool(Air, false);
+            _isMovementBlocked = false; // après une attack, donc qu'on land on peut se déplacer
             if(_moveDirection.y < 0) { AudioManager.Instance.PlaySound("Landing_metal", true); }
             _moveDirection.y = 0; // comme ça, il n'y a pas de force qui accumulé si on saute pas avant la prochaine chute
         }
@@ -106,6 +111,7 @@ namespace Prog.Script
 
         public void OnMove(InputAction.CallbackContext context)
         {
+            if(_isMovementBlocked) { return; }
             var joystickMovement = context.ReadValue<Vector2>();
             _playerAnimator.SetFloat(Horizontal, joystickMovement.x);
             if (context.performed)
@@ -199,6 +205,37 @@ namespace Prog.Script
         private void CancelAttack()
         {
             _playerAnimator.SetBool(Attacking, false);
+        }
+
+        public void OnGetsAttacked(float enemyPosition)
+        {
+            var characterWillBeMovedRight = _direction.IsGoingLeft(transform, enemyPosition);
+            if(characterWillBeMovedRight)
+            {
+                _moveDirection.x = gettingHitForceX;
+                _moveDirection.y += gettingHitForceY;
+                _moveDirection.x *= horizontalSpeed + 1;
+            }
+            else
+            {
+                _moveDirection.x = -gettingHitForceX;
+                _moveDirection.y += gettingHitForceY;
+                _moveDirection.x *= horizontalSpeed + 1;
+            }
+            playerCombat.ReceivesAttack();
+            BlockMovementTimer();
+            _playerAnimator.SetBool(Air, true);
+        }
+
+        public void BlockMovementTimer()
+        {
+            StartCoroutine(blockMovement());
+            IEnumerator blockMovement()
+            {
+                _isMovementBlocked = true;
+                yield return new WaitForSeconds(gettingHitBlockMovementTimer);
+                _isMovementBlocked = false;
+            }
         }
 
         public void PlayStepSound() // Call par l'event d'animation 

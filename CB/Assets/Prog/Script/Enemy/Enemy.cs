@@ -27,6 +27,7 @@ namespace Prog.Script
         private readonly ApplyForce _applyForce = new ApplyForce();
 
         public BasicRobotBehavior robotBehavior;
+        public WeaponImpactDetector WeaponImpactDetector;
 
         public AudioClips hitClips;
 
@@ -135,5 +136,11 @@ namespace Prog.Script
                 robotBehavior.EnterAttackState(other.transform.position.x);
             }
         }
+
+        public void CheckForPlayer()
+        {
+            WeaponImpactDetector.CheckForPlayer();
+        }
+        
     }
 }
