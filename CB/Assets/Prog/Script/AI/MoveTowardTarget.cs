@@ -28,6 +28,7 @@ namespace Prog.Script.AI
 
         public void OnEnter()
         {
+        //    Debug.Log("enter move toward target");
             _navMeshAgent.enabled = true;
             _navMeshAgent.SetDestination(_robot.Target.transform.position);
             SetAnimationRelativeToDirection();
@@ -41,6 +42,8 @@ namespace Prog.Script.AI
         public void OnExit()
         {
             _navMeshAgent.enabled = false;
+         //   Debug.Log("exit moveTowardTarget");
+            _robot.canAttackPlayer = false;
         }
     }
 }
