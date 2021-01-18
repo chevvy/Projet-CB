@@ -21,6 +21,7 @@ namespace Prog.Script.AI
 
         public void OnEnter()
         {
+            // Debug.Log("Enter attack player");
             _robotAgent.enabled = false;
             _robotAnimator.SetTrigger(Attack);
         }
@@ -28,6 +29,7 @@ namespace Prog.Script.AI
         public void OnExit()
         {
             _robotAgent.enabled = true;
+            // Debug.Log("exit attack player");
         }
     }
 }

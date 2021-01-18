@@ -22,6 +22,7 @@ namespace Prog.Script.AI
 
         public void OnEnter()
         {
+            // Debug.Log("Enter idle search");
             _robot.isSearching = true;
             _robot.StartCoroutine(SearchForTarget());
         }
@@ -45,6 +46,7 @@ namespace Prog.Script.AI
         public void OnExit()
         {
             _robot.isSearching = false;
+            // Debug.Log("exit idle search");
         }
     }
 }

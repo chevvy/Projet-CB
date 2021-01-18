@@ -39,6 +39,7 @@ namespace Prog.Script.AI
 
         public void OnEnter()
         {
+            // Debug.Log("Enter Takes damage");
             _robot.EnterTakesDamageState();
             _robot.StartCoroutine(WaitBeforeCheckingForGround());
             SetAnimationRelativeToDirection();
@@ -60,6 +61,7 @@ namespace Prog.Script.AI
 
         public void OnExit()
         {
+            // Debug.Log("exit takes damage");
             _robot.ExitTakesDamageState();
             _isCheckingForGround = false;
         }

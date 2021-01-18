@@ -35,12 +35,13 @@ namespace Prog.Script.AI
 
         public void OnEnter()
         {
-            
+            // Debug.Log("Enter search for target");
+            NavMeshAgent.speed = _robot.agentSpeed;
         }
 
         public void OnExit()
         {
-            
+            // Debug.Log("exit search for target");
         }
     }
 }
