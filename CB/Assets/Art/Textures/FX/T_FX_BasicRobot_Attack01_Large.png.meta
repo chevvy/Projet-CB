@@ -132,6 +132,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -140,12 +141,12 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
-    aniso: -1
-    mipBias: -100
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
-    wrapW: -1
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -163,6 +164,8 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
@@ -974,6 +977,43 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      FX_BasicRobot_Attack01_Large_13: -8967637777761162208
+      FX_BasicRobot_Attack01_Large_14: -7144694261523448037
+      FX_BasicRobot_Attack01_Large_8: -7788828030337296403
+      FX_BasicRobot_Attack01_Large_29: -5457670976302617984
+      FX_BasicRobot_Attack01_Large_16: 5506771116674389311
+      FX_BasicRobot_Attack01_Large_22: 6929038000777287134
+      FX_BasicRobot_Attack01_Large_15: 587942528834020007
+      FX_BasicRobot_Attack01_Large_10: -841099420560106313
+      FX_BasicRobot_Attack01_Large_20: -358057377680810314
+      FX_BasicRobot_Attack01_Large_23: 2718654637745801538
+      FX_BasicRobot_Attack01_Large_31: 965949796240959596
+      FX_BasicRobot_Attack01_Large_34: -1937016665045389985
+      FX_BasicRobot_Attack01_Large_19: -2428752296597820014
+      FX_BasicRobot_Attack01_Large_1: 310633825973316102
+      FX_BasicRobot_Attack01_Large_11: 7559874395147738109
+      FX_BasicRobot_Attack01_Large_30: 548936654652610888
+      FX_BasicRobot_Attack01_Large_24: 4792848682793711390
+      FX_BasicRobot_Attack01_Large_9: 8039812547881800379
+      FX_BasicRobot_Attack01_Large_3: 1939586915755559947
+      FX_BasicRobot_Attack01_Large_12: -6062034195562707641
+      FX_BasicRobot_Attack01_Large_18: 7161275994383095050
+      FX_BasicRobot_Attack01_Large_25: -1061388703947926283
+      FX_BasicRobot_Attack01_Large_5: 302778045444414991
+      FX_BasicRobot_Attack01_Large_26: -3630810480408863159
+      FX_BasicRobot_Attack01_Large_27: 6362932721581495400
+      FX_BasicRobot_Attack01_Large_35: 943788693450471128
+      FX_BasicRobot_Attack01_Large_4: -5583399085811616719
+      FX_BasicRobot_Attack01_Large_17: 575870812245957730
+      FX_BasicRobot_Attack01_Large_32: 2249537946367788971
+      FX_BasicRobot_Attack01_Large_21: -7931314800431806743
+      FX_BasicRobot_Attack01_Large_28: 7213119945765628840
+      FX_BasicRobot_Attack01_Large_0: -7018409462528220364
+      FX_BasicRobot_Attack01_Large_6: -949166940557948944
+      FX_BasicRobot_Attack01_Large_7: -2392964734285904293
+      FX_BasicRobot_Attack01_Large_33: 5319765295232262396
+      FX_BasicRobot_Attack01_Large_2: 6678647220907929971
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
